@@ -72,3 +72,31 @@ These are hypothetical planes used to transect the body, in order to describe th
 **Coronal (Frontal) Plane:** A vertical plane that divides the body into anterior (front) and posterior (back) parts.
 
 **Transverse (Axial) Plane:** A horizontal plane that divides the body into superior (upper) and inferior (lower) parts. It produces a cross-section.
+
+## Powder bed fusion
+
+**Contour:** A defined closed path that traces the outermost region of a 2D slice.
+
+**D10, D50, D90:** The respective percentiles for describing the size distribution of powder particles.
+
+**Design of Experiments (DOE):** A systematic method to study relationships between multiple variables.
+
+**Down-Skin:** Surfaces of a component facing downward relative to the print orientation.
+
+**Hatch:** The path the laser takes to cover the desired area of the 2D slice.
+
+**Island:** A closed region of a 2D slice.
+
+**Neural network:** A process of using a series of algorithms to recognize relationships in data.
+
+**Power:** The laser output at a system level, denoted in watts.
+
+**Response surface methodology (RSM):** A method to explore the relationships between variables that can define the maximum and minimum values of said relationship.
+
+**Shell and Core:** The **core** describes the center region of the component being produced; the **shell** is the outer region.
+
+**Sidewalls:** Any vertical sections at the edge of an island.
+
+**Taguchi method:** A statistical method used to optimize a design.
+
+**Up-Skin:** Surfaces of a component facing upward relative to the print orientation.

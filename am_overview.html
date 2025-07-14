@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'am_overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Powder bed fusion" href="pbf.html" />
     <link rel="prev" title="What is biomaterial?" href="biomaterials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,6 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
 </ul>
 
     </div>
@@ -367,13 +369,20 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-overview">Methods overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-melting-slm"><strong>Selective Laser Melting (SLM)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-beam-melting-ebm"><strong>Electron Beam Melting (EBM)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fused-deposition-modeling-fdm"><strong>Fused Deposition Modeling (FDM)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stereolithography-sla"><strong>Stereolithography (SLA)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powder-bed-fusion-pbf">Powder Bed Fusion (PBF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-melting-slm">1. Selective Laser Melting (SLM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-beam-melting-ebm">2. Electron Beam Melting (EBM)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vat-photopolymerization-vp">Vat Photopolymerization (VP)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stereolithography-sla">Stereolithography (SLA)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binder-jetting">Binder Jetting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-energy-deposition-ded">Directed Energy Deposition (DED)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-extrusion">Material Extrusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-jetting">Material Jetting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sheet-lamination">Sheet Lamination</a></li>
 </ul>
             </nav>
         </div>
@@ -387,123 +396,196 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="additive-manufacturing-forges-the-future-of-medical-implants">
 <h1>Additive Manufacturing Forges the Future of Medical Implants<a class="headerlink" href="#additive-manufacturing-forges-the-future-of-medical-implants" title="Link to this heading">#</a></h1>
-<p>Additive manufacturing (AM), popularly known as 3D printing, is revolutionizing the production of medical implants, shifting from standardized sizes to patient-specific solutions with complex, performance-enhancing designs. This technology builds objects layer by layer from a digital model, enabling the creation of highly customized implants that can improve surgical outcomes, reduce recovery times, and enhance biocompatibility. Several AM methods are now pivotal in producing everything from cranial plates to spinal cages and dental restorations.</p>
-<p>The most prominent methods for manufacturing medical implants include powder bed fusion techniques for metals, such as <strong>Selective Laser Melting (SLM)</strong> and <strong>Electron Beam Melting (EBM)</strong>, which are ideal for strong, permanent implants. For polymers and biocompatible resins, <strong>Fused Deposition Modeling (FDM)</strong> and <strong>Stereolithography (SLA)</strong> are commonly employed, often for surgical guides, anatomical models, and sometimes non-load-bearing or biodegradable implants.</p>
-<section id="methods-overview">
-<h2>Methods overview<a class="headerlink" href="#methods-overview" title="Link to this heading">#</a></h2>
+<p><strong>Additive Manufacturing (AM)</strong>, as defined by the <strong>ISO/ASTM 52900</strong> standard, is the process of joining materials to create objects from 3D model data, usually layer upon layer. This is in contrast to subtractive manufacturing methodologies, such as traditional machining. AM technologies are revolutionizing the medical field, particularly in the production of patient-specific implants.</p>
+<section id="powder-bed-fusion-pbf">
+<h2>Powder Bed Fusion (PBF)<a class="headerlink" href="#powder-bed-fusion-pbf" title="Link to this heading">#</a></h2>
+<p>Powder Bed Fusion methods build parts within a bed of polymer or metal powder. A thermal source, like a laser or electron beam, selectively fuses particles in a specific pattern, and the process is repeated layer by layer.</p>
 <section id="selective-laser-melting-slm">
-<h3><strong>Selective Laser Melting (SLM)</strong><a class="headerlink" href="#selective-laser-melting-slm" title="Link to this heading">#</a></h3>
-<p>Selective Laser Melting is a leading method for creating dense, high-strength metal implants. It is a powder bed fusion process that uses a high-powered laser to fuse metallic powders into a solid object.</p>
-<p><strong>Physical Principle:</strong>
-The process begins by spreading a thin layer of fine metal powder (commonly titanium alloys, cobalt-chrome, or stainless steel) over a build platform. A high-energy laser, guided by a 3D CAD model, selectively scans the cross-section of the implant, melting and fusing the powder particles together. The platform then lowers by one layer thickness, and a new layer of powder is applied. This process is repeated layer by layer in a chamber with a controlled inert gas atmosphere to prevent oxidation, until the final, fully dense implant is complete.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
-<th class="head text-left"><p>Disadvantages</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><strong>High Precision &amp; Complex Geometries:</strong> Enables the creation of intricate designs, including porous lattice structures that promote osseointegration (bone ingrowth) and reduce stress shielding.</p></td>
-<td class="text-left"><p><strong>High Cost:</strong> The machinery and specialized metal powders are expensive, increasing the overall cost of production.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Excellent Mechanical Properties:</strong> Produces implants with strength and density comparable to or exceeding those made by traditional forging or casting methods.</p></td>
-<td class="text-left"><p><strong>Residual Stresses:</strong> The rapid heating and cooling can induce internal stresses, potentially leading to warping or micro-cracks. Post-processing heat treatments are often required.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><strong>Patient-Specific Customization:</strong> Allows for the rapid production of implants tailored to a patient’s unique anatomy based on CT or MRI scan data.</p></td>
-<td class="text-left"><p><strong>Rough Surface Finish:</strong> The layer-by-layer process results in a surface that typically requires post-processing (e.g., polishing, machining) to meet clinical standards.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Material Efficiency:</strong> Less material is wasted compared to subtractive manufacturing methods like CNC machining.</p></td>
-<td class="text-left"><p><strong>Build Size Limitations:</strong> The size of the build chamber restricts the maximum dimensions of the implant that can be produced.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<h3>1. Selective Laser Melting (SLM)<a class="headerlink" href="#selective-laser-melting-slm" title="Link to this heading">#</a></h3>
+<p>SLM is a primary method for creating high-strength, non-porous metal implants.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle:</strong> A high-powered laser scans across a thin layer of fine metal powder (e.g., titanium or cobalt-chrome alloys), following a path dictated by a CAD model. The laser’s intense energy completely melts and fuses the powder particles together. After a layer is completed, the build platform lowers, a new layer of powder is spread, and the process repeats until the implant is fully formed. This all occurs in an inert gas atmosphere to prevent oxidation.</p></li>
+<li><p><strong>Advantages:</strong></p>
+<ul>
+<li><p><strong>High Precision:</strong> Creates implants with excellent detail and dimensional accuracy.</p></li>
+<li><p><strong>Complex Geometries:</strong> Enables the production of intricate designs, such as porous lattice structures that promote <strong>osseointegration</strong> (bone ingrowth).</p></li>
+<li><p><strong>Superior Mechanical Properties:</strong> Produces fully dense parts with strength often exceeding that of traditional cast or forged components.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages:</strong></p>
+<ul>
+<li><p><strong>Residual Stresses:</strong> The rapid heating and cooling cycles can induce internal stresses, potentially causing warping or cracking. Post-processing heat treatments are often required.</p></li>
+<li><p><strong>Rough Surface Finish:</strong> The resulting surface is inherently rough and typically requires secondary polishing or machining.</p></li>
+<li><p><strong>High Cost:</strong> Both the machinery and the specialized, medical-grade metal powders are expensive.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="electron-beam-melting-ebm">
-<h3><strong>Electron Beam Melting (EBM)</strong><a class="headerlink" href="#electron-beam-melting-ebm" title="Link to this heading">#</a></h3>
-<p>Similar to SLM, Electron Beam Melting is another powder bed fusion technique used for metal implants. It offers distinct advantages, particularly for certain materials like titanium alloys.</p>
-<p><strong>Physical Principle:</strong>
-EBM employs a high-energy electron beam as its heat source instead of a laser. The process takes place in a high-temperature vacuum environment. The electron beam, guided by magnetic coils, melts and fuses the metal powder layer by layer. The high-temperature preheating of the powder bed before melting helps to minimize residual stresses in the final part.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
-<th class="head text-left"><p>Disadvantages</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><strong>Reduced Residual Stress:</strong> The high-temperature build environment minimizes thermal gradients, resulting in parts with significantly lower residual stress compared to SLM, often eliminating the need for post-build stress relief.</p></td>
-<td class="text-left"><p><strong>Rougher Surface Finish:</strong> EBM typically produces parts with a rougher surface than SLM, necessitating more extensive post-processing for a smooth finish.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>High-Purity Environment:</strong> The vacuum chamber prevents contamination and oxidation, making it ideal for processing reactive materials like titanium and tantalum.</p></td>
-<td class="text-left"><p><strong>Limited Material Selection:</strong> The process is primarily optimized for a smaller range of conductive materials, most commonly titanium and cobalt-chrome alloys.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><strong>Faster Build Speeds:</strong> The electron beam can scan the powder bed at higher speeds than a laser, often resulting in faster production times for larger components.</p></td>
-<td class="text-left"><p><strong>High Energy Consumption:</strong> Maintaining a vacuum and generating the electron beam requires significant energy.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Excellent Material Properties:</strong> Produces strong, dense parts with a microstructure that can be beneficial for fatigue properties.</p></td>
-<td class="text-left"><p><strong>Higher Equipment Cost:</strong> EBM systems are generally more expensive than their laser-based counterparts.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<h3>2. Electron Beam Melting (EBM)<a class="headerlink" href="#electron-beam-melting-ebm" title="Link to this heading">#</a></h3>
+<p>EBM is another PBF process used for metal implants, particularly those made from titanium alloys.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle:</strong> EBM uses a high-energy electron beam as its heat source within a high-temperature vacuum. The electron beam melts and fuses the metal powder layer by layer. The key difference is that the entire powder bed is pre-heated to an elevated temperature, which minimizes thermal gradients during the build.</p></li>
+<li><p><strong>Advantages:</strong></p>
+<ul>
+<li><p><strong>Reduced Residual Stress:</strong> The hot-process environment significantly reduces internal stresses, often eliminating the need for post-build stress relief treatments.</p></li>
+<li><p><strong>Faster Build Speeds:</strong> The electron beam can scan faster than a laser, making it more efficient for larger implants.</p></li>
+<li><p><strong>High-Purity Parts:</strong> The vacuum environment prevents contamination, which is ideal for reactive materials like titanium.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages:</strong></p>
+<ul>
+<li><p><strong>Rougher Surface Finish:</strong> EBM parts generally have a rougher surface than SLM parts, requiring more extensive post-processing.</p></li>
+<li><p><strong>Limited Material Selection:</strong> The process is primarily optimized for a smaller range of conductive materials.</p></li>
+<li><p><strong>Lower Resolution:</strong> The feature detail is typically less fine compared to what SLM can achieve.</p></li>
+</ul>
+</li>
+</ul>
 </section>
-<hr class="docutils" />
-<section id="fused-deposition-modeling-fdm">
-<h3><strong>Fused Deposition Modeling (FDM)</strong><a class="headerlink" href="#fused-deposition-modeling-fdm" title="Link to this heading">#</a></h3>
-<p>Fused Deposition Modeling is a material extrusion technique widely recognized for its accessibility and use with a range of thermoplastic polymers. In the medical field, it is used for anatomical models, surgical guides, and increasingly for implants made from high-performance, biocompatible polymers.</p>
-<p><strong>Physical Principle:</strong>
-FDM works by feeding a filament of thermoplastic material (such as PEEK or ULTEM for medical applications) through a heated extruder. The extruder melts the filament and deposits the molten material onto a build platform in a predetermined path, tracing the object’s cross-section. The material cools and solidifies, and the subsequent layer is deposited on top, fusing with the layer below. This continues until the object is fully formed.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
-<th class="head text-left"><p>Disadvantages</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><strong>Cost-Effectiveness:</strong> FDM printers and materials are generally more affordable than metal AM systems, making it an accessible technology.</p></td>
-<td class="text-left"><p><strong>Lower Resolution &amp; Anisotropy:</strong> The layer-by-layer extrusion results in a less detailed surface finish and mechanical properties that can vary depending on the build orientation (anisotropy).</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Material Versatility:</strong> A wide range of thermoplastic filaments are available, including biocompatible and sterilizable options like PEEK (Polyether ether ketone) and PC-ISO (Polycarbonate).</p></td>
-<td class="text-left"><p><strong>Weaker Inter-Layer Adhesion:</strong> The bond between layers can be a weak point, potentially compromising the overall strength of the implant compared to monolithic materials.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><strong>Ease of Use:</strong> The technology is relatively simple to operate and maintain compared to powder bed fusion systems.</p></td>
-<td class="text-left"><p><strong>Support Structures Required:</strong> Overhangs and complex geometries require support structures that must be manually removed, which can affect surface quality.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Rapid Prototyping:</strong> Excellent for quickly creating non-implantable anatomical models for surgical planning and patient education.</p></td>
-<td class="text-left"><p><strong>Limited to Thermoplastics:</strong> Cannot produce metal implants directly.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </section>
+<section id="vat-photopolymerization-vp">
+<h2>Vat Photopolymerization (VP)<a class="headerlink" href="#vat-photopolymerization-vp" title="Link to this heading">#</a></h2>
+<p>This process uses a vat of liquid photopolymer resin (a light-activated polymer) to build objects layer by layer.</p>
 <section id="stereolithography-sla">
-<h3><strong>Stereolithography (SLA)</strong><a class="headerlink" href="#stereolithography-sla" title="Link to this heading">#</a></h3>
-<p>Stereolithography is a vat photopolymerization process known for producing parts with high accuracy and a smooth surface finish. It is widely used for creating detailed anatomical models and surgical guides, as well as some biocompatible devices.</p>
-<p><strong>Physical Principle:</strong>
-SLA uses an ultraviolet (UV) laser to selectively cure and solidify a liquid photopolymer resin contained in a vat. The build platform is positioned just below the surface of the liquid resin, and the laser traces the cross-section of the object, hardening the material. The platform then moves down (or up, in inverted systems), and a recoating blade sweeps a new layer of resin over the previous one. The process repeats until the 3D object is complete.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
-<th class="head text-left"><p>Disadvantages</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><strong>High Accuracy &amp; Smooth Surface Finish:</strong> SLA is capable of producing parts with very fine details and a smooth, almost injection-molded quality surface, minimizing the need for extensive post-processing.</p></td>
-<td class="text-left"><p><strong>Material Brittleness:</strong> Standard SLA resins can be brittle, although newer engineering and biocompatible resins offer improved toughness and durability.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Excellent for Anatomical Models:</strong> The high resolution makes it ideal for creating highly detailed and accurate anatomical models for pre-operative planning.</p></td>
-<td class="text-left"><p><strong>UV Light Degradation:</strong> Parts can become brittle and change properties over time with prolonged exposure to UV light.</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><strong>Biocompatible Resins:</strong> A growing number of biocompatible and sterilizable resins are available, allowing for the creation of surgical guides, dental appliances, and other patient-contact devices.</p></td>
-<td class="text-left"><p><strong>Post-Processing Required:</strong> Parts require washing in a solvent to remove excess uncured resin and a post-curing cycle in a UV oven to fully solidify and stabilize their mechanical properties.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Watertight Parts:</strong> SLA produces fully dense, watertight parts, which is crucial for applications involving fluid flow or sealing.</p></td>
-<td class="text-left"><p><strong>Higher Material Cost:</strong> Photopolymer resins are generally more expensive than FDM filaments.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<h3>Stereolithography (SLA)<a class="headerlink" href="#stereolithography-sla" title="Link to this heading">#</a></h3>
+<p>While less common for permanent implants, SLA is crucial for creating anatomical models, surgical guides, and some biocompatible devices.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle:</strong> An ultraviolet (UV) laser is directed into a vat of liquid photopolymer resin. The laser traces the cross-section of the object on the resin’s surface, curing and solidifying it. The build platform then moves by a single layer’s thickness, and the process repeats.</p></li>
+<li><p><strong>Advantages:</strong></p>
+<ul>
+<li><p><strong>Exceptional Accuracy &amp; Surface Finish:</strong> SLA produces parts with very fine details and a smooth surface, making it perfect for creating precise anatomical models for surgical planning.</p></li>
+<li><p><strong>Biocompatible Materials:</strong> A growing range of biocompatible and sterilizable resins are available for producing custom surgical guides and dental appliances.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages:</strong></p>
+<ul>
+<li><p><strong>Limited Mechanical Properties:</strong> The resulting polymer parts are generally not as strong or durable as metal implants and can become brittle over time.</p></li>
+<li><p><strong>Post-Processing:</strong> Parts require washing to remove excess resin and post-curing in a UV oven to achieve their final mechanical properties.</p></li>
+<li><p><strong>Not for Permanent Load-Bearing Implants:</strong> The materials are unsuitable for long-term, high-stress applications like orthopedic implants.</p></li>
+</ul>
+</li>
+</ul>
 </section>
+</section>
+<section id="binder-jetting">
+<h2>Binder Jetting<a class="headerlink" href="#binder-jetting" title="Link to this heading">#</a></h2>
+<p>In binder jetting, a liquid bonding agent is selectively deposited to join powder materials. The bound part is then often sintered in a furnace to achieve its final density and strength.</p>
+<ul class="simple">
+<li><p><strong>Advantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Complex Geometries:</strong> Excellent for creating intricate porous structures that promote <strong>osseointegration</strong> (bone ingrowth).</p></li>
+<li><p><strong>High Throughput:</strong> Relatively fast build speeds allow for batch production of standard-sized implants.</p></li>
+<li><p><strong>No Internal Stress:</strong> The process occurs at room temperature, avoiding the residual stresses common in high-heat methods.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Extensive Post-Processing:</strong> Parts require significant post-processing (debinding and sintering) which can cause shrinkage and affect dimensional accuracy.</p></li>
+<li><p><strong>Lower Mechanical Strength:</strong> Final parts may have lower density and mechanical properties compared to those made with powder bed fusion.</p></li>
+<li><p><strong>Potential for Contamination:</strong> The infiltration of the binding agent can be a concern for biocompatibility.</p></li>
+</ul>
+</li>
+<li><p><strong>Implant-Grade Materials:</strong></p>
+<ul>
+<li><p>Metals: <strong>Titanium alloys (e.g., Ti-6Al-4V)</strong>, <strong>stainless steel (316L)</strong>.</p></li>
+<li><p>Ceramics: <strong>Hydroxyapatite (HA)</strong>, <strong>Tricalcium Phosphate (TCP)</strong> for bone scaffolds.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="directed-energy-deposition-ded">
+<h2>Directed Energy Deposition (DED)<a class="headerlink" href="#directed-energy-deposition-ded" title="Link to this heading">#</a></h2>
+<p>DED uses focused thermal energy (like a laser or electron beam) to fuse materials as they are being deposited. It’s often used to add material to existing components, making it ideal for repairs or coatings.</p>
+<ul class="simple">
+<li><p><strong>Advantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Hybrid Manufacturing:</strong> Can add features or biocompatible coatings (like HA) onto conventionally manufactured implants.</p></li>
+<li><p><strong>Repair and Modification:</strong> Ideal for repairing high-value damaged implants or customizing existing ones.</p></li>
+<li><p><strong>Large-Scale Parts:</strong> Suitable for producing large orthopedic implants.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Low Resolution:</strong> Produces parts with lower detail and a rougher surface finish, often requiring significant secondary machining.</p></li>
+<li><p><strong>Material Waste:</strong> Can be less efficient with material usage compared to powder bed methods.</p></li>
+</ul>
+</li>
+<li><p><strong>Implant-Grade Materials:</strong></p>
+<ul>
+<li><p>Metals: <strong>Titanium alloys</strong>, <strong>Cobalt-Chrome (Co-Cr) alloys</strong>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="material-extrusion">
+<h2>Material Extrusion<a class="headerlink" href="#material-extrusion" title="Link to this heading">#</a></h2>
+<p>This process, commonly known as Fused Deposition Modeling (FDM), involves selectively dispensing a filament of thermoplastic material through a heated nozzle.</p>
+<ul class="simple">
+<li><p><strong>Advantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Cost-Effective:</strong> Low-cost machines and materials make it accessible.</p></li>
+<li><p><strong>PEEK Compatibility:</strong> Capable of printing high-performance polymers like <strong>PEEK</strong>, which is radiolucent and has a modulus closer to bone than metal.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Anisotropic Properties:</strong> Parts are mechanically weak in the z-axis (between layers), making them unsuitable for most load-bearing applications.</p></li>
+<li><p><strong>Limited Material Range:</strong> The selection of medical-grade materials is limited.</p></li>
+<li><p><strong>Low Resolution:</strong> Not suitable for implants requiring fine details or complex internal structures.</p></li>
+</ul>
+</li>
+<li><p><strong>Implant-Grade Materials:</strong></p>
+<ul>
+<li><p>Polymers: <strong>Polyetheretherketone (PEEK)</strong>, <strong>Polycaprolactone (PCL)</strong> for resorbable scaffolds, <strong>Polylactic Acid (PLA)</strong> for temporary devices.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="material-jetting">
+<h2>Material Jetting<a class="headerlink" href="#material-jetting" title="Link to this heading">#</a></h2>
+<p>Material jetting operates like a 2D inkjet printer, but it selectively deposits droplets of photopolymer material that are immediately cured by UV light.</p>
+<ul class="simple">
+<li><p><strong>Advantages for Implants:</strong></p>
+<ul>
+<li><p><strong>High Accuracy &amp; Smooth Surface:</strong> Produces highly detailed parts with very smooth surfaces, reducing the need for post-processing.</p></li>
+<li><p><strong>Multi-Material Capabilities:</strong> Can create implants with varying material properties or colors, ideal for realistic anatomical models for surgical planning.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Limited Biocompatibility:</strong> Materials are typically acrylic-based photopolymers, which generally lack the long-term biocompatibility and mechanical strength required for permanent implants.</p></li>
+<li><p><strong>Poor Mechanical Properties:</strong> Not suitable for load-bearing applications.</p></li>
+</ul>
+</li>
+<li><p><strong>Implant-Grade Materials:</strong></p>
+<ul>
+<li><p>Polymers: Various <strong>biocompatible photopolymer resins</strong> certified for short-term mucosal contact, often used for dental guides or surgical models.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sheet-lamination">
+<h2>Sheet Lamination<a class="headerlink" href="#sheet-lamination" title="Link to this heading">#</a></h2>
+<p>This method bonds sheets of material together to form an object. It is not commonly used for the production of critical medical implants.</p>
+<ul class="simple">
+<li><p><strong>Advantages for Implants:</strong></p>
+<ul>
+<li><p>Generally not applicable for functional, long-term implants.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages for Implants:</strong></p>
+<ul>
+<li><p><strong>Poor Inter-laminar Strength:</strong> Weak bonding between layers creates a high risk of delamination under physiological loads.</p></li>
+<li><p><strong>Limited Material Selection:</strong> Primarily used with paper, plastics, or some metals not typically certified for implantation.</p></li>
+<li><p><strong>Geometric Limitations:</strong> Not suitable for creating the complex internal structures required for modern implants.</p></li>
+</ul>
+</li>
+<li><p><strong>Implant-Grade Materials:</strong></p>
+<ul>
+<li><p>None are widely used or accepted for permanent implant applications.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 
@@ -546,6 +628,15 @@ SLA uses an ultraviolet (UV) laser to selectively cure and solidify a liquid pho
         <p class="prev-next-title">What is biomaterial?</p>
       </div>
     </a>
+    <a class="right-next"
+       href="pbf.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Powder bed fusion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -563,13 +654,20 @@ SLA uses an ultraviolet (UV) laser to selectively cure and solidify a liquid pho
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-overview">Methods overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-melting-slm"><strong>Selective Laser Melting (SLM)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-beam-melting-ebm"><strong>Electron Beam Melting (EBM)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fused-deposition-modeling-fdm"><strong>Fused Deposition Modeling (FDM)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stereolithography-sla"><strong>Stereolithography (SLA)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powder-bed-fusion-pbf">Powder Bed Fusion (PBF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-melting-slm">1. Selective Laser Melting (SLM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-beam-melting-ebm">2. Electron Beam Melting (EBM)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vat-photopolymerization-vp">Vat Photopolymerization (VP)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stereolithography-sla">Stereolithography (SLA)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binder-jetting">Binder Jetting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-energy-deposition-ded">Directed Energy Deposition (DED)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-extrusion">Material Extrusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-jetting">Material Jetting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sheet-lamination">Sheet Lamination</a></li>
 </ul>
   </nav></div>
 
