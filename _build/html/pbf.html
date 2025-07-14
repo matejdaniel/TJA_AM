@@ -1,0 +1,1047 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Powder bed fusion &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pbf';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Additive Manufacturing Forges the Future of Medical Implants" href="am_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Powder bed fusion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fpbf.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pbf.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Powder bed fusion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-pbf-building-process">General PBF Building Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-powder-bed-fusion-processes">Types of Powder Bed Fusion Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-sintering-sls">Selective Laser Sintering (SLS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laser-powder-bed-fusion-lpbf">Laser Powder Bed Fusion (LPBF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-heat-sintering-shs">Selective Heat Sintering (SHS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-powder-bed-fusion-eb-pbf">Electron Powder Bed Fusion (EB-PBF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-parameters-in-pbf">Process parameters in PBF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-defects-in-lpbf">Types of Defects in LPBF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porosity">Porosity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cracks">Cracks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balling">Balling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-roughness">Surface Roughness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-stress">Residual Stress</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lack-of-fusion-lof-unmelted-particles-as-inclusions">Lack of Fusion (LOF) / Unmelted Particles (as inclusions)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anisotropy">Anisotropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delamination-distortion-and-warpage">Delamination, Distortion, and Warpage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeatability-and-reproducibility-issues">Repeatability and Reproducibility Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-of-alloying-elements">Loss of Alloying Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formation-of-interfacial-phases">Formation of Interfacial Phases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oxide-inclusions">Oxide Inclusions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metal-powders-in-powder-bed-fusion-preparation-characterization-and-recycling">Metal Powders in Powder Bed Fusion: Preparation, Characterization, and Recycling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-powder-preparation">Methods of Powder Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powder-characterization">3.2 Powder Characterization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powder-recycling-methods">3.3 Powder Recycling Methods</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="powder-bed-fusion">
+<h1>Powder bed fusion<a class="headerlink" href="#powder-bed-fusion" title="Link to this heading">#</a></h1>
+<p>Powder Bed Fusion (PBF) is a fundamental <strong>Additive Manufacturing (AM) process</strong> that builds three-dimensional (3D) objects layer by layer. It is a mainstream technique for metal AM, with sales of metal AM machines exceeding 1800 units in 2017. One of the earliest PBF processes, <strong>Selective Laser Sintering</strong>, was developed at the University of Texas. In 1995, the Fraunhofer Institute ILT in Aachen, Germany, developed Selective Laser Melting through research by Wilhelm Meiners, Konrad Wissenbach, and Andres Gasser. This resulted in a fundamental patent for SLM. The SLM process fully melts the metal powder into a solid mass, distinguishing it from true sintering processes like SLS.
+Around the same time, in the 1990s, EOS also patented a metal powder-based process known as <strong>Direct Metal Laser Sintering</strong>. While the term suggests sintering, DMLS, much like SLM, involves melting the metal particles. To avoid confusion between SLM and DMLS, the term <strong>Laser Powder Bed Fusion</strong> is now commonly used to refer to these similar technologies that involve melting metal powder with a laser. The history of Electron Beam Melting (EBM) dates back to the early 1990s. The fundamental principles of EBM were patented in 1993 by the Swedish company Arcam AB (originally Arcam) in collaboration with Chalmers University of Technology in Gothenburg, Sweden. Selective Electron Beam Melting (SEBM) was introduced to the market as a transformative additive manufacturing technology by Arcam AB Corporation in 1997. As the principle is simmilar to laser powder bed, it is named <strong>Electron Beam  Powder Bed Fusion</strong>.</p>
+<section id="general-pbf-building-process">
+<h2>General PBF Building Process<a class="headerlink" href="#general-pbf-building-process" title="Link to this heading">#</a></h2>
+<p>The core concept of PBF involves fabricating actual parts from a desired 3D solid CAD model data by adding material layer by layer. Building process in PBF consists of:</p>
+<ul class="simple">
+<li><p><strong>Data Preparation</strong>: The 3D solid model of a part designed in CAD software is converted into an STL (Stereolithography) file format, which is accepted by the AM machine. This STL file includes both the part model and any necessary support structures.</p></li>
+<li><p><strong>Machine Setup</strong>: Before the build process begins, the AM machine is set up and configured.</p></li>
+<li><p><strong>Powder Layer Spreading</strong>: A layer of powder is spread uniformly onto a “build platform” (also known as the powder bed). This can be achieved by a <strong>roller or a blade mechanism</strong>. The powder delivery piston moves up to supply the powder, and the recoater blade or roller levels it to the required layer thickness. This layer thickness typically ranges from 20 to 200 µm.</p></li>
+<li><p><strong>Energy Source Interaction</strong>: An <strong>energy source</strong>, typically a laser or an electron beam, then scans the powder selectively based on the 2D cross-sectional slice data from the CAD model. The beam traces the geometry of the current layer, <strong>fusing or melting the powder particles</strong> in the selected regions.</p>
+<ul>
+<li><p><strong>Melting and Solidification</strong>: As the energy beam interacts with the powder, it absorbs the energy and converts it into heat. When the temperature reaches or exceeds the powder’s melting point, the particles melt, forming a <strong>localized molten pool</strong>. This molten pool then rapidly cools and solidifies. This process generates <strong>high heating and cooling rates</strong> (e.g., 10^6 °C/s for heating and 10^5 °C/s for cooling in LPBF Ti-6Al-4V).</p></li>
+<li><p><strong>Heat Transfer</strong>: Heat transfer within the powder bed is complex, involving conduction, convection, and radiation between particles, though conduction is often considered the most significant. Physical mechanisms like the Marangoni effect (fluid dynamic within the melt pool) and recoil pressure (from metal evaporation) also influence the melt pool behavior and can lead to defects.</p></li>
+</ul>
+</li>
+<li><p><strong>Platform Lowering</strong>: Once a layer is complete, the build platform is lowered by a depth equal to the desired layer thickness.</p></li>
+<li><p><strong>Repetition</strong>: A new layer of powder is then spread across the previously solidified layer. The scanning and solidification process is repeated until the complete physical part is built.</p></li>
+<li><p><strong>Post-Build</strong>: After the part is finished, unused or unmelted powders are cleaned and can often be recycled for further use. The part may then undergo cleaning and secondary processes if required.</p></li>
+</ul>
+</section>
+<section id="types-of-powder-bed-fusion-processes">
+<h2>Types of Powder Bed Fusion Processes<a class="headerlink" href="#types-of-powder-bed-fusion-processes" title="Link to this heading">#</a></h2>
+<p>PBF encompasses several specific techniques, primarily differentiated by their energy source and the material interaction:</p>
+<section id="selective-laser-sintering-sls">
+<h3>Selective Laser Sintering (SLS)<a class="headerlink" href="#selective-laser-sintering-sls" title="Link to this heading">#</a></h3>
+<p>SLS is characterized as a powder sintering process. In this process, the laser beam selectively scans and fuses/sinters the powder particles based on 3D CAD data.
+Historically, SLS was initially applied to polymer powder using a CO2 laser. When applied to metals, it was termed SLS because the powder particles were sintered without fully melting. The CO2 laser was not efficient at fusing metal powders due to low absorption, which resulted in SLS-built parts being porous, with relative densities typically no higher than 99%</p>
+<p>SLS perform <strong>direct sintering of metallic powder</strong> or use metal powder coated with polymer (<strong>indirect SLS</strong>). Some materials, like ceramics, have very high melting temperatures or are sensitive to thermal shock, making them challenging to process directly with the laser in SLS. In other cases, achieving the desired density and properties in metals through direct SLS can be complex. Indirect SLS overcomes these limitations by using an intermediary binder material. The powder of the target material (e.g., ceramic or metal) is mixed with a polymeric binder. The binder acts as a temporary “glue” to hold the particles together during the build process.   The powder mixture is spread in a thin layer, and a laser selectively sinters (or fuses) the polymeric binder based on the design of each layer. This process is repeated layer by layer until the entire “green part” is created. The target material particles are held together by the solidified binder.  After the printing is complete, the green part is carefully removed from the powder bed. It then undergoes a debinding process, where the polymeric binder is removed. This is typically done by heating the part in a controlled furnace, causing the binder to decompose and evaporate (pyrolysis). Once the binder is removed, the part, now consisting only of the target material powder, is very fragile and porous. It is then sintered at a high temperature in a furnace. During sintering, the powder particles fuse together, increasing the density and strength of the final part. In some cases, for metals, an infiltration step with another metal like copper or bronze might be used to fill the remaining pores and achieve full density. Indirect SLS typically results in objects with low strength and high porosity, often requiring thermal post-treatment.</p>
+</section>
+<section id="laser-powder-bed-fusion-lpbf">
+<h3>Laser Powder Bed Fusion (LPBF)<a class="headerlink" href="#laser-powder-bed-fusion-lpbf" title="Link to this heading">#</a></h3>
+<p>Laser Powder Bed Fusion (LPBF) is also denoted as <strong>Direct Metal Laser Sintering (DMLS)</strong> or <strong>Selective laser melting (SLM)</strong>.  This technology uses an <strong>intense laser to fully melt and fuse</strong> selected regions of powder. This leads to <strong>dense parts</strong> with very homogeneous microstructures. The process is carried out in an <strong>inert atmosphere</strong> (e.g., nitrogen or argon gas) to protect heated parts from oxidation.  LPBF is widely accepted in various industries due to its versatility with materials, including alloys, and its capability to produce accurate parts with good surface finish for small-scale production due to smaller beam size. LPBF exhibits high cooling rates due to localized melting and rapid solidification, leading to <strong>fine-grained microstructures</strong>.</p>
+</section>
+<section id="selective-heat-sintering-shs">
+<h3>Selective Heat Sintering (SHS)<a class="headerlink" href="#selective-heat-sintering-shs" title="Link to this heading">#</a></h3>
+<p>This process uses a <strong>heated thermal head</strong> to sinter <strong>plastic powders</strong>. It is used for manufacturing structural parts and conceptual prototypes.</p>
+</section>
+<section id="electron-powder-bed-fusion-eb-pbf">
+<h3>Electron Powder Bed Fusion (EB-PBF)<a class="headerlink" href="#electron-powder-bed-fusion-eb-pbf" title="Link to this heading">#</a></h3>
+<p>Electron Powder Bed Fusion (EB-PBF) is also denoted as <strong>Electron Beam Melting (EBM)</strong>. This technology uses a <strong>beam of electrons</strong> as the heat energy source for melting metal powders. It operates in a <strong>high vacuum</strong> environment. The build chamber is typically <strong>preheated to a high temperature</strong> (e.g., 700-1100 °C, much higher than L-PBF which is usually up to 200 °C) and maintained there throughout the build. This high temperature leads to slower cooling rates and <strong>lower residual stresses</strong> compared to laser methods.
+EBM can produce <strong>fully dense parts</strong> with very homogeneous microstructures using a wide range of metal powders. EBM has higher power (up to 3000W) and much faster beam speeds (up to 8000 m/s) than laser systems, resulting in shorter build times. It typically uses larger layer thicknesses (50-150 µm) than laser methods, which expedites builds but can result in <strong>rougher surfaces and less dimensional accuracy</strong>. EBM is less common than SLM due to its higher equipment cost, poorer precision, and being limited to conductive metals.</p>
+</section>
+</section>
+<section id="process-parameters-in-pbf">
+<h2>Process parameters in PBF<a class="headerlink" href="#process-parameters-in-pbf" title="Link to this heading">#</a></h2>
+<p>The Powder Bed Fusion (PBF) process relies heavily on the precise control of various process parameters to achieve desired part quality, density, and mechanical properties, while minimizing defects.</p>
+<p>The <strong>principal process parameters</strong> in PBF can be categorized as follows:</p>
+<ul class="simple">
+<li><p><strong>Laser-Related Parameters</strong>:</p>
+<ul>
+<li><p><strong>Laser Power (P)</strong>: This is a fundamental parameter directly responsible for melting the powder. Increasing laser power generally increases the melting point of the powder. It significantly affects the melt pool temperature, which in turn influences microstructure and defect formation.</p></li>
+<li><p><strong>Scan Speed (v)</strong>: The rate at which the laser beam moves across the powder bed. Higher scan speeds can lead to finer microstructures due to increased thermal and kinetic undercooling. However, excessively high speeds can cause incomplete melting and porosity.</p></li>
+<li><p><strong>Laser Spot Size/Beam Diameter (d)</strong>: While often fixed, it is an important parameter affecting the energy distribution on the powder bed. Adjusting it can increase hatch spacing and influence surface quality.</p></li>
+<li><p><strong>Pulse Duration/Pulse Frequency</strong>: These determine the energy input and how long the laser dwells in a particular location, affecting fusion depth and melt pool size.</p></li>
+<li><p><strong>Laser Energy Density (VED)</strong>: Many researchers combine laser power, scan speed, hatch spacing, and layer thickness into a single parameter called volumetric energy density (VED) or laser energy density. This parameter is crucial for achieving full melting and densification. Inappropriate VED can lead to various defects like porosity, balling, and cracking.</p></li>
+</ul>
+</li>
+<li><p><strong>Layer-Related Parameters</strong>:</p>
+<ul>
+<li><p><strong>Layer Thickness (t)</strong>: This parameter directly impacts dimensional accuracy, surface finish, and mechanical properties. Smaller layer thicknesses generally result in better resolution and smoother surfaces but increase build time.</p></li>
+<li><p><strong>Hatch Spacing (h) / Hatch Pitch</strong>: The distance between adjacent scan tracks. Increasing it can improve build rate but may lead to defects if not compensated.</p></li>
+</ul>
+</li>
+<li><p><strong>Powder Characteristics</strong>:</p>
+<ul>
+<li><p><strong>Particle Size Distribution (PSD)</strong>: Influences powder flowability, packing density, and surface quality of the final part.</p></li>
+<li><p><strong>Particle Shape and Morphology</strong>: Spherical particles generally improve flowability and packing density, which are beneficial for densification and accuracy.</p></li>
+<li><p><strong>Flowability</strong>: The ability of the powder to flow and spread uniformly, which is critical for forming homogeneous powder layers.</p></li>
+<li><p><strong>Composition and Purity</strong>: Intrinsic properties that affect the material’s response to laser interaction and the final part’s properties.</p></li>
+<li><p><strong>Absorptivity and Thermal Conductivity</strong>: How the powder absorbs laser energy and conducts heat, which impacts melt pool formation and stability.</p></li>
+</ul>
+</li>
+<li><p><strong>Scanning Strategy</strong>:</p>
+<ul>
+<li><p>The path and sequence in which the laser scans each layer (e.g., zig-zag, island, contour). Different strategies can influence thermal gradients, residual stresses, microstructure, and surface quality. Remelting tracks can also be part of the strategy to reduce residual stresses.</p></li>
+</ul>
+</li>
+<li><p><strong>Build Environment Parameters</strong>:</p>
+<ul>
+<li><p><strong>Powder Bed Pre-heating Temperature</strong>: Elevated temperatures can reduce thermal gradients and residual stresses, improve part density, and affect microstructure.</p></li>
+<li><p><strong>Build Atmosphere</strong>: The type of inert gas (e.g., argon, nitrogen) and its oxygen level or chamber pressure are critical to prevent oxidation and control defects like balling and porosity.</p></li>
+</ul>
+</li>
+</ul>
+<p>These parameters are highly <strong>interrelated</strong>, and their optimal combination is crucial for fabricating high-quality, defect-free parts. Inappropriate selection can lead to various defects such as porosity (lack-of-fusion, keyhole, gas pores), cracks (hot/cold, solidification), surface roughness, balling, and significant residual stresses, all of which negatively impact the mechanical properties and reliability of the final product. Understanding and optimizing these parameters is a continuous area of research in additive manufacturing.</p>
+</section>
+<section id="types-of-defects-in-lpbf">
+<h2>Types of Defects in LPBF<a class="headerlink" href="#types-of-defects-in-lpbf" title="Link to this heading">#</a></h2>
+<p>While LPBF offers significant advantages, such as the ability to produce complex and accurate dimensional parts from various materials, including alloys, it is not without its challenges. The complex thermal cycles, rapid heating and cooling rates, and intricate interplay of process parameters often lead to the formation of various defects. These defects are critical as they directly influence the final part’s quality, mechanical properties, and reliability, necessitating a thorough understanding of their formation mechanisms, consequences, and mitigation strategies. Defects are an inherent part of the LPBF process, and minimizing them is a major challenge for manufacturers.</p>
+<p>Common defects observed in LPBF-printed metal products include:</p>
+<ul class="simple">
+<li><p><strong>Porosity</strong></p></li>
+<li><p><strong>Cracks</strong></p></li>
+<li><p><strong>Balling</strong></p></li>
+<li><p><strong>Surface Roughness</strong></p></li>
+<li><p><strong>Residual Stress</strong></p></li>
+<li><p><strong>Lack of Fusion (LOF) / Unmelted Particles</strong></p></li>
+<li><p><strong>Anisotropy</strong></p></li>
+<li><p><strong>Delamination/Distortion/Warpage</strong></p></li>
+<li><p><strong>Repeatability and Reproducibility Issues</strong></p></li>
+<li><p><strong>Loss of Alloying Elements</strong></p></li>
+<li><p><strong>Interfacial Phases</strong></p></li>
+<li><p><strong>Oxide Inclusions</strong></p></li>
+</ul>
+<p>These defects are primarily governed by the process parameters. A complete understanding of the relationship between processing parameters and final part properties remains a main obstacle in AM.</p>
+<section id="porosity">
+<h3>Porosity<a class="headerlink" href="#porosity" title="Link to this heading">#</a></h3>
+<p>Porosity is considered the <strong>most universal and near-inevitable defect</strong> in LPBF-printed metals. It significantly impacts the mechanical performance of the product. Porosity in LPBF parts is typically classified into two main categories based on morphology: <strong>gas porosity</strong> (generally spherical) and <strong>lack-of-fusion (LOF) porosity</strong> (irregular, often containing unmelted particles). Other types mentioned include fusion pores and shrinkage pores, as well as keyhole-induced pores.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Gas Porosity:</strong> Often originates from <strong>gas entrapped within the feedstock powders</strong> during atomization or from <strong>shielding gas entrapped during intensive melt pool flow</strong>. It occurs when there isn’t sufficient time for gas bubbles to escape the melt pool before solidification. High energy input can lead to vaporization of certain elements, contributing to pores. The plume generated by the laser can also induce gas flow that entrains powder particles, leading to gas pores.</p></li>
+<li><p><strong>Lack-of-Fusion (LOF) Porosity:</strong> Results from <strong>insufficient melting of powder</strong> due to inadequate energy input. This can happen with low laser power, high scanning speed (low energy density), or inappropriate hatch spacing, leaving triangular spaces between neighboring tracks or layers. These voids are essentially un-completely melted powder regions.</p></li>
+<li><p><strong>Keyhole Porosity:</strong> Occurs at <strong>excessive heat input</strong>. A high-energy laser beam can create a strong steam jet that pushes the melt down due to recoil pressure, forming a vapor depression known as a “keyhole”. If the keyhole depth exceeds a threshold, a pore can remain at the bottom of the melt pool. High volumetric energy density (VED) can also lead to keyhole porosity.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Degradation of Mechanical Performance:</strong> Porosity can significantly degrade properties like <strong>ductility</strong> and <strong>fatigue performance</strong>. It acts as a <strong>stress concentrator</strong>, leading to crack nucleation under mechanical loads.</p></li>
+<li><p><strong>Fatigue:</strong> Porosity is <strong>one of the most critical factors</strong> in determining fatigue performance, serving as <strong>fatigue crack initiation sites</strong>. Larger, more numerous, and surface-located pores result in extremely poor fatigue strength.</p></li>
+<li><p><strong>Strength &amp; Density:</strong> Porosity reduces the dynamic strength, load-bearing capacity, and overall density of the part.</p></li>
+<li><p><strong>Post-processing Effects:</strong> Entrapped gas in pores can prevent their total closure even after Hot Isostatic Pressing (HIP). In some cases, pores can even grow after heat treatments due to the thermal expansion of entrapped gas.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Optimizing scanning parameters, operating in a shielding chamber, and employing HIP treatment can minimize or remove pores, although HIP might reduce strength and not close surface-connected pores.</p></li>
+</ul>
+</section>
+<section id="cracks">
+<h3>Cracks<a class="headerlink" href="#cracks" title="Link to this heading">#</a></h3>
+<p>Cracks are another significant defect in LPBF, often considered intolerable in most applications due to their severe impact on part quality.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Hot Cracking (Solidification Cracking &amp; Liquation Cracking):</strong> Occurs in the <strong>end-stage of the solidification process</strong>. This can be due to deformation in the solid structure during solidification, insufficient convection in the liquid region, or the formation of liquid films with low surface tension that facilitate crack propagation. Alloys with narrower solidification ranges tend to exhibit better printability, while those with larger ranges are more prone to cracking. Elemental enrichment at the solidification front can lead to the formation of intermetallics, carbides, or oxide inclusions that contribute to hot cracking.</p></li>
+<li><p><strong>Cold Cracking (Solid-State Cracking, including Strain-Age Cracking (SAC) and Ductility-Dip Cracking (DDC)):</strong></p>
+<ul>
+<li><p><strong>Residual Stress-Induced Cracks:</strong> Are common in LPBF due to the <strong>high cooling rates and steep temperature gradients</strong> during rapid melting and solidification. The material undergoes continuous thermal cycles, leading to rapid contraction and expansion. When internal stresses exceed the material’s yield stress, deformation or cracking occurs to relieve the stress.</p></li>
+<li><p><strong>Strain-Age Cracking (SAC):</strong> Primarily observed in γ’-strengthened nickel-based alloys. It results from the <strong>joint effect of γ’ precipitation and residual stresses</strong> accumulated during LPBF, leading to local stress concentration.</p></li>
+<li><p><strong>Ductility-Dip Cracking (DDC):</strong> Linked to <strong>grain boundary inoperability</strong> at intermediate temperatures. Suppressed grain boundary sliding can cause strain concentration and void formation, which then connect to form cracks.</p></li>
+</ul>
+</li>
+<li><p><strong>General Factors:</strong> Inappropriate process parameters, unbalanced stress profiles between layers, the use of multiple metals with different thermal expansion coefficients, poor adhesion between layers, and improper cooling or support structures can all contribute to crack formation.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Compromised Mechanical Properties:</strong> Cracks significantly compromise the part’s <strong>strength, stiffness, and durability</strong>, leading to premature failure and a shorter lifespan.</p></li>
+<li><p><strong>Fatigue:</strong> Cracks accelerate <strong>fatigue crack propagation</strong>.</p></li>
+<li><p><strong>Aesthetics:</strong> Cracks can lead to rough or uneven surfaces, making the part unsuitable for certain applications.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Optimizing printing parameters (e.g., lower speed, higher temperature), using support structures, and post-processing like annealing are common strategies. Novel alloy design approaches focus on manipulating grain/cell boundaries, facilitating liquid backfilling, or introducing segregation phases to alleviate thermal stress and improve crack resistance.</p></li>
+</ul>
+</section>
+<section id="balling">
+<h3>Balling<a class="headerlink" href="#balling" title="Link to this heading">#</a></h3>
+<p>Balling refers to the phenomenon where the liquid molten material breaks down into small, ball-shaped agglomerations.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p>It is often a result of <strong>typical microstructures on the surface</strong> of LPBF-fabricated parts due to the presence of loose powders.</p></li>
+<li><p>It occurs when the <strong>wetting ability of the melt tracks worsens</strong>, leading to poor bonding with the previous layer and broken melt tracks.</p></li>
+<li><p><strong>Low energy input</strong> (e.g., low laser power and high scanning speed) can cause only surface melting of particles, resulting in a weak bond neck.</p></li>
+<li><p><strong>High laser power and scan speeds</strong>, even with a seemingly suitable overall energy density, can also induce balling.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Poor Surface Finish:</strong> Balling significantly degrades the surface finish and can introduce numerous pores into the processed part.</p></li>
+<li><p><strong>Process Disruption:</strong> It might even damage the recoating roller, affecting the distribution of subsequent layers.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Increasing the energy density can reduce balling effects.</p></li>
+</ul>
+</section>
+<section id="surface-roughness">
+<h3>Surface Roughness<a class="headerlink" href="#surface-roughness" title="Link to this heading">#</a></h3>
+<p>Surface roughness describes the geometrical irregularities on the part surface.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Staircase Effect:</strong> This is a major contributor, inherent to the layer-by-layer nature of AM, where larger layer thicknesses create a more pronounced stair-stepping effect on inclined surfaces.</p></li>
+<li><p><strong>Partially Melted Particles:</strong> The surface of LPBF parts is often covered by partially melted powder particles.</p></li>
+<li><p><strong>Powder Characteristics:</strong> The morphology and size of powder particles significantly influence roughness. Large-sized particles are difficult to melt completely, leading to a lower surface finish. Poor powder flowability can hinder even spreading, affecting layer continuity and leading to rough surfaces.</p></li>
+<li><p><strong>Process Parameters &amp; Strategies:</strong> Inappropriate laser processing parameters and scanning strategies affect melt pool morphology and surface quality. An increase in both scanning speed and layer thickness can increase surface roughness.</p></li>
+<li><p><strong>Support Structures:</strong> These can adversely affect the surface finish even after removal.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Reduced Fatigue Performance:</strong> Increased surface roughness tends to cause faster crack initiation, leading to a decrease in fatigue performance. Rough surfaces can also lead to stress concentration and cracks.</p></li>
+<li><p><strong>Dimensional Inaccuracy:</strong> The staircase effect also causes dimensional inaccuracy and volumetric errors.</p></li>
+<li><p><strong>Aesthetics:</strong> Rough surfaces are unsuitable for applications requiring a smooth aesthetic finish.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Optimizing layer thickness, using contour scans, and post-processing techniques such as machining, chemical etching, vibratory finishing, sandblasting, and double-laser-beam polishing are effective. Increasing the number of edge contours can reduce surface roughness significantly.</p></li>
+</ul>
+</section>
+<section id="residual-stress">
+<h3>Residual Stress<a class="headerlink" href="#residual-stress" title="Link to this heading">#</a></h3>
+<p>Residual stresses are internal stresses that remain within a component after it has been manufactured and cooled to equilibrium with the environment. They are one of the fundamental phenomena hindering LPBF’s widespread adoption.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Thermal Gradients:</strong> The <strong>primary cause</strong> is the <strong>large thermal gradients</strong> created by the laser rapidly heating and then cooling areas of the powder bed.</p></li>
+<li><p><strong>Rapid Solidification:</strong> The rapid melting and solidification cycles cause rapid contraction and expansion of the material, leading to an unbalanced stress profile between layers.</p></li>
+<li><p><strong>Shrinkage:</strong> Volume shrinkage during solidification also contributes to residual stresses.</p></li>
+<li><p><strong>Geometric Complexity:</strong> Part geometry and support structures can also influence residual stress distribution and magnitude.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Dimensional Accuracy &amp; Distortion:</strong> High residual stresses cause <strong>warping, geometric distortion, and delamination</strong>. These effects are often irreversible by post-processing stress relief heat treatments.</p></li>
+<li><p><strong>Cracking:</strong> Residual stresses can induce stress-related cracking and accelerate crack growth, leading to early fatigue failure. Tensile residual stress, in particular, can exceed the material’s yield strength and facilitate fatigue crack propagation.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Pre-heating the build platform (more common and effective in EBM than LPBF due to higher temperatures), post-processing heat treatments, surface peening treatments, and optimizing scanning strategies (e.g., scan patterns, vector lengths, rotation angles) are used to minimize residual stresses. Interestingly, porosity can have a positive effect by relaxing residual stresses.</p></li>
+</ul>
+</section>
+<section id="lack-of-fusion-lof-unmelted-particles-as-inclusions">
+<h3>Lack of Fusion (LOF) / Unmelted Particles (as inclusions)<a class="headerlink" href="#lack-of-fusion-lof-unmelted-particles-as-inclusions" title="Link to this heading">#</a></h3>
+<p>While LOF porosity was discussed under porosity, it is also important to consider unmelted particles as discrete inclusions. These refer to areas where there is insufficient melting and bonding between adjacent layers or between different materials in multi-material prints.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Insufficient Energy Input:</strong> Similar to LOF porosity, it results from <strong>inadequate laser power, high scan speed</strong>, or improper hatch spacing, leading to incomplete melting of the powder and poor bonding.</p></li>
+<li><p><strong>Poor Adhesion:</strong> Lack of proper adhesion between layers or materials can lead to these defects.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Weak Bonds:</strong> Formation of weak bonds between layers or materials.</p></li>
+<li><p><strong>Reduced Mechanical Properties:</strong> Leads to poor mechanical properties, reduced reliability, and potential for voids or cracks.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Optimizing process parameters, particularly energy density, to ensure complete melting and fusion.</p></li>
+</ul>
+</section>
+<section id="anisotropy">
+<h3>Anisotropy<a class="headerlink" href="#anisotropy" title="Link to this heading">#</a></h3>
+<p>Anisotropy in LPBF refers to the variation in mechanical properties depending on the direction of measurement relative to the build direction.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Epitaxial Grain Growth:</strong> The layer-by-layer building process and directional heat extraction during rapid solidification facilitate <strong>columnar grain growth</strong> predominantly along the building (Z) direction.</p></li>
+<li><p><strong>Thermal History &amp; Microstructure:</strong> The complex thermal cycles, including intrinsic heat treatment (IHT), lead to microstructural non-uniformities and preferred crystallographic orientations.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Direction-Dependent Properties:</strong> The mechanical response (e.g., strength, ductility) varies significantly with the loading direction relative to the build direction. For almost all PBF-AM components, the plane parallel to the building direction (Z-direction) is the weakest compared to the plane perpendicular to the building direction (XY).</p></li>
+<li><p><strong>Limited Performance:</strong> Anisotropy can limit the performance of parts in certain applications, especially those under complex or multi-axial loading. It can also result in reduced ductility and lower fatigue resistance.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Heat treatments, such as those at 300°C or above for AlSi10Mg, can effectively eliminate mechanical anisotropy. Modifying process parameters to promote columnar-to-equiaxed transition (CET) and grain refinement can weaken texture and improve isotropy. β solution treatment has also been shown to mitigate anisotropy.</p></li>
+</ul>
+</section>
+<section id="delamination-distortion-and-warpage">
+<h3>Delamination, Distortion, and Warpage<a class="headerlink" href="#delamination-distortion-and-warpage" title="Link to this heading">#</a></h3>
+<p>These defects relate to macroscopic shape deviations and structural separation within the printed part.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>High Residual Stress:</strong> The primary cause is the <strong>accumulation of high residual stresses</strong> due to large thermal gradients and rapid cooling/solidification during the build process.</p></li>
+<li><p><strong>Volume Shrinkage:</strong> Non-uniform volume shrinkage and thermal gradients during cooling contribute to these shape distortions.</p></li>
+<li><p><strong>Process Interruptions:</strong> Even minor process interruptions can impact part integrity and lead to such issues.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Part Failure:</strong> Severe delamination can lead to complete part failure.</p></li>
+<li><p><strong>Dimensional Inaccuracy:</strong> Warping and distortion cause a lack of dimensional accuracy, making the part deviate from its design.</p></li>
+<li><p><strong>Irreversible Damage:</strong> These shape distortions are often irreversible by standard post-processing stress relief treatments.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Optimizing process parameters, pre-heating, and using appropriate support structures can help manage thermal stresses and reduce distortion.</p></li>
+</ul>
+</section>
+<section id="repeatability-and-reproducibility-issues">
+<h3>Repeatability and Reproducibility Issues<a class="headerlink" href="#repeatability-and-reproducibility-issues" title="Link to this heading">#</a></h3>
+<p>These issues refer to the inability to consistently produce parts with the same properties and quality, either within the same machine or across different machines.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Process Variations:</strong> Inherent and systematic manufacturing process variations are key contributors.</p></li>
+<li><p><strong>Build Parameters:</strong> Factors like sample orientation, build location, and build height significantly influence dimensional variations.</p></li>
+<li><p><strong>Machine Precision:</strong> The mechanical precision of the manufacturing setup (e.g., layer thickness control, laser spot size, scanner position) impacts dimensional accuracy.</p></li>
+<li><p><strong>Powder Quality:</strong> Variations in powder particle size distribution (PSD) and flowability directly affect the consistency of layer thickness and ultimately mechanical properties, reducing repeatability.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Major Industrial Barrier:</strong> Lack of repeatability and reproducibility is considered the <strong>greatest barrier to mainstream adoption</strong> of metal AM in high-tech industries, affecting Overall Equipment Effectiveness (OEE).</p></li>
+<li><p><strong>Quality &amp; Reliability Concerns:</strong> Leads to inconsistencies in dimensional accuracy and mechanical properties, raising concerns about the overall quality and reliability of LPBF parts.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Standardizing machines and feedstocks, developing advanced monitoring instruments, and high-fidelity simulations are crucial for improving repeatability and reliability.</p></li>
+</ul>
+</section>
+<section id="loss-of-alloying-elements">
+<h3>Loss of Alloying Elements<a class="headerlink" href="#loss-of-alloying-elements" title="Link to this heading">#</a></h3>
+<p>This defect involves a change in the material’s chemical composition during processing.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Evaporation/Oxidation:</strong> <strong>High temperatures</strong> and <strong>long printing times</strong> can lead to the loss of alloying elements through evaporation or oxidation.</p></li>
+<li><p><strong>Material Properties:</strong> Materials with high vapor pressures are particularly susceptible to this loss.</p></li>
+<li><p><strong>Part Geometry:</strong> Certain geometries can trap gases or promote oxidation, further contributing to the loss of elements.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Altered Properties:</strong> Changes in elemental composition can alter the part’s properties and compromise its overall integrity and reliability.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Optimizing process parameters to control temperature and processing time, and using appropriate shielding gases.</p></li>
+</ul>
+</section>
+<section id="formation-of-interfacial-phases">
+<h3>Formation of Interfacial Phases<a class="headerlink" href="#formation-of-interfacial-phases" title="Link to this heading">#</a></h3>
+<p>These are undesirable phases that can form at the interface between different materials, especially in multi-material LPBF.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Material Incompatibility:</strong> Occurs when <strong>incompatible materials</strong> are used together or when high laser power promotes unwanted reactions.</p></li>
+<li><p><strong>Process Conditions:</strong> The speed and temperature of the printing process can influence their formation.</p></li>
+<li><p><strong>Diffusion:</strong> Diffusion of alloying elements can lead to the formation of intermetallic compounds at interfaces.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Weak Bonds:</strong> Leads to the formation of weak bonds between materials.</p></li>
+<li><p><strong>Reduced Properties:</strong> Results in poor mechanical properties, reduced reliability, and can introduce voids or cracks.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Research focuses on developing compatible materials or coatings to prevent interfacial phase formation.</p></li>
+</ul>
+</section>
+<section id="oxide-inclusions">
+<h3>Oxide Inclusions<a class="headerlink" href="#oxide-inclusions" title="Link to this heading">#</a></h3>
+<p>These are non-metallic inclusions, primarily oxides, formed within the material.</p>
+<ul class="simple">
+<li><p><strong>Physical Principle/Formation Mechanism:</strong></p>
+<ul>
+<li><p><strong>Contaminated Powder:</strong> Presence of an oxide layer in the pre-solidified powder layer can hinder the distribution of the new layer.</p></li>
+<li><p><strong>Recycled Powder:</strong> Leftover powder exposed to air during handling can form surface moisture and oxides, especially when recycled. Oxygen content can increase with powder reuse.</p></li>
+<li><p><strong>Chamber Environment:</strong> The processing chamber environment is crucial; exposure to oxygen can lead to oxide formation.</p></li>
+</ul>
+</li>
+<li><p><strong>Consequences:</strong></p>
+<ul>
+<li><p><strong>Poor Densification:</strong> Oxide layers can inhibit interlayer bonding, leading to poor densification.</p></li>
+<li><p><strong>Reduced Fatigue Performance:</strong> Oxide inclusions can impair fatigue properties by acting as crack initiation sites.</p></li>
+</ul>
+</li>
+<li><p><strong>Mitigation (Briefly):</strong> Maintaining a controlled, inert atmosphere within the build chamber, ensuring powder quality, and proper handling of recycled powders.</p></li>
+</ul>
+<p>The formation mechanisms are often rooted in the rapid melting and solidification cycles, leading to phenomena such as unstable melt pool flow, gas entrapment, non-equilibrium phase transformations, and the build-up of thermal stresses. While many defects are interconnected (e.g., porosity influencing fatigue and residual stress), strategies involving <strong>optimization of process parameters</strong> (e.g., laser power, scan speed, layer thickness, hatch spacing), <strong>post-processing techniques</strong> (e.g., HIP, heat treatments, surface finishing), and <strong>advanced alloy design</strong> are crucial for defect mitigation and achieving desired material properties. Continued research is essential to further refine these strategies and overcome the inherent challenges in LPBF for widespread industrial adoption.</p>
+</section>
+</section>
+<section id="metal-powders-in-powder-bed-fusion-preparation-characterization-and-recycling">
+<h2>Metal Powders in Powder Bed Fusion: Preparation, Characterization, and Recycling<a class="headerlink" href="#metal-powders-in-powder-bed-fusion-preparation-characterization-and-recycling" title="Link to this heading">#</a></h2>
+<p>The <strong>quality of the metal powders used as feedstock is paramount</strong> in these processes, as their characteristics directly influence the stability of the manufacturing process and the final properties of the fabricated components. Therefore, a detailed understanding of how these powders are prepared, characterized, and subsequently recycled is crucial for successful and cost-effective PBF operations.</p>
+<section id="methods-of-powder-preparation">
+<h3>Methods of Powder Preparation<a class="headerlink" href="#methods-of-powder-preparation" title="Link to this heading">#</a></h3>
+<p>Metal powders for PBF are primarily produced using <strong>atomization processes</strong>, which are generally high-cost methods requiring stringent quality control. Common atomization techniques include gas atomization, water atomization, or plasma rotating electrode processes (PREP). For instance, micro-fine spherical titanium grains traditionally obtained via gas atomization are noted for their expense.</p>
+<p>The atomization process is crucial for producing high-quality metal powders used in Laser Beam Fusion (LBF) technologies like Selective Laser Melting (SLM) and Direct Metal Laser Sintering (DMLS). The ideal powder characteristics include controlled particle size, spherical or near-spherical shape for good flowability and packing density, high purity, and consistent composition. Several atomization methods are employed to achieve these characteristics:</p>
+<p><strong>1. Gas Atomization (GA):</strong></p>
+<ul class="simple">
+<li><p><strong>Process:</strong> This is a popular method for producing high-quality metal powders with controlled particle sizes and a spherical or near-spherical shape. The process involves:</p>
+<ol class="arabic simple">
+<li><p>Melting the metal or alloy under inert gas protection or vacuum to reduce impurities.</p></li>
+<li><p>Allowing the molten metal to flow through a nozzle.</p></li>
+<li><p>Atomizing the liquid metal stream into fine droplets using a high-pressure gas flow (typically argon, nitrogen, or helium).</p></li>
+<li><p>Solidifying the tiny droplets into spherical or near-spherical particles as they fall down in the atomization chamber.</p></li>
+</ol>
+</li>
+<li><p><strong>Variations:</strong> There are different gas atomization techniques, including Vacuum Induction melting Gas Atomization (VIGA) and Electrode Induction melting Gas Atomization (EIGA), which offer specific advantages in terms of purity and process control.</p></li>
+<li><p><strong>Advantages:</strong> Produces high-quality powders with good sphericity and controlled particle size, suitable for demanding applications.</p></li>
+</ul>
+<p><strong>2. Water Atomization (WA):</strong></p>
+<ul class="simple">
+<li><p><strong>Process:</strong> This is a cost-effective and commercially significant method for large-scale metal powder production. It involves:</p>
+<ol class="arabic simple">
+<li><p>Melting the metal in a crucible.</p></li>
+<li><p>Pouring the molten metal stream through an orifice.</p></li>
+<li><p>Impinging the molten stream with high-pressure water jets, causing it to break down into fine droplets.</p></li>
+<li><p>Rapidly solidifying the droplets into powder particles.</p></li>
+<li><p>Collecting the powder as a water/powder slurry, followed by dewatering and drying.</p></li>
+</ol>
+</li>
+<li><p><strong>Characteristics:</strong> Powders obtained through water atomization are generally less spherical and may have a wider particle size distribution compared to gas-atomized powders. Their shape tends to be more irregular or ellipsoidal, which can sometimes affect spreadability in additive manufacturing processes.</p></li>
+<li><p><strong>Advantages:</strong> High production rates and lower costs compared to other methods, suitable for various metals including iron, stainless steel, and low-alloy metals.</p></li>
+</ul>
+<p><strong>3. Plasma Atomization (PA):</strong></p>
+<ul class="simple">
+<li><p><strong>Process:</strong> This method is used to produce high-quality, spherical powders with a narrow particle size distribution, often preferred for advanced applications. It involves:</p>
+<ol class="arabic simple">
+<li><p>Feeding a metal wire into a high-temperature plasma torch.</p></li>
+<li><p>Melting the tip of the wire using the plasma.</p></li>
+<li><p>Ejecting the molten metal as fine droplets.</p></li>
+<li><p>Allowing the droplets to solidify into spherical powder particles.</p></li>
+</ol>
+</li>
+<li><p><strong>Advantages:</strong> Produces highly spherical powders with excellent flowability and uniform size, ideal for critical applications in aerospace, medical devices, and other high-tech industries.</p></li>
+</ul>
+<p><strong>4. Centrifugal Atomization (CA):</strong></p>
+<ul class="simple">
+<li><p><strong>Process:</strong> This technique utilizes centrifugal forces to fragment molten metal into fine droplets. The process typically involves:</p>
+<ol class="arabic simple">
+<li><p>Melting the metal.</p></li>
+<li><p>Pouring the molten metal onto a rapidly rotating disk or into a rapidly spinning container.</p></li>
+<li><p>The centrifugal force causes the molten metal to be thrown outward and break into fine droplets due to surface tension.</p></li>
+<li><p>These droplets then cool and solidify into fine metal powders.</p></li>
+</ol>
+</li>
+<li><p><strong>Advantages:</strong> Can produce powders with uniform particle size and high purity. It is also scalable and versatile for processing a wide range of metals and alloys.</p></li>
+</ul>
+<p>The choice of atomization process depends on various factors, including the type of metal or alloy, the desired powder characteristics (particle size distribution, shape, purity), production volume, and cost considerations. For LBF processes, gas and plasma atomization are often preferred for critical applications due to the high sphericity and controlled particle size they offer, which are essential for achieving dense and accurate parts. Water atomization provides a more cost-effective solution for less demanding applications or preliminary stages. Centrifugal atomization is also gaining importance for its ability to produce high-quality powders of various materials. However, other methods can be employed to prepare or complement powder feedstock:</p>
+<ul class="simple">
+<li><p><strong>Milling</strong>: Commercially pure titanium (CP-Ti) produced via hydrogenation-dehydrogenation can be milled and then mixed with spherical powders to help reduce overall costs.</p></li>
+<li><p><strong>Mechanical Alloying</strong>: This approach can be used to control the final chemical composition and reduce porosity in the powder. A challenge with mechanical alloying can arise if mixed powders have dissimilar densities, potentially leading to separation upon melting.</p></li>
+<li><p><strong>In-situ Alloying</strong>: This is an emerging, high-throughput method that involves blending multiple elemental powders (e.g., titanium, aluminum, niobium) during the printing process itself to achieve the desired alloy composition. This method offers greater flexibility and can reduce the need for expensive pre-alloyed powders. However, it also presents challenges, such as incomplete melting of high-melting-point elements and evaporation of volatile elements, which can potentially lead to inhomogeneity and defects in the final part.</p></li>
+</ul>
+<p>It is important to acknowledge that the powder-making process itself can introduce impurities or porosity into the feedstock material.</p>
+</section>
+<section id="powder-characterization">
+<h3>3.2 Powder Characterization<a class="headerlink" href="#powder-characterization" title="Link to this heading">#</a></h3>
+<p><strong>Powder quality is a critical factor</strong> that directly influences process stability and the final part’s properties in PBF. Characterization broadly covers <strong>intrinsic properties</strong> and <strong>extrinsic properties</strong>. Intrinsic properties include chemical composition, purity, and microstructure, while extrinsic properties pertain to particle morphology, density, size distribution, and flowability.</p>
+<p>Key powder characteristics and their assessment methods include:</p>
+<ul class="simple">
+<li><p><strong>Particle Size Distribution (PSD)</strong>: This is a significant factor that influences various aspects of the PBF process and the final part, including powder flowability, packing density, laser absorption characteristics, powder bed thermal conductivity, surface roughness, and the mechanical properties. <strong>Finer particles</strong> offer a greater surface area and can absorb laser energy more efficiently than coarser particles. However, even a small change in PSD can impact flowability and packing density. The PSD can also influence the formation of microstructures, with studies noting that lower layer thickness in SLM can lead to denser parts with better dimensional accuracy. Furthermore, the PSD can affect the repeatability of parts; more varied PSDs in cobalt chrome have been linked to reduced repeatability, despite potentially leading to higher ultimate tensile strength.</p></li>
+<li><p><strong>Particle Shape and Morphology</strong>: <strong>Spherical particles are generally preferred</strong> as they improve flowability and packing density, which contributes to better densification and accuracy of the printed part.  Irregularly shaped particles, or the presence of surface oxides (e.g., on aluminum powder), can hinder flowability and spheroidization during the melting process. Particle shape also plays a role in determining the appropriate layer thickness for printing. These characteristics can be observed using techniques like <strong>scanning electron microscopy (SEM)</strong>. Changes in morphology, such as recycled powder becoming less spherical or exhibiting impact marks, can lead to lower flowability.</p></li>
+<li><p><strong>Flowability</strong>: Defined as the ability of powder to flow and spread uniformly, this characteristic is critical for forming homogeneous powder layers in the PBF process.</p>
+<ul>
+<li><p>Methods for assessing flowability include:</p>
+<ul>
+<li><p><strong>Hall flowmeter funnel (ASTM B213) and Carney funnel (ASTM B964)</strong>: These are simple and widely used methods, but they may only be suitable for highly free-flowing powders and might not provide sufficient distinction or quantitative statements for Additive Manufacturing (AM) applications. Some studies indicate that Hall flowability may not allow clear distinction for EBM applicability.</p></li>
+<li><p><strong>Angle of Repose (AOR)</strong>: Used to characterize bulk solids, applicable for free-flowing to slightly cohesive powders. Its reproducibility can worsen for cohesive materials, and its utility for predicting processability in AM is often debated.</p></li>
+<li><p><strong>Shear Testers</strong>: Can effectively rank powders for AM, but their suitability for free-flowing materials is sometimes questioned.</p></li>
+<li><p><strong>Powder Rheometers (e.g., Freeman FT4)</strong>: Show promise in differentiating flow properties by measuring parameters like stability index, specific energy, and conditioned bulk density.</p></li>
+<li><p><strong>Dynamic Avalanche Angle</strong>: Measures dynamic avalanching behavior and can correlate with observed flowability.</p></li>
+<li><p><strong>Hausner Ratio (HR)</strong>: Defined as the ratio of bulk and tap density, it can be used for comparative studies of fine-grained powders, though some research questions its correlation with more sophisticated methods for AM.</p></li>
+</ul>
+</li>
+<li><p>Factors influencing flowability include decreasing PSD width, coarser particles, and decreasing moisture content. Poor powder flowability can block particle spreading and affect layer continuity, leading to rough surfaces on the printed part.</p></li>
+</ul>
+</li>
+<li><p><strong>Density</strong>: Including apparent density, bulk density, and tap density, these properties influence how well the powder can be packed and the thermal conductivity of the powder bed. A higher powder packing density generally leads to higher bed thermal conductivity and potentially better mechanical properties in the final part.
+Conversely, lower powder bed density can result in lower part densities.
+The apparent and tapping density of the part result from thermal cycles and can be controlled using particles of different sizes, a technique known as bimodal or trimodal powder distribution.</p></li>
+<li><p><strong>Composition and Purity</strong>: The chemical composition and purity of the powder affect its response to laser interaction and the final part’s properties.
+Impurities, such as entrapped gas or residual oxygen, can lead to defects like porosity and oxidation.
+Even a small percentage of unwanted oxygen (0.1–0.2%) can be present during SLM, causing defects like porosity and affecting mechanical properties.</p></li>
+<li><p><strong>Absorptivity, Reflectivity, and Thermal Conductivity</strong>: These properties dictate how the powder absorbs laser energy and conducts heat, which are fundamental to melt pool formation and stability.
+For example, aluminum powder is highly reflective in the infrared range, absorbing only a small percentage (around 7%) of laser energy, which makes process control challenging.
+High thermal conductivity, like that of aluminum or magnesium, can cause heat energy to quickly conduct away to already scanned and solidified parts, leading to more energy consumption and wider melt tracks. It can also make the LPBF process challenging to control and monitor.
+The thermal conductivity of the bulk powder is approximately half of that of the solid material and is very sensitive to powder geometry characteristics.</p></li>
+</ul>
+<p>A significant challenge in powder characterization is the <strong>lack of a comprehensive understanding of the direct relationship between powder properties and final part properties</strong>. There is a need for standardized characterization techniques that closely emulate actual PBF process conditions to provide more reliable predictions. Establishing large databases that contain powder, process, and part properties is suggested as a way to overcome this challenge.</p>
+</section>
+<section id="powder-recycling-methods">
+<h3>3.3 Powder Recycling Methods<a class="headerlink" href="#powder-recycling-methods" title="Link to this heading">#</a></h3>
+<p><strong>Powder recycling is a critical aspect of PBF</strong> due to the <strong>high cost of metal powders</strong> and the desire for resource efficiency and cost-effectiveness. Only a small fraction of the powder introduced into the machine is actually consumed in building the part; the majority can be reused.</p>
+<p>Common recycling strategies include:</p>
+<ul class="simple">
+<li><p><strong>Strategy A</strong>: Used and sieved powder is mixed with virgin powder in a constant proportion after each build.</p></li>
+<li><p><strong>Strategy B</strong>: Used powder is mixed with powder of the same “age” after each cycle.</p></li>
+<li><p><strong>Strategy C</strong>: Sieved, unfused powder is reintroduced for subsequent builds without mixing with other powders. This is the most commonly applied recycling approach.</p></li>
+<li><p><strong>Strategy D</strong>: Sieved, used powder is added to the top of unused virgin powder without mixing.</p></li>
+</ul>
+<p><strong>Effects of Recycling:</strong>
+While recycling contributes to sustainability, it can lead to observable changes in both powder and part properties:</p>
+<ul class="simple">
+<li><p><strong>Changes in Powder Properties</strong>:</p>
+<ul>
+<li><p><strong>Chemical Composition</strong>: Typically, the <strong>oxygen content of recycled powder tends to increase</strong>, and in some cases, elements like aluminum may decrease, while carbon and nitrogen may increase. Surface chemistry can also change, such as the formation of chromium-manganese-rich oxide particulates.</p></li>
+<li><p><strong>Morphology</strong>: Recycled powder can become <strong>less spherical</strong>, exhibit deformations, or show impact marks. However, in some instances, morphology may remain consistent.</p></li>
+<li><p><strong>Particle Size Distribution (PSD)</strong>: The PSD can become coarser (e.g., Ti-6Al-4V, 316L stainless steel), finer (e.g., AlSi10Mg), or remain relatively constant, depending on the material and specific recycling conditions.</p></li>
+<li><p><strong>Flowability</strong>: Flowability can either improve (e.g., Ti-6Al-4V, 316L, 17-4PH SS), degrade (e.g., EBM powder), or stay the same (e.g., IN718).</p></li>
+</ul>
+</li>
+<li><p><strong>Changes in Part Properties</strong>:
+Despite observable changes in powder properties, the overall impact on the final part quality is often reported as small.
+However, some studies indicate a <strong>decrease in ductility</strong> and impact toughness when using recycled powder (e.g., 316L, Ti-6Al-4V).
+Hardness and surface roughness can also be affected.
+Density can also increase or remain constant. For example, in recycled Ti-6Al-4V, some studies reported a decrease in elongation at break and High Cycle Fatigue (HCF). In contrast, other studies on Ti-6Al-4V showed increased density, surface roughness, hardness, and ultimate tensile strength (UTS).</p></li>
+</ul>
+<p><strong>Challenges with Recycling</strong>: Powder can be exposed to ambient air during handling, leading to surface moisture and oxides that can affect the process. The effects of recycling can vary significantly between EBM and LPBF processes and even among different materials within the same process category. A deeper understanding of how laser heat interacts with recycled powder is necessary to control its impact on microstructural and mechanical properties.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="am_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Additive Manufacturing Forges the Future of Medical Implants</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-pbf-building-process">General PBF Building Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-powder-bed-fusion-processes">Types of Powder Bed Fusion Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-sintering-sls">Selective Laser Sintering (SLS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laser-powder-bed-fusion-lpbf">Laser Powder Bed Fusion (LPBF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-heat-sintering-shs">Selective Heat Sintering (SHS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-powder-bed-fusion-eb-pbf">Electron Powder Bed Fusion (EB-PBF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-parameters-in-pbf">Process parameters in PBF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-defects-in-lpbf">Types of Defects in LPBF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porosity">Porosity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cracks">Cracks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balling">Balling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-roughness">Surface Roughness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-stress">Residual Stress</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lack-of-fusion-lof-unmelted-particles-as-inclusions">Lack of Fusion (LOF) / Unmelted Particles (as inclusions)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anisotropy">Anisotropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delamination-distortion-and-warpage">Delamination, Distortion, and Warpage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeatability-and-reproducibility-issues">Repeatability and Reproducibility Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-of-alloying-elements">Loss of Alloying Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formation-of-interfacial-phases">Formation of Interfacial Phases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oxide-inclusions">Oxide Inclusions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metal-powders-in-powder-bed-fusion-preparation-characterization-and-recycling">Metal Powders in Powder Bed Fusion: Preparation, Characterization, and Recycling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-powder-preparation">Methods of Powder Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powder-characterization">3.2 Powder Characterization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powder-recycling-methods">3.3 Powder Recycling Methods</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
