@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: glossary
+- file: history
+- file: disease
+- file: biomaterials
+- file: am_overview
+#- file: notebooks
+#- file: markdown-notebooks

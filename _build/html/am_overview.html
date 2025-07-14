@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Additive Manufacturing Forges the Future of Medical Implants &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'am_overview';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="What is biomaterial?" href="biomaterials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fam_overview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/am_overview.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Additive Manufacturing Forges the Future of Medical Implants</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-overview">Methods overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-melting-slm"><strong>Selective Laser Melting (SLM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-beam-melting-ebm"><strong>Electron Beam Melting (EBM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fused-deposition-modeling-fdm"><strong>Fused Deposition Modeling (FDM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stereolithography-sla"><strong>Stereolithography (SLA)</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="additive-manufacturing-forges-the-future-of-medical-implants">
+<h1>Additive Manufacturing Forges the Future of Medical Implants<a class="headerlink" href="#additive-manufacturing-forges-the-future-of-medical-implants" title="Link to this heading">#</a></h1>
+<p>Additive manufacturing (AM), popularly known as 3D printing, is revolutionizing the production of medical implants, shifting from standardized sizes to patient-specific solutions with complex, performance-enhancing designs. This technology builds objects layer by layer from a digital model, enabling the creation of highly customized implants that can improve surgical outcomes, reduce recovery times, and enhance biocompatibility. Several AM methods are now pivotal in producing everything from cranial plates to spinal cages and dental restorations.</p>
+<p>The most prominent methods for manufacturing medical implants include powder bed fusion techniques for metals, such as <strong>Selective Laser Melting (SLM)</strong> and <strong>Electron Beam Melting (EBM)</strong>, which are ideal for strong, permanent implants. For polymers and biocompatible resins, <strong>Fused Deposition Modeling (FDM)</strong> and <strong>Stereolithography (SLA)</strong> are commonly employed, often for surgical guides, anatomical models, and sometimes non-load-bearing or biodegradable implants.</p>
+<section id="methods-overview">
+<h2>Methods overview<a class="headerlink" href="#methods-overview" title="Link to this heading">#</a></h2>
+<section id="selective-laser-melting-slm">
+<h3><strong>Selective Laser Melting (SLM)</strong><a class="headerlink" href="#selective-laser-melting-slm" title="Link to this heading">#</a></h3>
+<p>Selective Laser Melting is a leading method for creating dense, high-strength metal implants. It is a powder bed fusion process that uses a high-powered laser to fuse metallic powders into a solid object.</p>
+<p><strong>Physical Principle:</strong>
+The process begins by spreading a thin layer of fine metal powder (commonly titanium alloys, cobalt-chrome, or stainless steel) over a build platform. A high-energy laser, guided by a 3D CAD model, selectively scans the cross-section of the implant, melting and fusing the powder particles together. The platform then lowers by one layer thickness, and a new layer of powder is applied. This process is repeated layer by layer in a chamber with a controlled inert gas atmosphere to prevent oxidation, until the final, fully dense implant is complete.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
+<th class="head text-left"><p>Disadvantages</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>High Precision &amp; Complex Geometries:</strong> Enables the creation of intricate designs, including porous lattice structures that promote osseointegration (bone ingrowth) and reduce stress shielding.</p></td>
+<td class="text-left"><p><strong>High Cost:</strong> The machinery and specialized metal powders are expensive, increasing the overall cost of production.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Excellent Mechanical Properties:</strong> Produces implants with strength and density comparable to or exceeding those made by traditional forging or casting methods.</p></td>
+<td class="text-left"><p><strong>Residual Stresses:</strong> The rapid heating and cooling can induce internal stresses, potentially leading to warping or micro-cracks. Post-processing heat treatments are often required.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Patient-Specific Customization:</strong> Allows for the rapid production of implants tailored to a patient’s unique anatomy based on CT or MRI scan data.</p></td>
+<td class="text-left"><p><strong>Rough Surface Finish:</strong> The layer-by-layer process results in a surface that typically requires post-processing (e.g., polishing, machining) to meet clinical standards.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Material Efficiency:</strong> Less material is wasted compared to subtractive manufacturing methods like CNC machining.</p></td>
+<td class="text-left"><p><strong>Build Size Limitations:</strong> The size of the build chamber restricts the maximum dimensions of the implant that can be produced.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="electron-beam-melting-ebm">
+<h3><strong>Electron Beam Melting (EBM)</strong><a class="headerlink" href="#electron-beam-melting-ebm" title="Link to this heading">#</a></h3>
+<p>Similar to SLM, Electron Beam Melting is another powder bed fusion technique used for metal implants. It offers distinct advantages, particularly for certain materials like titanium alloys.</p>
+<p><strong>Physical Principle:</strong>
+EBM employs a high-energy electron beam as its heat source instead of a laser. The process takes place in a high-temperature vacuum environment. The electron beam, guided by magnetic coils, melts and fuses the metal powder layer by layer. The high-temperature preheating of the powder bed before melting helps to minimize residual stresses in the final part.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
+<th class="head text-left"><p>Disadvantages</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Reduced Residual Stress:</strong> The high-temperature build environment minimizes thermal gradients, resulting in parts with significantly lower residual stress compared to SLM, often eliminating the need for post-build stress relief.</p></td>
+<td class="text-left"><p><strong>Rougher Surface Finish:</strong> EBM typically produces parts with a rougher surface than SLM, necessitating more extensive post-processing for a smooth finish.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>High-Purity Environment:</strong> The vacuum chamber prevents contamination and oxidation, making it ideal for processing reactive materials like titanium and tantalum.</p></td>
+<td class="text-left"><p><strong>Limited Material Selection:</strong> The process is primarily optimized for a smaller range of conductive materials, most commonly titanium and cobalt-chrome alloys.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Faster Build Speeds:</strong> The electron beam can scan the powder bed at higher speeds than a laser, often resulting in faster production times for larger components.</p></td>
+<td class="text-left"><p><strong>High Energy Consumption:</strong> Maintaining a vacuum and generating the electron beam requires significant energy.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Excellent Material Properties:</strong> Produces strong, dense parts with a microstructure that can be beneficial for fatigue properties.</p></td>
+<td class="text-left"><p><strong>Higher Equipment Cost:</strong> EBM systems are generally more expensive than their laser-based counterparts.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="fused-deposition-modeling-fdm">
+<h3><strong>Fused Deposition Modeling (FDM)</strong><a class="headerlink" href="#fused-deposition-modeling-fdm" title="Link to this heading">#</a></h3>
+<p>Fused Deposition Modeling is a material extrusion technique widely recognized for its accessibility and use with a range of thermoplastic polymers. In the medical field, it is used for anatomical models, surgical guides, and increasingly for implants made from high-performance, biocompatible polymers.</p>
+<p><strong>Physical Principle:</strong>
+FDM works by feeding a filament of thermoplastic material (such as PEEK or ULTEM for medical applications) through a heated extruder. The extruder melts the filament and deposits the molten material onto a build platform in a predetermined path, tracing the object’s cross-section. The material cools and solidifies, and the subsequent layer is deposited on top, fusing with the layer below. This continues until the object is fully formed.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
+<th class="head text-left"><p>Disadvantages</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Cost-Effectiveness:</strong> FDM printers and materials are generally more affordable than metal AM systems, making it an accessible technology.</p></td>
+<td class="text-left"><p><strong>Lower Resolution &amp; Anisotropy:</strong> The layer-by-layer extrusion results in a less detailed surface finish and mechanical properties that can vary depending on the build orientation (anisotropy).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Material Versatility:</strong> A wide range of thermoplastic filaments are available, including biocompatible and sterilizable options like PEEK (Polyether ether ketone) and PC-ISO (Polycarbonate).</p></td>
+<td class="text-left"><p><strong>Weaker Inter-Layer Adhesion:</strong> The bond between layers can be a weak point, potentially compromising the overall strength of the implant compared to monolithic materials.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Ease of Use:</strong> The technology is relatively simple to operate and maintain compared to powder bed fusion systems.</p></td>
+<td class="text-left"><p><strong>Support Structures Required:</strong> Overhangs and complex geometries require support structures that must be manually removed, which can affect surface quality.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Rapid Prototyping:</strong> Excellent for quickly creating non-implantable anatomical models for surgical planning and patient education.</p></td>
+<td class="text-left"><p><strong>Limited to Thermoplastics:</strong> Cannot produce metal implants directly.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="stereolithography-sla">
+<h3><strong>Stereolithography (SLA)</strong><a class="headerlink" href="#stereolithography-sla" title="Link to this heading">#</a></h3>
+<p>Stereolithography is a vat photopolymerization process known for producing parts with high accuracy and a smooth surface finish. It is widely used for creating detailed anatomical models and surgical guides, as well as some biocompatible devices.</p>
+<p><strong>Physical Principle:</strong>
+SLA uses an ultraviolet (UV) laser to selectively cure and solidify a liquid photopolymer resin contained in a vat. The build platform is positioned just below the surface of the liquid resin, and the laser traces the cross-section of the object, hardening the material. The platform then moves down (or up, in inverted systems), and a recoating blade sweeps a new layer of resin over the previous one. The process repeats until the 3D object is complete.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Advantages</p></th>
+<th class="head text-left"><p>Disadvantages</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>High Accuracy &amp; Smooth Surface Finish:</strong> SLA is capable of producing parts with very fine details and a smooth, almost injection-molded quality surface, minimizing the need for extensive post-processing.</p></td>
+<td class="text-left"><p><strong>Material Brittleness:</strong> Standard SLA resins can be brittle, although newer engineering and biocompatible resins offer improved toughness and durability.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Excellent for Anatomical Models:</strong> The high resolution makes it ideal for creating highly detailed and accurate anatomical models for pre-operative planning.</p></td>
+<td class="text-left"><p><strong>UV Light Degradation:</strong> Parts can become brittle and change properties over time with prolonged exposure to UV light.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Biocompatible Resins:</strong> A growing number of biocompatible and sterilizable resins are available, allowing for the creation of surgical guides, dental appliances, and other patient-contact devices.</p></td>
+<td class="text-left"><p><strong>Post-Processing Required:</strong> Parts require washing in a solvent to remove excess uncured resin and a post-curing cycle in a UV oven to fully solidify and stabilize their mechanical properties.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Watertight Parts:</strong> SLA produces fully dense, watertight parts, which is crucial for applications involving fluid flow or sealing.</p></td>
+<td class="text-left"><p><strong>Higher Material Cost:</strong> Photopolymer resins are generally more expensive than FDM filaments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="biomaterials.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">What is biomaterial?</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-overview">Methods overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selective-laser-melting-slm"><strong>Selective Laser Melting (SLM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-beam-melting-ebm"><strong>Electron Beam Melting (EBM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fused-deposition-modeling-fdm"><strong>Fused Deposition Modeling (FDM)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stereolithography-sla"><strong>Stereolithography (SLA)</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
