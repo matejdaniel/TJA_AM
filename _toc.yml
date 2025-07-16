@@ -10,5 +10,6 @@ chapters:
 - file: biomaterials
 - file: am_overview
 - file: pbf
+- file: hip_joint
   #- file: notebooks
 #- file: markdown-notebooks
