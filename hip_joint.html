@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hip joint &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hip_joint';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Powder bed fusion" href="pbf.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hip joint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fhip_joint.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/hip_joint.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hip joint</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hip joint</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy">Anatomy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bony-anatomy">Bony Anatomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartilage-and-labrum">Cartilage and Labrum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ligaments-and-joint-capsule">Ligaments and Joint Capsule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurovascular-anatomy">Neurovascular Anatomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muscular-anatomy">Muscular Anatomy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motions-in-the-hip-joint">Motions in the hip joint</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-motion-and-axes">Types of Motion and Axes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-of-motion-rom">Range of Motion (ROM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-chain-vs-closed-chain-movements">Open-Chain vs. Closed-Chain Movements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muscular-contributions">Muscular Contributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-affecting-motion">Factors Affecting Motion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-joint-loading">Hip joint loading</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-methods-direct-measurement-and-simplified-static-analysis">Early Methods: Direct Measurement and Simplified Static Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-methods-mathematical-modeling-with-reduction-and-optimization">Intermediate Methods: Mathematical Modeling with Reduction and Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-musculoskeletal-analysis">More Complex Musculoskeletal Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-influencing-hip-joint-force-calculations">Factors Influencing Hip Joint Force Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseases-of-the-hip-joint">Diseases of the hip joint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-hip-arthroplasty">Total hip arthroplasty</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-overview">Historical overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-hip-arthroplasty">Components of hip arthroplasty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixation-method">Fixation method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failures-of-tha">Failures of THA</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hip-joint">
+<h1>Hip joint<a class="headerlink" href="#hip-joint" title="Link to this heading">#</a></h1>
+<section id="anatomy">
+<h2>Anatomy<a class="headerlink" href="#anatomy" title="Link to this heading">#</a></h2>
+<p>The hip joint is a crucial articulation that connects the lower extremities to the axial skeleton, enabling a wide range of motion while providing remarkable stability and supporting the weight of the head, arms, and trunk (HAT). It is a <strong>true ball-and-socket, diarthrodial (synovial) joint</strong>, meaning it has a joint cavity, articular cartilage-covered surfaces, a synovial membrane producing synovial fluid, and a ligamentous capsule.</p>
+<section id="bony-anatomy">
+<h3>Bony Anatomy<a class="headerlink" href="#bony-anatomy" title="Link to this heading">#</a></h3>
+<p>The hip joint is formed by the articulation of two main bones: the pelvis (specifically, the acetabulum) and the thigh bone (femur).</p>
+<ul class="simple">
+<li><p><strong>Acetabulum</strong>:</p>
+<ul>
+<li><p>This is the <strong>cup-shaped socket</strong> of the hip joint, located on the lateral aspect of the pelvic bone.</p></li>
+<li><p>It is formed by the fusion of three parts of the <strong>innominate bone</strong> (pelvis): the <strong>ilium</strong> (approximately 40%), <strong>ischium</strong> (40%), and <strong>pubis</strong> (20%). In skeletally immature individuals, these bones are separated by triradiate cartilage, which typically fuses between 14 and 23 years of age.</p></li>
+<li><p>The acetabulum covers about 170° of the femoral head.</p></li>
+<li><p>Its actual articular surface appears <strong>lunate-shaped</strong> (horseshoe-shaped) when viewed from inside. The central inferior acetabular fossa within this lunate area is a fat-filled space that houses a synovial-covered fat pad and contains the acetabular attachment of the ligamentum teres.</p></li>
+<li><p>The socket is completed inferiorly by the <strong>transverse acetabular ligament</strong>.</p></li>
+<li><p>The acetabulum is angled obliquely in an <strong>anterior, lateral, and inferior direction</strong>. Normally, it is oriented in 15 to 20 degrees of anteversion and 40 degrees of abduction.</p></li>
+</ul>
+</li>
+<li><p><strong>Femur</strong>:</p>
+<ul>
+<li><p>The femur is the <strong>longest bone in the body</strong> and its primary functions are weight-bearing and contributing to gait stability.</p></li>
+<li><p><strong>Femoral Head</strong>: This is the <strong>rounded ball</strong> at the top of the thigh bone that fits into the acetabulum. It forms approximately <strong>two-thirds of a sphere</strong>.</p></li>
+<li><p><strong>Femoral Neck</strong>: This connects the femoral head to the shaft. Its structure plays a role in hip joint function, particularly its <strong>angular relationships</strong> with the femoral shaft, defined by the angle of inclination and the torsion angle. The femoral neck is intracapsular, while the greater and lesser trochanters are extracapsular.</p></li>
+<li><p><strong>Trochanters</strong>: Close to the femoral head are two bony parts where muscles are attached: the <strong>greater trochanter</strong> (on the side of the thighbone, serving as a muscle attachment point) and the <strong>lesser trochanter</strong>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cartilage-and-labrum">
+<h3>Cartilage and Labrum<a class="headerlink" href="#cartilage-and-labrum" title="Link to this heading">#</a></h3>
+<p>The articulating surfaces of the hip joint are covered by specialized cartilage and a fibrocartilaginous rim.</p>
+<ul class="simple">
+<li><p><strong>Articular Cartilage</strong>:</p>
+<ul>
+<li><p>The surfaces of both the <strong>femoral head and the acetabulum are covered with articular (hyaline) cartilage</strong>.</p></li>
+<li><p>This smooth tissue <strong>cushions the ends of the bones, enables smooth movement</strong>, and acts as a shock absorber.</p></li>
+<li><p>The thickness of articular cartilage in the hip joint typically ranges from <strong>2 to 4 mm</strong>. It is thickest on the medial-central surface of the femoral head and in the superior-anterior region of the acetabular dome.</p></li>
+<li><p>The cartilage is <strong>viscoelastic</strong>, meaning its load-bearing pattern can change based on the magnitude of the applied load. Under low loads, joint surfaces are incongruous, but under heavy loads, they become congruous, providing maximum surface contact.</p></li>
+</ul>
+</li>
+<li><p><strong>Acetabular Labrum</strong>:</p>
+<ul>
+<li><p>The labrum is a <strong>fibrocartilaginous structure that outlines the acetabular socket</strong>, running around its circumference.</p></li>
+<li><p>It is a <strong>continuous, usually triangular structure</strong> that attaches directly to the bony rim of the acetabulum. Variants like round, irregular, and flattened shapes have been observed in people without hip pain, with the incidence of triangular labra decreasing with age as rounded and irregular margins increase.</p></li>
+<li><p>The labrum helps to <strong>deepen the socket and increase its concavity</strong>, enhancing joint stability and helping the joint fit better.</p></li>
+<li><p>It also forms a <strong>seal for the central compartment</strong> by maintaining negative intra-articular pressure, which resists distraction of the femoral head from the socket and enhances nutrient fluid flow to the articular cartilage.</p></li>
+<li><p>The labrum is typically <strong>2 to 3 mm thick</strong> and is wider and thinner anteriorly, and thicker posteriorly.</p></li>
+<li><p>It is thought that the <strong>anterior and superior aspects of the labrum are the most innervated portions</strong>, containing free nerve endings and sensory nerve end organs that produce pain, pressure, and deep sensation.</p></li>
+<li><p>The <strong>vascular supply</strong> to the labrum is provided by the obturator, superior gluteal, and inferior gluteal arteries. This blood supply is believed to be mostly peripheral, with the outer one-third of the acetabular base being vascular, while the majority is avascular. Labral tears are most likely to occur at the junction of the labrum and articular cartilage, an area termed the “watershed region”.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ligaments-and-joint-capsule">
+<h3>Ligaments and Joint Capsule<a class="headerlink" href="#ligaments-and-joint-capsule" title="Link to this heading">#</a></h3>
+<p>The hip joint is enveloped by a strong capsule reinforced by several powerful ligaments that contribute significantly to its stability.</p>
+<ul class="simple">
+<li><p><strong>Joint Capsule</strong>:</p>
+<ul>
+<li><p>The hip joint capsule is <strong>strong and dense</strong>.</p></li>
+<li><p>It is formed by an intertwining of three separate entities (ligaments).</p></li>
+<li><p>The capsule is <strong>tight in extension and more relaxed in flexion</strong>.</p></li>
+<li><p>It is thickened <strong>anterosuperiorly</strong>, where predominant stresses occur, and is relatively thin and loosely attached posteroinferiorly.</p></li>
+<li><p>The capsule covers the femoral head and neck, attaching to the entire periphery of the acetabulum beyond the labrum and to the intertrochanteric line anteriorly and the femoral neck posteriorly.</p></li>
+</ul>
+</li>
+<li><p><strong>Capsular Ligaments</strong>: These ligaments reinforce the joint capsule and help restrain motion. They are coiled around the femoral neck, becoming <strong>tightest in combined extension and medial rotation</strong> and loosest in flexion and lateral rotation.</p>
+<ul>
+<li><p><strong>Iliofemoral Ligament (Y ligament of Bigelow)</strong>: This is considered the <strong>strongest ligament in the body</strong>. It is located anteriorly, spanning from the anterior inferior iliac spine (AIIS) to the intertrochanteric line of the femur in an inverted “Y” shape. Its primary function is to <strong>prevent excessive extension and hyperextension</strong>, and it plays a significant role in stabilizing upright posture and limiting anterior translation of the hip.</p></li>
+<li><p><strong>Pubofemoral Ligament</strong>: Located anteriorly, this ligament arises from the pubic ramus and passes to the anterior surface of the intertrochanteric fossa. It helps prevent <strong>excessive abduction and extension</strong>.</p></li>
+<li><p><strong>Ischiofemoral Ligament</strong>: This is the <strong>posterior capsular ligament</strong>, attaching to the posterior surface of the acetabular rim and labrum. It winds tightly on extension, helping to stabilize the hip in extension and preventing excess extension. It also limits medial rotation.</p></li>
+<li><p>All three capsular ligaments (iliofemoral, pubofemoral, and ischiofemoral) <strong>limit medial rotation</strong> of the femur.</p></li>
+</ul>
+</li>
+<li><p><strong>Ligamentum Teres (Ligament of the Head of the Femur)</strong>: This is an intra-articular but extrasynovial accessory joint structure. It is a triangular band attached at one end to both sides of the peripheral edge of the acetabular notch, passing under the transverse acetabular ligament, and attaching at its other end to the fovea of the femoral head. It contributes little to hip stability but some propose it plays a role in joint nutrition, especially in childhood.</p></li>
+<li><p><strong>Zona Orbicularis (Angular Ligament)</strong>: This ligament encircles the femoral neck like a buttonhole and also plays little role in stability.</p></li>
+</ul>
+</section>
+<section id="neurovascular-anatomy">
+<h3>Neurovascular Anatomy<a class="headerlink" href="#neurovascular-anatomy" title="Link to this heading">#</a></h3>
+<p>The hip joint has a specific innervation and blood supply.</p>
+<ul class="simple">
+<li><p><strong>Nerves</strong>: The hip joint receives innervation from several nerves.</p>
+<ul>
+<li><p><strong>Femoral Nerve</strong>: Supplies the anterior aspect of the joint and the anterior capsule.</p></li>
+<li><p><strong>Obturator Nerve</strong>: Supplies the anteromedial aspect of the joint and the anterior capsule.</p></li>
+<li><p><strong>Superior Gluteal Nerve</strong>: Supplies the posterior aspect laterally.</p></li>
+<li><p><strong>Nerve to Quadratus Femoris</strong>: Supplies the posterior capsule.</p></li>
+<li><p>Articular branches from the sciatic nerve also contribute to the posterior aspect.</p></li>
+<li><p>The anterior capsule and the superior labrum are considered the primary pain generators of the hip joint due to their higher density of nociceptors and mechanoreceptors.</p></li>
+<li><p>The <strong>lateral femoral cutaneous nerve</strong> is also located near the hip and is prone to damage by inappropriately placed arthroscopic portals.</p></li>
+</ul>
+</li>
+<li><p><strong>Blood Supply</strong>: The blood supply to the hip is provided by various arteries, with some variations.</p>
+<ul>
+<li><p><strong>Medial Circumflex Femoral Artery</strong>: This is a major source of blood supply, along with the lateral circumflex femoral artery, both branching from the profunda femoris (deep artery of the thigh).</p></li>
+<li><p><strong>Lateral Circumflex Femoral Artery</strong>: Also a major contributor, branching from the profunda femoris.</p></li>
+<li><p><strong>Obturator Artery</strong>: Its posterior division gives rise to the foveal artery (artery to the head of the femur), which travels within the ligamentum teres and helps prevent avascular necrosis if the circumflex arteries are disrupted.</p></li>
+<li><p><strong>Superior Gluteal Artery</strong> and <strong>Inferior Gluteal Artery</strong>: Contribute to the vascular supply of the labrum and surrounding buttock/thigh region.</p></li>
+<li><p>There are two significant anastomoses: the <strong>cruciate anastomosis</strong> (supports the upper thigh) and the <strong>trochanteric anastomosis</strong> (supports the head of the femur).</p></li>
+<li><p>The <strong>retinacular blood vessels</strong>, arising from a vascular ring at the base of the femoral neck, are the major source of nutrition to the femoral head and neck.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="muscular-anatomy">
+<h3>Muscular Anatomy<a class="headerlink" href="#muscular-anatomy" title="Link to this heading">#</a></h3>
+<p>The hip joint is surrounded by a large number of powerful and well-balanced muscles that enable a wide range of motion in multiple planes while providing essential stability. There are approximately <strong>22 to 27 muscles</strong> acting on the hip joint.</p>
+<ul class="simple">
+<li><p><strong>Grouping of Muscles</strong>: These muscles can be divided into groups based on their main actions or location.</p>
+<ul>
+<li><p><strong>Flexion</strong>: Primarily by the <strong>iliopsoas</strong> (psoas major and iliacus), with assistance from the pectineus, rectus femoris, and sartorius.</p></li>
+<li><p><strong>Extension</strong>: Primarily by the <strong>gluteus maximus</strong> and hamstring muscles (biceps femoris, semitendinosus, semimembranosus).</p></li>
+<li><p><strong>Medial (Internal) Rotation</strong>: Primarily by the <strong>tensor fascia latae</strong> and fibers of the gluteus medius and minimus.</p></li>
+<li><p><strong>Lateral (External) Rotation</strong>: Primarily by the <strong>obturator muscles, quadratus femoris, and gemelli</strong>, with assistance from the gluteus maximus, sartorius, and piriformis.</p></li>
+<li><p><strong>Adduction</strong>: Primarily by the <strong>adductor longus, brevis, and magnus</strong>, with assistance from the gracilis and pectineus.</p></li>
+<li><p><strong>Abduction</strong>: Primarily by the <strong>gluteus medius and minimus</strong>, with assistance from the tensor fascia latae and sartorius.</p></li>
+</ul>
+</li>
+</ul>
+<p>These muscular actions are critical for movements such as walking, standing, running, and stair climbing, and for maintaining balance and controlling leg alignment.</p>
+</section>
+</section>
+<section id="motions-in-the-hip-joint">
+<h2>Motions in the hip joint<a class="headerlink" href="#motions-in-the-hip-joint" title="Link to this heading">#</a></h2>
+<p>The hip joint is a <strong>true ball-and-socket, diarthrodial (synovial) joint</strong> that connects the lower extremities to the axial skeleton, supporting body weight and allowing substantial mobility. It permits rotational motion in all directions.</p>
+<section id="types-of-motion-and-axes">
+<h3>Types of Motion and Axes<a class="headerlink" href="#types-of-motion-and-axes" title="Link to this heading">#</a></h3>
+<p>The hip joint allows for movement in three major axes, all perpendicular to one another, with the center of the entire axis located at the femoral head.</p>
+<ul class="simple">
+<li><p><strong>Flexion and Extension</strong>: Occur around a <strong>transverse axis</strong> in the <strong>sagittal plane</strong>.</p>
+<ul>
+<li><p><strong>Flexion</strong> describes the decrease in angle between parts. It involves moving the leg forward, lifting the knee toward the chest, bending down, or squatting. The femoral head spins posteriorly in flexion.</p></li>
+<li><p><strong>Extension</strong> describes the increase in angle. It involves moving the leg backward. The femoral head spins anteriorly in extension.</p></li>
+</ul>
+</li>
+<li><p><strong>Medial (Internal) Rotation and Lateral (External) Rotation</strong>: Occur along a <strong>longitudinal (vertical) axis</strong> in the <strong>transverse (horizontal) plane</strong>.</p>
+<ul>
+<li><p><strong>Medial rotation</strong> is turning the thigh toward the midline of the body. It describes rotation towards the midline.</p></li>
+<li><p><strong>Lateral rotation</strong> is turning the thigh away from the midline of the body. It describes rotation away from the midline.</p></li>
+</ul>
+</li>
+<li><p><strong>Abduction and Adduction</strong>: Occur along a <strong>sagittal (anterior-posterior) axis</strong> in the <strong>frontal plane</strong>.</p>
+<ul>
+<li><p><strong>Abduction</strong> is a movement away from the midline. It involves moving the leg out to the side.</p></li>
+<li><p><strong>Adduction</strong> is a movement towards the midline. It involves moving one leg toward the other.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="range-of-motion-rom">
+<h3>Range of Motion (ROM)<a class="headerlink" href="#range-of-motion-rom" title="Link to this heading">#</a></h3>
+<p>The range of motion varies among individuals and activities.</p>
+<ul class="simple">
+<li><p><strong>Flexion</strong>: Typically 0° to approximately <strong>120° with the knee flexed</strong> (to release hamstring tension). It can be about 90° with the knee extended. Maximum hip motion occurs during flexion.</p></li>
+<li><p><strong>Extension</strong>: Ranges from about <strong>5° to 30°</strong> (hyperextension). The least movement at the hip occurs during extension.</p></li>
+<li><p><strong>Abduction</strong>: Typically 0° to <strong>30°/45°</strong>.</p></li>
+<li><p><strong>Adduction</strong>: Typically 0° to <strong>20°/30°</strong>.</p></li>
+<li><p><strong>Internal Rotation</strong>: Ranges from 0° to <strong>30°/40°</strong>. Less rotation occurs when the hip is extended due to soft tissue restriction.</p></li>
+<li><p><strong>External Rotation</strong>: Ranges from 0° to <strong>40°/60°</strong>.</p></li>
+</ul>
+<p>Normal gait on level ground requires about 30° flexion, 10° hyperextension, 5° abduction, 5° adduction, and 5° of both medial and lateral rotation. Hip flexion of at least 120°, abduction of at least 20°, and internal/external rotation of at least 20° are necessary for normal daily activities. Activities like squatting, rising from a chair, or stair climbing require substantial ROM.</p>
+</section>
+<section id="open-chain-vs-closed-chain-movements">
+<h3>Open-Chain vs. Closed-Chain Movements<a class="headerlink" href="#open-chain-vs-closed-chain-movements" title="Link to this heading">#</a></h3>
+<p>Hip motions can be understood from two perspectives:</p>
+<ul class="simple">
+<li><p><strong>Open-Chain Movements (Femur moving on Pelvis)</strong>: Occur when the foot is not fixed to anything. For example, lifting the leg up or moving the leg while lying down.</p>
+<ul>
+<li><p>In open-chain hip flexion, if the hip moves past its normal range, the <strong>pelvis may go into posterior tilt and the low back may round (lumbar flexion)</strong> to provide more range.</p></li>
+<li><p>In open-chain hip extension, if the hip moves past its normal range, the <strong>pelvis may go into anterior tilt and the spine into extension</strong>.</p></li>
+<li><p>These coordinated movements are referred to as <strong>lumbo-pelvic rhythm</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Closed-Chain Movements (Pelvis moving on Femur)</strong>: Occur when the feet are fixed, such as standing with feet on the ground. In this scenario, the pelvis moves on the femoral head.</p>
+<ul>
+<li><p><strong>Posterior pelvic tilt</strong> (squeezing glutes and tucking pelvis) creates relative <strong>hip extension</strong>.</p></li>
+<li><p><strong>Anterior pelvic tilt</strong> creates relative <strong>hip flexion</strong>.</p></li>
+<li><p><strong>Lateral pelvic tilt</strong> can lead to abduction or adduction in the hip joint. For instance, if the gluteus medius is weak, it can result in contralateral pelvic drop and adduction of the limb.</p></li>
+<li><p><strong>Pelvic rotation</strong> (e.g., turning to the left while feet are fixed) can cause one leg to go into internal rotation and the other into external rotation.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="muscular-contributions">
+<h3>Muscular Contributions<a class="headerlink" href="#muscular-contributions" title="Link to this heading">#</a></h3>
+<p>A large number of powerful and well-balanced muscles surround the hip joint, contributing to its stability and enabling its wide range of motion. Approximately 22 to 27 separate musculotendinous units act on the hip joint. These muscles can be grouped by their primary actions:</p>
+<ul class="simple">
+<li><p><strong>Flexion</strong>: Primarily by the <strong>iliopsoas</strong> (psoas major and iliacus), assisted by the pectineus, rectus femoris, and sartorius.</p></li>
+<li><p><strong>Extension</strong>: Primarily by the <strong>gluteus maximus</strong> and hamstring muscles (biceps femoris, semitendinosus, semimembranosus).</p></li>
+<li><p><strong>Medial (Internal) Rotation</strong>: Primarily by the <strong>tensor fascia latae</strong> and fibers of the gluteus medius (anterior portion) and minimus. The piriformis can switch from lateral to medial rotator with increased hip flexion.</p></li>
+<li><p><strong>Lateral (External) Rotation</strong>: Primarily by the <strong>obturator muscles, quadratus femoris, and gemelli</strong>, with assistance from the gluteus maximus, sartorius, and piriformis.</p></li>
+<li><p><strong>Adduction</strong>: Primarily by the <strong>adductor longus, brevis, and magnus</strong>, with assistance from the gracilis and pectineus.</p></li>
+<li><p><strong>Abduction</strong>: Primarily by the <strong>gluteus medius and minimus</strong>, with assistance from the tensor fascia latae and sartorius.</p></li>
+</ul>
+<p>The effectiveness of muscles can change based on the hip’s position, a phenomenon known as “inversion of muscular action,” which commonly manifests as a muscle’s secondary function. For example, adductor muscles may act as hip flexors when the hip is neutral but as extensors when the hip is already flexed.</p>
+</section>
+<section id="factors-affecting-motion">
+<h3>Factors Affecting Motion<a class="headerlink" href="#factors-affecting-motion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Femoroacetabular Impingement (FAI)</strong>: Morphologic alterations of the femur or acetabulum can lead to FAI, which limits hip ROM. Cam-type FAI involves an abnormal femoral head-neck junction impinging on the acetabular rim, especially during flexion and internal rotation. Pincer-type FAI results from acetabular overcoverage, pinching the labrum between the femur and acetabulum. FAI can cause reduced hip flexion and internal rotation.</p></li>
+<li><p><strong>Developmental Dysplasia of the Hip (DDH)</strong>: This condition involves a shallow acetabulum and/or poor femoral head coverage, which can also lead to hip pain and altered range of motion.</p></li>
+<li><p><strong>Capsular Laxity</strong>: Can lead to “microinstability” of the hip, increasing joint rotations and femoral head translations and potentially altering normal kinematics, possibly leading to degeneration.</p></li>
+<li><p><strong>Age</strong>: Hip extension ROM may diminish with age, while flexion remains relatively unchanged. The incidence of triangular labra decreases with increasing age, with rounded and irregular margins increasing.</p></li>
+<li><p><strong>Surgical Approaches</strong>: Different surgical approaches for total hip arthroplasty (THA) can affect hip kinematics. For example, the direct lateral approach can lead to the acetabulum being slightly more retroverted, while the posterior approach is opposite. Surgical release and repair of abductor musculature (lateral approach) or short external rotators (posterior approach) can impact gait mechanics and rotatory kinetics.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hip-joint-loading">
+<h1>Hip joint loading<a class="headerlink" href="#hip-joint-loading" title="Link to this heading">#</a></h1>
+<p>Calculating the forces acting on the hip joint is a complex but crucial aspect of biomechanics, enabling a deeper understanding of joint function, injury, and disease. Researchers have developed various methods, ranging from direct measurements and simplified static analyses to sophisticated mathematical models and computational simulations.</p>
+<section id="early-methods-direct-measurement-and-simplified-static-analysis">
+<h2>Early Methods: Direct Measurement and Simplified Static Analysis<a class="headerlink" href="#early-methods-direct-measurement-and-simplified-static-analysis" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Direct Measurement using Instrumented Implants:</strong>
+The most accurate way to determine hip joint forces in living subjects is through <strong>direct measurement using specially designed instrumented endoprostheses</strong>. Pioneers like Rydell were among the first to attempt this, yielding force magnitudes in the hip of approximately 2.3 to 2.9 times body weight for single-leg stance and 1.6 to 3.3 times body weight for level walking. These prostheses are equipped with strain gauges and telemetric devices, allowing for real-time, three-dimensional measurement of the resultant hip joint force with high accuracy (within 1% at ~200 Hz). Such <em>in vivo</em> measurements have established reference libraries, like the Orthoload database, which are considered gold standards for validating computational models. However, direct measurements are technically complex and can only be performed in patients who have undergone total hip replacement.</p></li>
+<li><p><strong>Two-Dimensional (Static) Analysis / Free-Body Diagrams:</strong>
+To estimate hip joint forces without invasive implants, simplified <strong>two-dimensional analyses based on free-body diagrams</strong> have been widely used, particularly for static conditions like standing. These models typically balance the moment arms of the body weight (acting as a load) and the abductor muscle forces (acting as effort) around the femoral head, which serves as the fulcrum.</p>
+<ul class="simple">
+<li><p><strong>Pauwels’ Contributions:</strong> Friedrich Pauwels published seminal work in 1935, analyzing forces on the hip during two-legged standing, one-legged standing, and walking. He calculated the eccentric force exerted by the upper body (head, trunk, upper limbs, and swinging leg) and the counterbalancing force from the abductor muscles. His models suggested that the resultant force across the hip joint could reach <strong>more than four times body weight</strong> during the single-support period of gait. He also showed that the <strong>lever arm of the body weight is typically about three times as long as that of the abductor muscles</strong>.</p></li>
+<li><p><strong>Limitations:</strong> While useful for providing a rough estimate and clinical insights (e.g., how limping or using a cane reduces joint load), these models are simplified and often do not account for complex dynamics, the contribution of individual muscles, or three-dimensional force components.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="intermediate-methods-mathematical-modeling-with-reduction-and-optimization">
+<h2>Intermediate Methods: Mathematical Modeling with Reduction and Optimization<a class="headerlink" href="#intermediate-methods-mathematical-modeling-with-reduction-and-optimization" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Mathematical Models in General:</strong>
+Mathematical models are crucial for estimating hip joint loads and forces in other anatomical structures (like muscles and ligaments) that cannot be directly measured easily. These models vary in complexity based on their underlying assumptions and the number of muscles and structures considered.</p></li>
+<li><p><strong>Reduction Methods:</strong>
+Early mathematical models, like those introduced by Inman in 1947, often used a <strong>reduction method</strong> to simplify the problem of muscle redundancy. This involves reducing the number of independent muscle forces to be solved, often by lumping multiple muscles into a single representative force, usually in a two-dimensional framework. While simple and providing a rough estimation, this approach can lead to a loss of information about the function of individual muscles.</p></li>
+<li><p><strong>Optimization Approaches (Inverse Dynamics):</strong>
+To overcome the indeterminacy of muscle forces (where more muscles cross a joint than degrees of freedom), <strong>optimization procedures</strong> are employed, typically within an <strong>inverse dynamics approach</strong>. In inverse dynamics, external forces and body motions are known, and the internal forces (e.g., muscle forces, joint reaction forces) are computed.</p>
+<ul class="simple">
+<li><p><strong>Optimization Criteria:</strong> Various criteria are used to solve for the unknown muscle forces, such as minimizing the sum of muscle forces, muscle stresses (force per unit physiological cross-sectional area), or powers of these values (e.g., sum of muscle forces to the power of ‘n’). Other criteria include minimizing muscle fatigue, joint contact forces, or signals from Golgi tendon organs.</p></li>
+<li><p><strong>Impact on Results:</strong> While different optimization criteria can lead to varied distributions of individual muscle forces, the <strong>magnitude and direction of the overall hip joint resultant force (R) itself do not significantly depend on the choice of the optimization criterion</strong> for a given muscle model. However, alterations in the underlying <strong>geometry of the muscle model</strong> (e.g., attachment points) can significantly change the computed force R.</p></li>
+<li><p><strong>Model Complexity:</strong> Models can range from including nine effective muscular units to <strong>twenty-seven effective musculotendinous units</strong>. These models define muscle attachments, physiological cross-sectional area (PCSA), maximal isometric force, and sometimes muscle receptor density.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="more-complex-musculoskeletal-analysis">
+<h2>More Complex Musculoskeletal Analysis<a class="headerlink" href="#more-complex-musculoskeletal-analysis" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Full-Body Musculoskeletal Modeling Packages:</strong>
+Advances in computational power have led to the development of comprehensive <strong>full-body musculoskeletal modeling packages</strong> (e.g., AnyBody, OpenSim). These software simulate bones as rigid bodies connected by mechanical joints, with muscles functioning as actuators that provide the necessary torque for movement. They typically use an inverse dynamic approach to calculate internal forces from measured external forces and motions. These models allow for the evaluation of forces during daily activities, sports, and even surgical strategies without invasive <em>in vivo</em> experiments.</p></li>
+<li><p><strong>Subject-Specific Scalable Models:</strong>
+The trend has shifted towards <strong>individualized evaluation of joint biomechanics</strong>. Subject-specific scalable lower extremity models (e.g., TLEM 2.0) are being developed to account for individual variations in muscle lever arms, leading to more accurate estimations of hip joint reaction forces.</p></li>
+<li><p><strong>Finite Element Analysis (FEA) / Finite Element Models (FEM):</strong>
+<strong>FEA is a powerful computational tool widely used in biomechanics</strong> to model the response of the hip joint during various activities and to evaluate how the cartilage and other structures are affected by forces.</p>
+<ul class="simple">
+<li><p><strong>Model Creation:</strong> FE models of the hip joint are often developed based on <strong>CT (Computed Tomography) images</strong> to create detailed 3D geometries of the bones (pelvis and femur) and cartilage. These models can then be subjected to simulated loads corresponding to various activities like one-leg stance or walking.</p></li>
+<li><p><strong>Stress Distribution:</strong> FEA allows for the calculation of contact stress distribution within the hip joint’s articular cartilage. The accuracy of these stress distributions depends on knowing the strain/stress relationships and loads of the biological structures at a microscopic level, which is challenging for complex biological structures like the hip.</p></li>
+<li><p><strong>Integration with Imaging and Machine Learning:</strong> Research is also focused on <strong>creating 3D FE models from 2D X-ray images using machine learning algorithms</strong>. This approach aims to provide valuable biomechanical information, such as how pediatric hip deformities affect cartilage, without additional radiation exposure. This involves automatically detecting anatomical landmarks on X-ray images to reconstruct the femur and scale FE models to match individual subject sizes.</p></li>
+<li><p><strong>Applications:</strong> FEA can help in understanding how forces affect different structures, which can inform treatment routes and interventions. It has been used to predict transchondral stress and strain in the human hip, and to validate predictions of cartilage contact pressure.</p></li>
+</ul>
+</li>
+<li><p><strong>Discrete Element Analysis (DEA):</strong>
+An alternative method for determining hip joint contact stress distribution is <strong>discrete element analysis</strong>, where the acetabulum and femur are modeled as arrays of smooth fine mesh elements connected by linear springs. Stress is then determined from the deformation of these springs.</p></li>
+</ol>
+</section>
+<section id="factors-influencing-hip-joint-force-calculations">
+<h2>Factors Influencing Hip Joint Force Calculations<a class="headerlink" href="#factors-influencing-hip-joint-force-calculations" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Body Weight and Lever Arms:</strong> The magnitude of hip joint forces depends critically on the lever arm ratio between the body weight moment arm and the abductor muscle moment arm. Increases in body weight significantly increase total compressive forces on the joint.</p></li>
+<li><p><strong>Activities and Gait Speed:</strong> Hip joint forces vary considerably with activity. They range from approximately 1.6 to 4.3 times body weight during walking, up to 5.5 times body weight during stair ascending/descending, and can reach up to 8 times body weight during activities like running or skiing. Faster gait speeds generally increase the load on the hip.</p></li>
+<li><p><strong>Anatomical Variations:</strong> Factors like a short femoral neck or a wide pelvis can lead to higher hip forces. Femoral anteversion also influences the “functional” femoral offset, affecting hip joint reaction forces.</p></li>
+<li><p><strong>Pathologies:</strong> Conditions such as developmental dysplasia of the hip (DDH), femoroacetabular impingement (FAI), and avascular necrosis (AVN) alter the hip’s biomechanics, changing contact areas and increasing stress concentration, which can predispose to degeneration. For instance, dysplastic hips may experience contact forces as high as 260% of body weight during single-leg stance.</p></li>
+<li><p><strong>Surgical Interventions:</strong> Total hip arthroplasty (THA) influences all joint parameters including joint center, neck angle, offset, lever arms, and range of motion. The choice of surgical approach (e.g., lateral, posterior, anterior) can affect acetabular and femoral stem orientation, potentially impacting gait mechanics, rotatory kinetics, and dislocation rates. Surgical modifications like lateral displacement of the greater trochanter or varus/valgus osteotomies aim to optimize the abductor muscle lever arm and enlarge the weight-bearing surface to reduce joint pressure.</p></li>
+<li><p><strong>External Support:</strong> Using a cane or walking stick on the contralateral side can significantly reduce the joint reaction force on the painful hip by decreasing the gravitational moment arm and the required abductor muscle force.</p></li>
+</ul>
+</section>
+<section id="diseases-of-the-hip-joint">
+<h2>Diseases of the hip joint<a class="headerlink" href="#diseases-of-the-hip-joint" title="Link to this heading">#</a></h2>
+<p>Hip replacement surgery, also known as total hip arthroplasty (THA), is a well-established surgical intervention commonly performed to address debilitating hip conditions that cause significant pain and functional impairments, ultimately reducing an individual’s quality of life. While it was once primarily for older, low-demand patients, advancements mean it’s increasingly performed on younger, more active individuals.</p>
+<p>The main diseases and conditions leading to hip replacement include:</p>
+<ul class="simple">
+<li><p><strong>Osteoarthritis (OA)</strong>: This is the <strong>most common reason</strong> for total hip replacement, accounting for 75-80% of THAs. OA is typically an age-related “wear-and-tear” type of arthritis, often affecting individuals 50 years of age and older, sometimes with a family history. In OA, the cartilage cushioning the bones of the hip wears away, causing bones to rub against each other, leading to pain and stiffness. It can also be caused or accelerated by subtle irregularities in hip development during childhood. Radiographic findings often show asymmetrical joint space narrowing, especially in weight-bearing areas, along with osteophyte formation, subchondral bone sclerosis, and subchondral bone cysts.</p></li>
+<li><p><strong>Avascular Necrosis (AVN) / Osteonecrosis (ON)</strong>: This condition involves the decay of bone tissue in part of the femoral head due to a disrupted blood supply. It can result from injuries like dislocation or fracture that disrupt blood supply to the femoral head, or from certain diseases. AVN often presents in a younger patient population, typically between 35 and 50 years of age, and accounts for approximately 10% of annual THAs. In its terminal phase, the entire hip joint can be affected, with osteoarthritis superimposed on the deformed femoral head, making total hip replacement a common surgical solution.</p></li>
+<li><p><strong>Rheumatoid Arthritis</strong>: This is an autoimmune disease where the synovial membrane becomes inflamed and thick, leading to chronic inflammation that can damage cartilage and cause pain and stiffness. It is the most common type of inflammatory arthritis.</p></li>
+<li><p><strong>Developmental Dysplasia of the Hip (DDH)</strong>: This condition occurs when the hip joints do not fit together properly. It’s a progressive condition that can cause structural damage to the hip and is a significant cause of early osteoarthritis, sometimes developing before 60 years of age. Approximately 20% to 50% of adults with hip dysplasia may develop early osteoarthritis by age 50. In dysplastic hips, contact between articular surfaces is concentrated on a small area of cartilage, and cadaveric studies have shown contact forces can be as high as 260% of body weight during single-leg stance. Untreated DDH can lead to gradual progression of functional disability and accelerated osteoarthritis.</p></li>
+<li><p><strong>Hip Fractures</strong>: Fractures, particularly of the femoral neck, can lead to the need for hip replacement, especially among elderly individuals with osteoporosis. These fractures often result in loss of balance and a fall. A hip fracture can disrupt the blood supply to the femoral head, predisposing it to avascular necrosis.</p></li>
+<li><p><strong>Post-traumatic Arthritis</strong>: This can develop after a serious hip injury or fracture, leading to cartilage damage, pain, and stiffness over time.</p></li>
+<li><p><strong>Femoroacetabular Impingement Syndrome (FAI)</strong>: FAI involves abnormal contact between the femur and acetabulum, contributing to labral tears and cartilage damage. It is often related to primary hip OA (coxarthrosis).</p></li>
+<li><p><strong>Tumors</strong>: Both benign and malignant bone tumors can necessitate hip replacement.</p></li>
+<li><p><strong>Perthes Disease</strong>: This is an aseptic femoral head necrosis primarily seen in children, which can lead to hip replacement later in life if it causes hip damage.</p></li>
+<li><p><strong>Protrusio Acetabuli</strong>: This condition, where the acetabulum indents into the pelvis, can also be an indication for THA.</p></li>
+<li><p><strong>Ankylosing Spondylitis</strong>: This inflammatory disease primarily affecting the spine can also involve the hip joints, leading to the need for replacement.</p></li>
+<li><p><strong>Residual Arthritis from Slipped Capital Femoral Epiphysis</strong>: A condition where the head of the femur slips off the growth plate, leading to arthritis that may eventually require THA.</p></li>
+</ul>
+<p>Total hip arthroplasty aims to relieve pain, restore function, and improve mobility for patients suffering from these conditions.</p>
+</section>
+<section id="total-hip-arthroplasty">
+<h2>Total hip arthroplasty<a class="headerlink" href="#total-hip-arthroplasty" title="Link to this heading">#</a></h2>
+<p>Total hip arthroplasty (THA), also known as hip replacement surgery, is a widely performed and highly effective surgical intervention aimed at alleviating severe hip pain and restoring function and quality of life for individuals suffering from debilitating hip conditions. This procedure involves replacing damaged parts of the hip joint with artificial components to mimic the hip’s natural function.</p>
+<section id="historical-overview">
+<h3>Historical overview<a class="headerlink" href="#historical-overview" title="Link to this heading">#</a></h3>
+<p>The history of hip replacement dates back to the late 19th century. Early attempts at surgical solutions for hip pain included the experimental interposition of various tissues, such as fascia lata, skin, or even pig’s bladder, between the articulating surfaces of the hip. In 1891, Professor Themistocles Glück in Germany notably used ivory to replace femoral heads damaged by tuberculosis. In the early 20th century, artificial hip socket components were installed, with Smith-Peterson installing one in 1923, and Wiles in England designing a stainless steel total hip in 1938, though these early designs often did not function well. The 1960s marked a significant turning point with the introduction of the cemented McKee-Farrar THA, which became the first widely adopted successful total hip arthroplasty. Around the same time, Sir John Charnley, often recognized as the “father of modern total hip replacement,” revolutionized the procedure with his “low-friction arthroplasty” concept, initially using a Teflon acetabular component and a stainless steel femoral endoprosthesis, both cemented to bone. Despite early issues with excessive wear of Teflon, Charnley’s subsequent use of high-density polyethylene in 1962 laid the groundwork for modern THA.</p>
+</section>
+<section id="components-of-hip-arthroplasty">
+<h3>Components of hip arthroplasty<a class="headerlink" href="#components-of-hip-arthroplasty" title="Link to this heading">#</a></h3>
+<p>Modern hip arthroplasty prostheses consist of several key components designed to replace the damaged bone and cartilage of the hip joint. These artificial parts are typically made from a combination of <strong>metal, plastic (polyethylene), or ceramic</strong>. The prosthesis generally includes:</p>
+<ul class="simple">
+<li><p><strong>Femoral Head:</strong> A metal or ceramic ball that replaces the damaged femoral head.</p></li>
+<li><p><strong>Femoral Stem:</strong> A metal stem that is placed into the hollow center of the femur. This stem can be either <strong>cemented</strong> into the bone or designed for a “press fit,” allowing for bone ingrowth.</p></li>
+<li><p><strong>Acetabular Component:</strong> A metal socket that replaces the damaged cartilage surface of the acetabulum. This component may be held in place with screws or cement, or it can be a “press-fit” type with a roughened surface to encourage bone ingrowth.</p></li>
+<li><p><strong>Liner/Spacer:</strong> A plastic (polyethylene), ceramic, or metal spacer that is inserted between the new ball and the socket, creating a smooth gliding surface for articulation. Ceramics like alumina and zirconia are favored for their exceptional wear resistance, biocompatibility, and low wear rates, which help minimize bone dissolution caused by wear particles.</p></li>
+</ul>
+<p>There are several types of hip arthroplasty, each with distinct characteristics and indications:</p>
+<ul class="simple">
+<li><p><strong>Total Hip Arthroplasty (THA)</strong>: This is the most common type of hip replacement. It involves replacing <strong>both the femoral head (ball) and the acetabulum (socket)</strong> with prosthetic components. THA is typically recommended when both sides of the hip joint are affected by disease, such as in cases of <strong>osteoarthritis (OA)</strong>, which is the most frequent reason for the procedure.</p></li>
+<li><p><strong>Partial Hip Replacement (Hemiarthroplasty)</strong>: This procedure replaces <strong>only the femoral head</strong> and neck, leaving the acetabulum intact. Hemiarthroplasty is less common for general hip replacement and is usually reserved for specific situations like certain types of <strong>hip fractures</strong>, particularly of the femoral neck, or for tumor removal. It is primarily recommended for elderly or frail patients due to concerns about the prosthesis loosening or eroding the native acetabulum over time.</p></li>
+<li><p><strong>Hip Resurfacing Arthroplasty (HRA)</strong>: This is an alternative to conventional THA that aims to <strong>preserve more of the patient’s original bone</strong>. In HRA, the arthritic surfaces of the joint are replaced, but less bone is removed from the femur compared to a total hip replacement. This procedure typically involves a large femoral head articulation, which can result in a biomechanically more stable joint and potentially lower dislocation rates. HRA is generally considered ideal for <strong>young, active adults</strong> with good bone quality and hip morphology. However, certain contraindications exist, including proximal femoral osteoporosis, tumors, inflammatory arthritis, poor bone stock, and acetabular dysplasia. While early metal-on-metal HRA designs faced challenges with high revision rates due to metal debris, modern advancements include ceramic-on-ceramic or metal-on-polyethylene bearing surfaces to address these issues.</p></li>
+</ul>
+</section>
+<section id="fixation-method">
+<h3>Fixation method<a class="headerlink" href="#fixation-method" title="Link to this heading">#</a></h3>
+<p>The choice of fixation method for the prosthetic components in hip arthroplasty is a crucial decision influenced by various factors, including patient age, bone quality, activity level, and surgeon preference. Hip arthroplasty components are primarily fixed into the bone using either <strong>cemented</strong> or <strong>uncemented (biological ingrowth)</strong> methods, with hybrid approaches also commonly employed.</p>
+<p><strong>Cemented fixation</strong> involves using polymethyl methacrylate cement to bond the prosthetic component to the bone. Historically, Sir John Charnley’s “low-friction arthroplasty” laid the groundwork for modern cemented THA using high-density polyethylene [previous response]. The success of cementing relies heavily on the surgical technique, with continuous improvements over decades including vacuum-mixed cements, medullary canal plugs, centralizing elements, and jet-lavage to clean trabecular bone structures. Cemented prostheses have shown statistically the <strong>best results in terms of the overall THA population</strong>, particularly for older patients. For individuals over 75 years, cemented total hip arthroplasty is strictly recommended. However, cement performs better under compression than shearing forces, which historically led to increased failure rates for cemented acetabular cups. Loosening in cemented prostheses is often indicated by a lucency wider than 2 mm or progression of lucencies at the bone-cement interface on radiographs. National Joint Registry data for England and Wales indicated that cemented THAs had revision rates of 0.6% at one year, 1.4% at three years, and 2.0% at five years, which are generally lower than uncemented options.</p>
+<p><strong>Uncemented (biological ingrowth)</strong> fixation relies on the ingrowth of the patient’s bone directly onto or into a porous or roughened surface of the implant, creating a solid biological bond. This “press-fit” method requires the implant to be impacted into a slightly smaller cavity to achieve initial stability. Successful bone ingrowth is dependent on the quality of the initial fixation achieved by the surgeon, the characteristics of the implant surface, and the quality of the reamed bone bed, with micromotion in the early postoperative period needing to remain below a critical threshold. Uncemented fixation is commonly considered for <strong>younger and more active patients</strong> with good bone quality, and it is predominantly used for both femoral and acetabular components in cases of avascular necrosis. However, uncemented THAs have shown higher revision rates compared to cemented ones in some registries, with 1.3% at one year, 2.5% at three years, and 3.4% at five years.</p>
+<p><strong>Hybrid fixation</strong> combines an uncemented acetabular component with a cemented femoral stem. This approach leverages the strengths of both methods, aiming to provide good stability for the acetabular cup and reliable fixation for the femoral stem. Hybrid prostheses are increasingly popular, with revision rates catching up to cemented options. For patients aged between 60 and 70 who are borderline active, hybrid total hip arthroplasty may be considered. National Joint Registry data reported hybrid THA revision rates of 0.9% at one year, 1.8% at three years, and 2.7% at five years. The decision on which fixation method to use depends on the patient’s individual circumstances, with age, bone density, and expected activity level being key considerations for optimizing long-term outcomes and minimizing complications.</p>
+</section>
+</section>
+<section id="failures-of-tha">
+<h2>Failures of THA<a class="headerlink" href="#failures-of-tha" title="Link to this heading">#</a></h2>
+<p>Total hip arthroplasty (THA), despite being a highly successful surgical intervention, is associated with various potential failures and complications that can occur due to a range of factors including implant design, materials, surgical technique, and patient characteristics. Understanding these potential issues is crucial for optimizing long-term outcomes.</p>
+<p>Possible failures and their reasons include:</p>
+<ul class="simple">
+<li><p><strong>Loosening and Osteolysis:</strong></p>
+<ul>
+<li><p><strong>Aseptic Loosening</strong> is one of the most common causes for revision surgery, accounting for approximately 19.7% of revisions in some reports and 30% in others from national registries. It is also the most common problem seen with <strong>cemented prostheses</strong>. It can be indicated radiographically by a lucency wider than 2 mm or progression of lucencies at the bone-cement interface. Cemented acetabular cups, in particular, historically had increased failure rates because cement performs better under compression than shearing forces [previous response]. Poor cementing technique, such as a lack of cement mantle at the stem tip, can lead to early failure.</p></li>
+<li><p><strong>Osteolysis</strong>, the loss of bone, is often linked to long-term problems with hip replacements. It is primarily caused by the body’s reaction to <strong>polyethylene wear debris</strong>, fine particles of plastic wearing off the liner, which triggers an inflammatory process and bone resorption. This can lead to loosening of implants and even fractures around them. Early cemented components also showed osteolysis, initially thought to be “cement disease,” but later attributed to polyethylene wear debris.</p></li>
+<li><p>For <strong>uncemented (biological ingrowth) fixation</strong>, micromotion above a critical threshold in the early postoperative period can prevent successful bone ingrowth, leading to failure. Too much oversizing during “press-fitting” can cause bone fractures or fissures and small contact areas, while too little can lead to implant movement.</p></li>
+<li><p><strong>Femoral neck narrowing and scalloping</strong> can also occur, secondary to stress shielding, loosening, or an inflammatory response, including metal hypersensitivity.</p></li>
+</ul>
+</li>
+<li><p><strong>Dislocation:</strong></p>
+<ul>
+<li><p><strong>Dislocation</strong>, where the femoral head comes out of the socket, is one of the most common complications, accounting for approximately 28% of revisions in some registries. About 70% of THA dislocations occur within the first month after surgery, primarily due to incomplete scar formation and relaxed soft tissues.</p></li>
+<li><p>Key risk factors include <strong>component malpositioning</strong> (excessive anteversion can lead to anterior dislocation, while excessive retroversion can lead to posterior dislocation). Component orientation (inclination and anteversion) significantly influences dislocation risk.</p></li>
+<li><p>Other factors contributing to dislocation risk include prior hip surgery (most significant independent risk factor), elderly age (over 70 years), neuromuscular conditions (e.g., Parkinson’s disease), and drug/alcohol abuse. Preservation of gluteal muscles and restoration of leg length and femoral offset are important for reducing dislocation risk. A femoral offset of less than 33 mm is associated with hip dislocation.</p></li>
+</ul>
+</li>
+<li><p><strong>Infection:</strong></p>
+<ul>
+<li><p><strong>Infection</strong> can occur superficially in the wound or deep around the prosthesis, happening days, weeks, or even years after surgery. It is one of the most common causes for revision of a THA, with an incidence of about 1% to 2% in primary THA.</p></li>
+<li><p>Risk factors include obesity, diabetes, smoking, immunosuppressive medications or diseases, history of infection, previous hip surgery, IV drug use/abuse, alcohol abuse, poor oral hygiene, chronic renal/liver disease, malnutrition, and HIV (CD4 counts less than 400).</p></li>
+</ul>
+</li>
+<li><p><strong>Fractures:</strong></p>
+<ul>
+<li><p><strong>Bone fractures</strong> around the prosthesis (periprosthetic fractures) are a known complication, with an increasing incidence, particularly in younger patient populations. They are also common in very elderly patients with osteoporosis and trivial trauma.</p></li>
+<li><p><strong>Intraoperative fractures</strong> can occur in either the acetabulum or the femur during the procedure. Acetabular fractures (0.4% incidence with press-fit components) often occur during component impaction, with risk factors including under-reaming, poor patient bone quality, and dysplastic conditions. Femur fractures (up to 5% incidence) can result from technical errors, use of press-fit implants, poor patient bone quality, or revision surgery.</p></li>
+<li><p>Specific to <strong>Hip Resurfacing Arthroplasty (HRA)</strong>, <strong>femoral neck fracture</strong> is the most common complication (12% of cases), more common in females, and may be related to osteoporosis or poor surgical technique (e.g., notching of the femoral neck, varus positioning).</p></li>
+</ul>
+</li>
+<li><p><strong>Bearing Surface-Specific Issues:</strong></p>
+<ul>
+<li><p><strong>Metal-on-metal (MoM) bearings</strong> have faced significant issues, with higher failure rates compared to metal-on-plastic or ceramic-on-ceramic (6.2% vs. 1.7% and 2.3% at 5 years). Failures are linked to the release of minute metallic particles or metal ions, causing pain, disability, and adverse local tissue reactions such as <strong>metallosis</strong> and <strong>pseudotumors</strong>. Larger MoM head sizes have been associated with increased failure rates. Malpositioning, particularly cup inclinations above 50° and/or anteversion above 15°, can lead to “run-away wear”.</p></li>
+<li><p><strong>Ceramic-on-ceramic (CoC) bearings</strong> are known for low wear rates and debris. However, challenges include <strong>ceramic fragmentation</strong> (catastrophic failure can occur in about 2% of implants) and <strong>abnormal joint noise</strong> (“squeaking”). Increased friction due to rim loading or fluid film breakdown can lead to stripe wear, vibrations, and high moments at the implant-bone interface, causing fixation problems. CoC bearings are more sensitive to precise positioning.</p></li>
+<li><p><strong>Polyethylene (PE) bearings</strong>, while widely used, can lead to <strong>polyethylene wear debris</strong> which causes periprosthetic osteolysis and aseptic loosening. Highly cross-linked polyethylene was developed to reduce wear but may be less tough and prone to cracking.</p></li>
+</ul>
+</li>
+<li><p><strong>Other Complications:</strong></p>
+<ul>
+<li><p><strong>Blood clots</strong> (deep vein thrombosis in legs/pelvis, pulmonary embolism in lungs) are common complications, and can be life-threatening if they travel to the lungs.</p></li>
+<li><p><strong>Nerve damage</strong> (e.g., sciatic or lateral femoral cutaneous nerve palsy) can cause numbness, weakness, and pain, though often transient.</p></li>
+<li><p><strong>Limb length discrepancy</strong> can occur, where one leg becomes longer or shorter, sometimes due to muscle contracture.</p></li>
+<li><p><strong>Stiffness</strong> in the joint is possible.</p></li>
+<li><p><strong>Heterotopic ossification</strong> (abnormal bone formation around the hip) is a recognized complication.</p></li>
+<li><p><strong>Chronic pain</strong> can persist after surgery, potentially from iliopsoas impingement, trochanteric bursitis, or nerve injury.</p></li>
+<li><p><strong>Adverse tissue reactions</strong> can occur, including granulomatous disease, related to prosthesis failure, particularly type VI hypersensitivity response to metal ions.</p></li>
+<li><p><strong>Technical difficulties</strong> during surgery, such as femoral canal perforation (6.8% in some sickle cell anemia cases) or difficult prosthesis reduction, can lead to complications.</p></li>
+</ul>
+</li>
+</ul>
+<p>Overall, the long-term success of THA is dependent on addressing factors such as implant stability (initial and long-term), wear particle generation, anatomical restoration (offset, component orientation), surgical precision, and careful patient selection, particularly for younger, more active individuals.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pbf.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Powder bed fusion</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hip joint</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy">Anatomy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bony-anatomy">Bony Anatomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartilage-and-labrum">Cartilage and Labrum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ligaments-and-joint-capsule">Ligaments and Joint Capsule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurovascular-anatomy">Neurovascular Anatomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muscular-anatomy">Muscular Anatomy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motions-in-the-hip-joint">Motions in the hip joint</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-motion-and-axes">Types of Motion and Axes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-of-motion-rom">Range of Motion (ROM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-chain-vs-closed-chain-movements">Open-Chain vs. Closed-Chain Movements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muscular-contributions">Muscular Contributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-affecting-motion">Factors Affecting Motion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-joint-loading">Hip joint loading</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#early-methods-direct-measurement-and-simplified-static-analysis">Early Methods: Direct Measurement and Simplified Static Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-methods-mathematical-modeling-with-reduction-and-optimization">Intermediate Methods: Mathematical Modeling with Reduction and Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-musculoskeletal-analysis">More Complex Musculoskeletal Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factors-influencing-hip-joint-force-calculations">Factors Influencing Hip Joint Force Calculations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseases-of-the-hip-joint">Diseases of the hip joint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-hip-arthroplasty">Total hip arthroplasty</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-overview">Historical overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-hip-arthroplasty">Components of hip arthroplasty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixation-method">Fixation method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failures-of-tha">Failures of THA</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
