@@ -1,5 +1,11 @@
 # Additive manufacturing for joint replacement design
 
+## Table of contents
+
+
+```{tableofcontents}
+```
+
 ## Introduction
 
 The field of orthopedic medicine is on the cusp of a revolution, and at
@@ -55,5 +61,3 @@ students. It is for anyone who is passionate about leveraging
 technology to improve patient care and who believes in the power of
 innovation to solve the most pressing challenges in medicine.
 
-```{tableofcontents}
-```

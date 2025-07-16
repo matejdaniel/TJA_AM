@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Porous Implants in Orthopedics: Design, Function, and Advanced Concepts &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'porous';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hip joint" href="hip_joint.html" />
+    <link rel="prev" title="Powder bed fusion" href="pbf.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fporous.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/porous.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-challenge-of-stress-shielding-in-orthopedic-implants">The Challenge of Stress Shielding in Orthopedic Implants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-stress-shielding">Understanding Stress Shielding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-porous-structures-in-mitigating-stress-shielding">Role of Porous Structures in Mitigating Stress Shielding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfacing-with-bone-primary-and-secondary-osseointegration">Interfacing with Bone: Primary and Secondary Osseointegration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-stability">Primary Stability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-stability-the-mechanism-of-osseointegration">Secondary Stability: The Mechanism of Osseointegration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pore-parameters-for-osseointegration">Pore Parameters for Osseointegration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometries-of-porous-structures-enabled-by-additive-manufacturing">Geometries of Porous Structures Enabled by Additive Manufacturing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additive-manufacturing-as-a-key-enabler">Additive Manufacturing as a Key Enabler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strut-based-structures">Strut-Based Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triply-periodic-minimal-surfaces-tpms">Triply Periodic Minimal Surfaces (TPMS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-shell-tpms-designs">Equations of Shell-TPMS designs:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-skeletal-tpms-designs">Equations of Skeletal-TPMS designs:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characterizing-porous-structures-effective-density-and-modulus">Characterizing Porous Structures: Effective Density and Modulus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-design-concepts-for-enhanced-implant-performance">Advanced Design Concepts for Enhanced Implant Performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functionally-graded-porous-structures">Functionally Graded Porous Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metamaterials-including-auxetic-designs">Metamaterials, Including Auxetic Designs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-structure-biofunctionalization-and-future-directions">Beyond Structure: Biofunctionalization and Future Directions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-fabrication">Design and Fabrication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabrication-techniques-supporting-design">Fabrication Techniques Supporting Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="porous-implants-in-orthopedics-design-function-and-advanced-concepts">
+<h1>Porous Implants in Orthopedics: Design, Function, and Advanced Concepts<a class="headerlink" href="#porous-implants-in-orthopedics-design-function-and-advanced-concepts" title="Link to this heading">#</a></h1>
+<p>Porous biomaterials have emerged as a pivotal development in the field of orthopedic implants, offering a promising solution to address limitations of traditional solid implants and enhance implant longevity and integration with host bone. These materials are characterized by the presence of internal voids or pores within their structure, which facilitates the exchange of nutrients, waste, and cells. The main types of porous biomaterials utilized in orthopedic implants include metallic foams (such as titanium and tantalum), ceramic scaffolds, polymeric scaffolds, and composite materials. Titanium and its alloys, particularly Ti6Al4V, are widely favored in orthopedic and dental implant applications due to their exceptional biocompatibility, corrosion resistance, high strength-to-weight ratio, and ability to foster osseointegration.</p>
+<section id="the-challenge-of-stress-shielding-in-orthopedic-implants">
+<h2>The Challenge of Stress Shielding in Orthopedic Implants<a class="headerlink" href="#the-challenge-of-stress-shielding-in-orthopedic-implants" title="Link to this heading">#</a></h2>
+<section id="understanding-stress-shielding">
+<h3>Understanding Stress Shielding<a class="headerlink" href="#understanding-stress-shielding" title="Link to this heading">#</a></h3>
+<p>A primary challenge with conventional dense metallic implants, such as those made from surgical stainless steel, cobalt-chromium-molybdenum (CoCrMo), and solid titanium alloys, is the <strong>stress shielding phenomenon</strong>. This occurs due to a significant <strong>mismatch in the elastic modulus</strong> (stiffness) between the implant material and the surrounding natural bone tissue. For instance, solid titanium typically has an elastic modulus of approximately 110 GPa, while human cortical bone ranges from 3 to 30 GPa, and cancellous bone is even lower at 0.02–2 GPa.</p>
+<p>When a high-stiffness implant is placed, it tends to <strong>absorb a disproportionate amount of the mechanical load</strong>, transferring less stress to the adjacent bone. According to Wolff’s Law, bone is a self-remodeling material that requires mechanical loading to maintain its density and strength. Consequently, the under-stimulation of the bone due to stress shielding can lead to <strong>bone resorption</strong>, a decrease in bone density, and a weakened bone structure around the implant. This can ultimately result in implant-bone micromovements, implant loosening, and eventual implant failure, often necessitating revision surgeries.</p>
+</section>
+<section id="role-of-porous-structures-in-mitigating-stress-shielding">
+<h3>Role of Porous Structures in Mitigating Stress Shielding<a class="headerlink" href="#role-of-porous-structures-in-mitigating-stress-shielding" title="Link to this heading">#</a></h3>
+<p>An effective strategy to reduce stress shielding is the incorporation of <strong>porous metallic structures</strong> within the implant. The introduction of pores significantly <strong>reduces the overall stiffness (elastic modulus) of the metal implant</strong>, allowing it to better match the mechanical properties of natural bone. By carefully adjusting pore features, such as size, distribution, and overall porosity, the implant’s elastic modulus can be tailored to minimize stress shielding and promote a more physiological load distribution to the surrounding bone. This tailoring of mechanical properties translates into enhanced quality of life for the patient, reduced hospital expenses, and improved joint dynamic performance.</p>
+</section>
+</section>
+<section id="interfacing-with-bone-primary-and-secondary-osseointegration">
+<h2>Interfacing with Bone: Primary and Secondary Osseointegration<a class="headerlink" href="#interfacing-with-bone-primary-and-secondary-osseointegration" title="Link to this heading">#</a></h2>
+<p>The long-term success of orthopedic implants hinges on their ability to integrate effectively with the host bone, a process known as osseointegration. This process relies on achieving both primary and secondary stability.</p>
+<section id="primary-stability">
+<h3>Primary Stability<a class="headerlink" href="#primary-stability" title="Link to this heading">#</a></h3>
+<p><strong>Primary stability</strong> refers to the immediate mechanical fixation of the implant within the bone upon implantation. This initial stability is crucial for enabling the subsequent biological processes of bone ingrowth and healing. In clinical scenarios, primary stability is often achieved through mechanisms such as <strong>press-fit insertion</strong> of the implant into the bone or the use of <strong>screws</strong>. Sufficient primary stability is essential to minimize micromotions at the bone-implant interface, as excessive micromotion can lead to the formation of fibrous scar-like tissue instead of bone, hindering long-term osseointegration.</p>
+</section>
+<section id="secondary-stability-the-mechanism-of-osseointegration">
+<h3>Secondary Stability: The Mechanism of Osseointegration<a class="headerlink" href="#secondary-stability-the-mechanism-of-osseointegration" title="Link to this heading">#</a></h3>
+<p><strong>Secondary stability</strong> is achieved through <strong>osseointegration</strong>, defined as the direct structural and functional connection between ordered, living bone and the surface of a load-carrying implant. This involves the <strong>ingrowth (bone growing into the pores) and ongrowth (bone growing onto the surface) of new bone tissue</strong> directly into and onto the porous structure of the implant. The porous structure provides an <strong>open space for bone regeneration</strong>, which enhances the long-term stability and fixation of implants.</p>
+<p>Key benefits of successful osseointegration include:</p>
+<ul class="simple">
+<li><p><strong>Enhanced mechanical integrity</strong> of the bone-implant interface.</p></li>
+<li><p><strong>Facilitation of cell adhesion, proliferation, and differentiation</strong>, especially of osteoblasts.</p></li>
+<li><p><strong>Promotion of vascularization and nutrient/oxygen transport</strong> throughout the implant, supporting healing and minimizing infection risk.</p></li>
+<li><p><strong>Reduction of complications</strong> such as implant loosening and fibrous encapsulation.</p></li>
+</ul>
+<section id="pore-parameters-for-osseointegration">
+<h4>Pore Parameters for Osseointegration<a class="headerlink" href="#pore-parameters-for-osseointegration" title="Link to this heading">#</a></h4>
+<p>The effectiveness of osseointegration is significantly influenced by several porous parameters:</p>
+<ul class="simple">
+<li><p><strong>Porosity</strong>: Measured as a percentage, porosity directly affects the mechanical strength, density, and surface area available for cell adhesion. Optimal porosity for bone ingrowth and cell proliferation is often cited in the range of <strong>55–85%</strong> or <strong>50–90%</strong> for cancellous bone mimics. A proposed ideal range for porous Ti implants based on various studies and FDA regulations is <strong>30–70%</strong>.</p></li>
+<li><p><strong>Pore Size</strong>: This critical parameter determines which cells and tissues can penetrate the material.</p>
+<ul>
+<li><p>Optimal bone infiltration and osseointegration are reported for pore sizes between <strong>150 and 500 µm</strong>.</p></li>
+<li><p>Some studies suggest optimal osteoblast growth and bone ingrowth in ranges of <strong>400–800 µm</strong>, <strong>300–600 µm</strong>, or <strong>50–400 µm</strong>.</p></li>
+<li><p>A minimum pore size of <strong>100 µm</strong> is generally considered necessary for osteogenesis and cell penetration, while larger pores (e.g., above 300 µm, even up to 1000 µm) facilitate vascularization and nutrient transport.</p></li>
+</ul>
+</li>
+<li><p><strong>Pore Interconnectivity</strong>: <strong>Open and interconnected pores</strong> are vital for successful osseointegration as they allow for deeper tissue integration and efficient perfusion of nutrients and oxygen throughout the ingrown tissue. Closed cells restrict this process.</p></li>
+<li><p><strong>Surface Roughness</strong>: The <strong>topography and chemistry of the implant surface</strong> significantly affect cellular responses like cell adhesion, proliferation, and migration. Moderately rough surfaces with high surface energy can promote osteogenesis and increase bone-to-implant contact.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="geometries-of-porous-structures-enabled-by-additive-manufacturing">
+<h2>Geometries of Porous Structures Enabled by Additive Manufacturing<a class="headerlink" href="#geometries-of-porous-structures-enabled-by-additive-manufacturing" title="Link to this heading">#</a></h2>
+<section id="additive-manufacturing-as-a-key-enabler">
+<h3>Additive Manufacturing as a Key Enabler<a class="headerlink" href="#additive-manufacturing-as-a-key-enabler" title="Link to this heading">#</a></h3>
+<p>The advent of <strong>Additive Manufacturing (AM)</strong>, also known as 3D printing, has revolutionized the design and fabrication of orthopedic implants. AM technologies enable the <strong>layer-wise generation of highly complex geometries</strong> and intricate internal architectures that are challenging or impossible to achieve with conventional manufacturing methods. This versatility extends to a broad range of materials and allows for the <strong>customization of implant shapes and structures</strong> to match patient-specific anatomy and bone defects, leading to enhanced fit and performance. Key AM processes used for metallic implants include Selective Laser Melting (SLM), Selective Laser Sintering (SLS), and Electron Beam Melting (EBM).</p>
+<figure class="align-default" id="id2">
+<img alt="https://www.mdpi.com/metals/metals-14-01165/article_deploy/html/images/metals-14-01165-g001.png" src="https://www.mdpi.com/metals/metals-14-01165/article_deploy/html/images/metals-14-01165-g001.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Lattice structure classification based on structure and surface. Reproduced from <span id="id1">[]</span> under terms of the CC-BY license.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="strut-based-structures">
+<h3>Strut-Based Structures<a class="headerlink" href="#strut-based-structures" title="Link to this heading">#</a></h3>
+<p><strong>Strut-based structures</strong> are a common category of porous geometries often employed in additive manufacturing. These structures are formed by repeating unit cells composed of interconnected struts. Prominent examples include:</p>
+<ul class="simple">
+<li><p><strong>Simple Cubic (SC)</strong></p></li>
+<li><p><strong>Body-Centered Cubic (BCC)</strong></p></li>
+<li><p><strong>Face-Centered Cubic (FCC)</strong></p></li>
+</ul>
+<p>While relatively <strong>straightforward to model and analyze</strong> during the design phase, strut-based structures can feature <strong>sharp edges and corners</strong>. These sharp features are prone to <strong>stress concentration</strong>, which can be detrimental to the fatigue resistance and long-term mechanical performance of the implant.</p>
+</section>
+<section id="triply-periodic-minimal-surfaces-tpms">
+<h3>Triply Periodic Minimal Surfaces (TPMS)<a class="headerlink" href="#triply-periodic-minimal-surfaces-tpms" title="Link to this heading">#</a></h3>
+<p><strong>Triply Periodic Minimal Surfaces (TPMS)</strong> represent another significant class of porous structures, characterized by having an average curvature of zero and forming <strong>smooth, continuous surfaces</strong>. These structures are often preferred due to their unique properties that can mitigate some of the drawbacks of strut-based designs. Common TPMS geometries include:</p>
+<ul class="simple">
+<li><p><strong>Gyroid</strong></p></li>
+<li><p><strong>Diamond</strong></p></li>
+<li><p><strong>Primitive (or Schwarz Primitive)</strong></p></li>
+<li><p><strong>Schwarz W</strong></p></li>
+<li><p><strong>Split-P</strong></p></li>
+</ul>
+<p>TPMS structures are inherently <strong>self-supporting geometries</strong> in additive manufacturing processes, reducing the need for support structures and associated post-processing. Their smooth surfaces help to <strong>mitigate stress concentration</strong> and enhance mechanical performance. However, the mathematical complexity of TPMS designs can lead to increased manufacturing costs, difficulties in modeling and optimization, and longer computation times for numerical analysis.</p>
+<p>While specific equations for all structures are not provided in the sources, TPMS are defined by <strong>implicit mathematical equations</strong>. For example, a general equation often used to describe TPMS can be expressed as:
+$<span class="math notranslate nohighlight">\(f(x, y, z) = C\)</span><span class="math notranslate nohighlight">\(
+where \)</span>f(x, y, z)$ is a periodic function (e.g., based on trigonometric functions) and <code class="docutils literal notranslate"><span class="pre">C</span></code> is a constant that defines the iso-surface representing the structure. Varying <code class="docutils literal notranslate"><span class="pre">C</span></code> allows for the design of sheet-network or solid-network TPMS structures.</p>
+<section id="equations-of-shell-tpms-designs">
+<h4>Equations of Shell-TPMS designs:<a class="headerlink" href="#equations-of-shell-tpms-designs" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Gyroid:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\sin(x) \cdot \cos(y) + \sin(y) \cdot \cos(z) + \sin(z) \cdot \cos(x) = 0\)</span></p>
+<ul class="simple">
+<li><p>Diamond</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\sin(x) \cdot \sin(y) \cdot \sin(z) + \sin(x) \cdot \cos(y) \cdot \cos(z) + \cos(x) \cdot \sin(y) \cdot \cos(z) + \cos(x) \cdot \cos(y) \cdot \sin(z) = 0\)</span></p>
+<ul class="simple">
+<li><p>Lidinoid:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\sin(2x) \cdot \cos(y) \cdot \sin(z) + \sin(x) \cdot \sin(2y) \cdot \cos(z) + \cos(x) \cdot \sin(y) \cdot \sin(2z) -\)</span>
+<span class="math notranslate nohighlight">\(\quad - \cos(2x) \cdot \cos(2y) - \cos(2y) \cdot \cos(2z) - \cos(2z) \cdot \cos(2x) + 0.3 = 0\)</span></p>
+<ul class="simple">
+<li><p>Split-P:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(1.1 \cdot \left[ \sin(2x) \cdot \cos(y) \cdot \sin(z) + \sin(x) \cdot \sin(2y) \cdot \cos(z) + \cos(x) \cdot \sin(y) \cdot \sin(2z) \right] - \)</span>
+<span class="math notranslate nohighlight">\(\quad - 0.2 \cdot \left[ \cos(2x) \cdot \cos(2y) + \cos(2y) \cdot \cos(2z) + \cos(2z) \cdot \cos(2x) \right] - 0.4 \cdot \left[ \cos(2x) + \cos(2y) + \cos(2z) \right] = 0\)</span></p>
+<ul class="simple">
+<li><p>Schwarz:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\cos(x) + \cos(y) + \cos(z) = 0\)</span></p>
+</section>
+<section id="equations-of-skeletal-tpms-designs">
+<h4>Equations of Skeletal-TPMS designs:<a class="headerlink" href="#equations-of-skeletal-tpms-designs" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Schoen Gyroid:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\sin(x) \cdot \cos(y) + \sin(y) \cdot \cos(z) + \sin(z) \cdot \cos(x) - C = 0\)</span></p>
+<ul class="simple">
+<li><p>Schwarz Diamond:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\cos(x) \cdot \cos(y) \cdot \cos(z) + \sin(x) \cdot \sin(y) \cdot \sin(z) - C = 0\)</span></p>
+<ul class="simple">
+<li><p>Schwarz Primitive:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\cos(x) + \cos(y) + \cos(z) - C = 0\)</span></p>
+<ul class="simple">
+<li><p>Body Diagonals with Nodes:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(2 \cdot \left[ \cos(x) \cdot \cos(y) + \cos(y) \cdot \cos(z) + \cos(z) \cdot \cos(x) \right] - \left[ \cos(2x) + \cos(2y) + \cos(2z) \right] - C = 0\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Shell-TPMS Unit Cell Designs</p></th>
+<th class="head text-center"><p>Skeletal-TPMS Unit Cell Designs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Gyroid" src="https://user-images.githubusercontent.com/81706331/212520075-61342071-74e8-4a0c-abcf-6d7c4e0b2b0f.png" /></p></td>
+<td class="text-center"><p><img alt="Schoen Gyroid" src="https://user-images.githubusercontent.com/81706331/212520098-fa5b5f22-cd61-4911-96df-fa7c7154e5f3.png" /></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="Diamond" src="https://user-images.githubusercontent.com/81706331/212520079-ea284516-671c-4ec8-8540-510663d1fe84.png" /></p></td>
+<td class="text-center"><p><img alt="Schwarz Diamond" src="https://user-images.githubusercontent.com/81706331/212520101-3db607d9-cc28-4036-9d74-31e0583dd23d.png" /></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="Lidinoid" src="https://user-images.githubusercontent.com/81706331/212520087-77b587e0-c96f-4ed0-846e-e0ff68a5f94c.png" /></p></td>
+<td class="text-center"><p><img alt="Schwarz Primitive (pinched)" src="https://user-images.githubusercontent.com/81706331/212520106-87890470-5ee5-4857-b95c-2b7d2bcd28e5.png" /></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="Split-P" src="https://user-images.githubusercontent.com/81706331/212520090-54eccde5-42f4-4c08-9005-09529f2ea752.png" /></p></td>
+<td class="text-center"><p><img alt="Schwarz Primitive" src="https://user-images.githubusercontent.com/81706331/212520110-a109381d-d538-4e91-8528-9b3cc7bc4d04.png" /></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="Schwarz" src="https://user-images.githubusercontent.com/81706331/212520094-0863ce69-5f61-41ea-a1cc-f3939d13902a.png" /></p></td>
+<td class="text-center"><p><img alt="Body Diagonals with Nodes" src="https://user-images.githubusercontent.com/81706331/212520113-e11ff779-645f-43e4-ad5d-1994a2a10e17.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="characterizing-porous-structures-effective-density-and-modulus">
+<h3>Characterizing Porous Structures: Effective Density and Modulus<a class="headerlink" href="#characterizing-porous-structures-effective-density-and-modulus" title="Link to this heading">#</a></h3>
+<p>The mechanical and physical properties of porous structures, including their elasticity modulus, yield strength, plateau stress, and energy absorption, are critically influenced by parameters such as <strong>porosity, relative density, pore size, unit cell size, and strut thickness</strong>. The relationship between porosity, relative density, and mechanical properties can be understood through models like the Gibson-Ashby model.</p>
+<ul class="simple">
+<li><p><strong>Effective Elastic Modulus (E)</strong>: The stiffness of a porous implant is often characterized by its effective elastic modulus. As the porosity of a structure increases, its effective elastic modulus generally <strong>decreases significantly</strong>. This relationship is crucial for tailoring implants to match the stiffness of native bone and avoid stress shielding.</p></li>
+<li><p><strong>Effective Density</strong>: Porosity directly affects the overall density of the implant, with higher porosity leading to lower effective density. This reduction in weight can be advantageous for patient comfort and handling.</p></li>
+<li><p><strong>Mechanical Strength</strong>: While increased porosity reduces stiffness, it also generally leads to a <strong>decrease in mechanical strength</strong>. Therefore, designing load-bearing implants requires a careful balance between reducing stiffness to prevent stress shielding and maintaining sufficient mechanical strength to withstand physiological loads.</p></li>
+<li><p><strong>Failure Modes</strong>: The failure behavior of porous structures can vary; some are <strong>stretch-dominated</strong>, providing strong mechanical strength, while others are <strong>bending-dominated</strong>, exhibiting lower modulus.</p></li>
+</ul>
+<p>The compression test outlined in <strong>ISO 13314</strong> is a widely accepted standard used to evaluate the compressive properties of porous and cellular metals with 50% or more porosity. This standard provides guidelines for defining load and boundary conditions in numerical analysis for estimating elastic modulus and other characteristic values such as plateau stress and energy absorption efficiency.</p>
+</section>
+</section>
+<section id="advanced-design-concepts-for-enhanced-implant-performance">
+<h2>Advanced Design Concepts for Enhanced Implant Performance<a class="headerlink" href="#advanced-design-concepts-for-enhanced-implant-performance" title="Link to this heading">#</a></h2>
+<p>As additive manufacturing continues to advance, new design paradigms are emerging for porous implants that aim to further optimize their mechanical and biological properties.</p>
+<section id="functionally-graded-porous-structures">
+<h3>Functionally Graded Porous Structures<a class="headerlink" href="#functionally-graded-porous-structures" title="Link to this heading">#</a></h3>
+<p>Natural bone possesses a <strong>hierarchical structure</strong> with varying properties; cortical bone is dense with low porosity, while cancellous bone is highly porous. To better <strong>mimic this natural heterogeneity</strong> and optimize implant performance, <strong>functionally graded porous (FGP) structures</strong> are being developed. These designs feature a controlled variation in porosity, pore size, and/or material composition across different regions of the implant.</p>
+<p>The advantages of FGP implants include:</p>
+<ul class="simple">
+<li><p><strong>Minimized stress shielding</strong>: By gradually transitioning the elastic modulus from a dense core to a porous shell or from one region to another, FGP implants can create a more <strong>homogeneous stress distribution</strong> in the adjacent bone, similar to healthy bone, and significantly reduce stress shielding effects.</p></li>
+<li><p><strong>Enhanced bone ingrowth</strong>: Different pore sizes can be optimized for specific biological functions, such as smaller pores in inner regions for cell growth and larger pores in outer regions for nutrient transport and deeper bone penetration.</p></li>
+<li><p><strong>Improved load distribution and stability</strong>: FGP designs can provide adequate mechanical support in high-load areas while promoting biological integration in others.</p></li>
+</ul>
+<p>Examples include dental implants with <strong>axial gradient variation in porosity</strong> to alleviate stress shielding in cancellous bone without increasing stress concentration in the cortical bone margin, and hip implants with gradient modulus distribution. Some designs incorporate a <strong>dense core with a porous layer</strong> for high mechanical strength combined with bone ingrowth for stabilization.</p>
+</section>
+<section id="metamaterials-including-auxetic-designs">
+<h3>Metamaterials, Including Auxetic Designs<a class="headerlink" href="#metamaterials-including-auxetic-designs" title="Link to this heading">#</a></h3>
+<p><strong>Metamaterials</strong> are engineered materials with exotic properties not found in natural materials, derived from their designed structure rather than their composition. A particularly interesting class for biomedical applications are <strong>auxetic mechanical metamaterials</strong>, which exhibit a <strong>negative Poisson’s ratio (NPR)</strong>. Unlike conventional materials that thin laterally when stretched axially, auxetic materials become thicker perpendicular to the applied tensile force.</p>
+<p>This counter-intuitive behavior offers several potential benefits for orthopedic implants:</p>
+<ul class="simple">
+<li><p><strong>Improved bone-implant contact</strong>: The lateral expansion of auxetic implants under axial load can <strong>enhance contact and apply pressure to both medial and lateral aspects of the bone</strong>, potentially prolonging implant lifespan and reducing interface failure.</p></li>
+<li><p><strong>Enhanced energy absorption, shear resistance, and fracture resistance</strong>.</p></li>
+<li><p><strong>Further mitigation of stress shielding</strong>: By dynamically conforming to the bone, auxetic structures can help distribute stress more effectively and prevent wear particle ingress at the interface.</p></li>
+</ul>
+<p>Auxetic designs have been applied to hip stems with <strong>medial-to-lateral differentiated NPR designs</strong> and bone screws, demonstrating improved mechanical and biological properties suitable for bone-implant applications.</p>
+</section>
+<section id="beyond-structure-biofunctionalization-and-future-directions">
+<h3>Beyond Structure: Biofunctionalization and Future Directions<a class="headerlink" href="#beyond-structure-biofunctionalization-and-future-directions" title="Link to this heading">#</a></h3>
+<p>Beyond structural design, enhancing the biological interaction of porous implants is a continuous area of research. This includes <strong>biofunctionalization</strong>, such as infusing growth factors, small molecules like bisphosphonates, or mesenchymal progenitor cells onto or into the implant surface. For instance, certain porous Ti6Al4V scaffolds can be coated with platelet-rich plasma to enhance osseointegration in osteoporosis. There is also research on designing porous titanium interfaces to balance mechanical properties and in vitro cell behavior towards increased osseointegration.</p>
+<p>While the sources don’t explicitly detail “4D printing” or structural “fluid-filled cells” as established advanced design concepts for orthopedic implants, they do point to future directions that align with these ideas:</p>
+<ul class="simple">
+<li><p>The <strong>development of “smart porous biomaterials” that can respond to changing environmental conditions</strong> is a potential future direction. This concept is a core aspect of 4D printing, which typically involves materials that change shape or properties over time when subjected to external stimuli.</p></li>
+<li><p>The internal pores of graded/gradient porous biomaterials <strong>can be filled with biocompatible and biodegradable materials or living cells</strong>, or used for the <strong>outward diffusion of pharmaceutical agents</strong>. This suggests using the internal space for active biological functions, though not necessarily “fluid-filled cells” as a structural component for mechanical property tuning, but rather for drug delivery or cell culture. Examples include drug-loaded hydrogel integration within 3D-printed porous scaffolds.</p></li>
+</ul>
+</section>
+</section>
+<section id="design-and-fabrication">
+<h2>Design and Fabrication<a class="headerlink" href="#design-and-fabrication" title="Link to this heading">#</a></h2>
+<section id="fabrication-techniques-supporting-design">
+<h3>Fabrication Techniques Supporting Design<a class="headerlink" href="#fabrication-techniques-supporting-design" title="Link to this heading">#</a></h3>
+<p>The design of porous structures in materials, particularly those intended for biomedical applications and produced via additive manufacturing (AM), must thoroughly account for <strong>printability</strong>. Additive manufacturing, also known as 3D printing, has revolutionized the fabrication of intricate and complex geometries that are often difficult or impossible to achieve with conventional manufacturing methods. However, this advanced manufacturing approach introduces unique challenges that directly impact the feasibility and quality of porous designs.</p>
+<p>Key printability considerations include:</p>
+<ul class="simple">
+<li><p><strong>Complexity of Internal Geometries:</strong> While AM excels at creating complex designs, internal lattice structures, especially those that are fully enclosed by an outer shell, pose significant manufacturing challenges.</p></li>
+<li><p><strong>Support Structures:</strong> For successful prints, support structures are often required, especially for overhanging features. However, within fully enclosed internal lattice structures, these supports would be trapped and cannot be removed during post-processing. Overhang angles, measured from the horizontal, are a factor in print success, with larger angles generally being more beneficial for unsupported prints.</p></li>
+<li><p><strong>Manufacturing Inaccuracies:</strong> The actual geometry of a 3D-printed porous structure can significantly deviate from its designed model due to various manufacturing factors. These discrepancies can include:</p>
+<ul>
+<li><p><strong>Rounding of pore edges</strong>.</p></li>
+<li><p><strong>Agglomerations of partially melted powder particles</strong> in overhanging areas.</p></li>
+<li><p><strong>Irregular strut thicknesses</strong>, which can lead to stress concentrations.</p></li>
+<li><p><strong>Variations in pore size and porosity</strong> compared to the design. For instance, printed porosities have been observed to be lower than CAD-based planned geometries.</p></li>
+</ul>
+</li>
+<li><p><strong>Residual Powder</strong>:<br />
+Removing residual powder is a crucial post-processing step for additively manufactured (AM) porous implants, particularly those produced using powder bed fusion (PBF) techniques such as selective laser melting (SLM) and electron beam melting (EBM). <strong>Trapped powder</strong> within the complex internal lattice structures of these parts presents a significant challenge, as it can be difficult to remove, especially when enclosed cells form. Although residual powder may not severely impact the mechanical properties of the implant, its presence can lead to complications like elevated metal ion levels in the blood after hip arthroplasty. Standard methods for powder removal include using <strong>vibration tables or compressed air</strong>. Designers can also incorporate features like <strong>drain holes or channels</strong> directly into the part’s design to facilitate powder egress. Furthermore, the type of porous structure influences removal efficiency; regular porous designs have been observed to retain significantly less residual powder compared to random structures due to their higher permeability. Adjusting manufacturing parameters, such as reducing the preheating of the powder bed during EBM, can also minimize the amount of sintered powder, thereby easing its removal. For improving surface quality and properties, post-treatments like <strong>sandblasting</strong> or <strong>chemical etching</strong> are effective in removing unfused particles.</p></li>
+<li><p><strong>Pore Size Limitations:</strong> While larger pores can reduce discrepancies between designed and fabricated parameters (e.g., cell sizes of 2mm and 3mm significantly reduced errors compared to 1mm designs), some AM techniques have difficulty achieving very fine pore sizes. For example, in laser powder bed fusion (PBF-LB/M), a minimum pore size of 400 µm is generally necessary to ensure open porosity and avoid the risk of sintered and captured powder particles within the structure, which could negatively affect vascularization and nutrient distribution.</p></li>
+<li><p><strong>Post-Processing:</strong> Post-treatment procedures like sandblasting or electropolishing can be employed to improve surface quality by removing unfused particles and reducing surface roughness. However, these processes can also potentially affect the final mechanical properties of the porous structure.</p></li>
+</ul>
+<p>Failing to consider printability can result in products that do not match the desired mechanical and biological properties of the design, or may lead to manufacturing difficulties or outright failure. Therefore, the design process for additively manufactured porous structures must integrate considerations for the specific AM technique, material properties, and post-processing steps to ensure successful and functional outcomes.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Porous implants represent a significant advancement in orthopedic and dental applications, offering solutions to critical challenges like stress shielding and poor osseointegration associated with traditional solid implants. Additive manufacturing technologies have been instrumental in enabling the fabrication of complex, patient-specific porous architectures, including strut-based and Triply Periodic Minimal Surface (TPMS) designs. By precisely controlling parameters such as porosity, pore size, and interconnectivity, implants can be engineered to mimic the mechanical properties of natural bone and provide an optimal environment for bone ingrowth and vascularization. Future developments are focused on advanced concepts like functionally graded porous structures for tailored stiffness, auxetic metamaterials for enhanced biomechanical compatibility, and biofunctionalized surfaces to further promote bone regeneration and mitigate complications. These innovations hold tremendous potential for improving long-term clinical outcomes and transforming orthopedic treatments.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pbf.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Powder bed fusion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hip_joint.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hip joint</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-challenge-of-stress-shielding-in-orthopedic-implants">The Challenge of Stress Shielding in Orthopedic Implants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-stress-shielding">Understanding Stress Shielding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-porous-structures-in-mitigating-stress-shielding">Role of Porous Structures in Mitigating Stress Shielding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfacing-with-bone-primary-and-secondary-osseointegration">Interfacing with Bone: Primary and Secondary Osseointegration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-stability">Primary Stability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-stability-the-mechanism-of-osseointegration">Secondary Stability: The Mechanism of Osseointegration</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pore-parameters-for-osseointegration">Pore Parameters for Osseointegration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometries-of-porous-structures-enabled-by-additive-manufacturing">Geometries of Porous Structures Enabled by Additive Manufacturing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additive-manufacturing-as-a-key-enabler">Additive Manufacturing as a Key Enabler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strut-based-structures">Strut-Based Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triply-periodic-minimal-surfaces-tpms">Triply Periodic Minimal Surfaces (TPMS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-shell-tpms-designs">Equations of Shell-TPMS designs:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-skeletal-tpms-designs">Equations of Skeletal-TPMS designs:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characterizing-porous-structures-effective-density-and-modulus">Characterizing Porous Structures: Effective Density and Modulus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-design-concepts-for-enhanced-implant-performance">Advanced Design Concepts for Enhanced Implant Performance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functionally-graded-porous-structures">Functionally Graded Porous Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metamaterials-including-auxetic-designs">Metamaterials, Including Auxetic Designs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-structure-biofunctionalization-and-future-directions">Beyond Structure: Biofunctionalization and Future Directions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-fabrication">Design and Fabrication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabrication-techniques-supporting-design">Fabrication Techniques Supporting Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

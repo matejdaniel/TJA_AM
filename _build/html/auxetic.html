@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Auxetic Design and Its Advantages in Biomedical Engineering &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'auxetic';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fauxetic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/auxetic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Auxetic Design and Its Advantages in Biomedical Engineering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-and-function">Structure and function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-auxetic-materials-properties-and-mechanism">Understanding Auxetic Materials: Properties and Mechanism</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-methodologies-for-auxetic-porous-structures">Design Methodologies for Auxetic Porous Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-auxetic-designs-in-biomedical-engineering">Applications of Auxetic Designs in Biomedical Engineering</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="auxetic-design-and-its-advantages-in-biomedical-engineering">
+<h1>Auxetic Design and Its Advantages in Biomedical Engineering<a class="headerlink" href="#auxetic-design-and-its-advantages-in-biomedical-engineering" title="Link to this heading">#</a></h1>
+<p>The burgeoning field of biomedical engineering, particularly in the realm of orthopedic implants and tissue regeneration, is constantly seeking innovative materials and designs to overcome the limitations of traditional solutions. A significant breakthrough in this area has been the emergence of <strong>auxetic materials</strong>, a unique class of mechanical metamaterials characterized by a <strong>negative Poisson’s ratio (NPR)</strong>. Unlike most conventional materials that contract laterally when stretched axially, auxetic materials exhibit the counterintuitive property of <strong>expanding laterally when stretched and densifying when compressed</strong>. This remarkable behavior is not an inherent property of the raw material itself but rather originates from its precisely <strong>tailored internal micro-architectures</strong>. The profound advancements in <strong>additive manufacturing (AM)</strong>, also known as 3D printing, have been pivotal in enabling the high-precision fabrication of these intricate auxetic structures, thereby unlocking unprecedented possibilities for their application in biomedical devices.</p>
+<section id="structure-and-function">
+<h2>Structure and function<a class="headerlink" href="#structure-and-function" title="Link to this heading">#</a></h2>
+<p>Auxetic properties can be achieved by designing special microstructures. The sources describe three fundamental geometric configurations for auxetic metamaterials:</p>
+<ul class="simple">
+<li><p><strong>Reentrant Structures</strong>:</p>
+<ul>
+<li><p>These structures are characterized by <strong>inward-directed or negative-angled features</strong>.</p></li>
+<li><p>Their deformation primarily occurs through <strong>cell wall realignment, often described as “hinging”</strong>. When stretched, diagonal walls align horizontally, causing vertical separation and a stretch expansion effect, with wall deflection and axial deformation further contributing to this behavior.</p></li>
+<li><p>Typical reentrant structures include <strong>foam and honeycomb configurations</strong>. Specific examples mentioned are the auxetic arrowhead structure, stars (3-stars, 4-stars, 6-stars), lozenge grids, and square grids (also known as missing wall foam models).</p></li>
+<li><p>The auxetic effect in reentrant hexagonal honeycomb materials is influenced by parameters such as <strong>length ratio (h/l), wall thickness, and reentrant angle (θ)</strong>. Reducing wall thickness or increasing the reentrant angle can improve the auxetic effect and affect Young’s modulus. The NPR values for the auxetic arrowhead structure, for instance, range between -0.80 and -0.9296.</p></li>
+</ul>
+</li>
+<li><p><strong>Chiral Structures</strong>:</p>
+<ul>
+<li><p>Unlike reentrant structures, chiral structures consistently demonstrate an <strong>NPR regardless of specific angles</strong>.</p></li>
+<li><p>They typically consist of <strong>straight ligaments (walls) connected to a central node</strong>, which can be circular, rectangular, or non-superimposable in mirror images.</p></li>
+<li><p>External tensile or compressive loads induce <strong>central node rotation</strong>, causing ligaments to wrap or unwrap, which generates the auxetic effect. Their ability to “wind” upon compression sustains the NPR (approximately -1) over a wide strain range.</p></li>
+<li><p>Recognized configurations include <strong>trichiral, antitrichiral, tetrachiral, antitetrachiral, hexachiral, and meta-chiral structures</strong>.</p></li>
+<li><p>Factors like <strong>reduction in cell rib thickness and an increase in the r/R ratio</strong> can improve ligament flexion and, consequently, the auxetic effect in chiral systems. Stiffness can increase with the number of ligaments, their length-to-thickness ratio, and the amount of glue used at the connecting end, making node rotation and ligament flexion more difficult.</p></li>
+</ul>
+</li>
+<li><p><strong>Rotating Rigid Structures</strong>:</p>
+<ul>
+<li><p>These structures involve <strong>rigid units (e.g., squares) connected by hinges</strong>.</p></li>
+<li><p>When loaded, the squares rotate at their vertices, leading to either <strong>expansion or contraction</strong> depending on the load type.</p></li>
+<li><p>Examples include networks of <strong>triangles, rectangles, rhombi, and tetrahedra</strong>.</p></li>
+<li><p>The NPR value of rotational structures depends on <strong>geometric factors and the loading direction</strong>. Joint rigidity negatively influences the auxetic effect. These structures offer highly adjustable NPR values and improved stretchability.</p></li>
+</ul>
+</li>
+<li><p><strong>Other Structures</strong>:</p>
+<ul>
+<li><p>Beyond these three fundamental types, other auxetic structures have been reported, such as <strong>auxetic gels with 3D porous network structures</strong> (in hydrogel and aerogel form), <strong>bucklicrystal structures, sinusoidal filament networks, and cross-chiral structures</strong>. These gels exhibit high surface area, high porosity, and good absorptivity.</p></li>
+</ul>
+</li>
+</ul>
+<p>Research indicates that reentrant structures tend to outperform chiral and rotating rigid structures in terms of Poisson’s ratio and corresponding stiffness, leading to more research being conducted on them, particularly reentrant hexagonal honeycombs. However, a well-founded comparison between all three basic types is challenging due to limited experimental data for chiral and rotating rigid structures compared to their extensive modeling.</p>
+</section>
+<section id="understanding-auxetic-materials-properties-and-mechanism">
+<h2>Understanding Auxetic Materials: Properties and Mechanism<a class="headerlink" href="#understanding-auxetic-materials-properties-and-mechanism" title="Link to this heading">#</a></h2>
+<p>The defining characteristic of auxetic materials, their negative Poisson’s ratio, grants them a suite of advantageous mechanical and physical properties rarely found in nature. These include:</p>
+<ul class="simple">
+<li><p><strong>Resistance to Indentation</strong>: When a local force is applied, auxetic materials draw mass towards the loaded area, leading to smaller deformations compared to conventional materials where mass moves away.</p></li>
+<li><p><strong>Enhanced Shear Resistance</strong>: According to elasticity theory, the shear modulus is inversely proportional to Poisson’s ratio. Consequently, auxetic materials, with their NPR, demonstrate <strong>greater resistance to shear forces</strong>.</p></li>
+<li><p><strong>Improved Fracture Toughness</strong>: Auxetic structures exhibit <strong>higher fracture toughness</strong>, resulting in slower crack propagation and increased durability.</p></li>
+<li><p><strong>Synclastic Behavior</strong>: When subjected to bending stress, auxetic materials naturally form <strong>synclastic, dome-like surfaces</strong>, conforming better to complex anatomical shapes. This property is particularly beneficial for implants that need to intimately integrate with irregular tissue surfaces.</p></li>
+<li><p><strong>Variable Permeability</strong>: The expansion of the overall geometric structure extends to the individual cells within auxetic materials. This allows for the <strong>control of permeability</strong> by regulating the surface tension, thereby managing the maximum allowable particle size or fluid flow rate. This feature is highly valuable for applications requiring controlled fluid dynamics, such as nutrient delivery or waste removal in tissue scaffolds.</p></li>
+<li><p><strong>High Energy Absorption</strong>: Auxetic materials possess superior energy-absorbing and damping capabilities, making them ideal for impact protection applications.</p></li>
+</ul>
+<p>This unique mechanical behavior, stemming from the specific geometric configurations of their interconnected building blocks, renders auxetic metamaterials highly promising for biomedical innovations.</p>
+<section id="design-methodologies-for-auxetic-porous-structures">
+<h3>Design Methodologies for Auxetic Porous Structures<a class="headerlink" href="#design-methodologies-for-auxetic-porous-structures" title="Link to this heading">#</a></h3>
+<p>The realization of auxetic properties hinges on meticulous design, primarily through the manipulation of <strong>micro-architectures</strong>. Additive manufacturing technologies have been instrumental in translating these complex designs into physical objects. Several methodologies are employed in designing auxetic porous structures:</p>
+<ul class="simple">
+<li><p><strong>Computer-Aided Design (CAD)</strong>: CAD software is fundamental for creating initial models of porous structures. This involves generating intricate cellular structures using specific algorithms.</p></li>
+<li><p><strong>Unit Cell Approach</strong>: A common design strategy involves creating a <strong>unit cell</strong> of the auxetic geometry and then replicating it to form the larger structure. Examples include re-entrant, chiral, and rotating unit cells.</p></li>
+<li><p><strong>Finite Element Analysis (FEA)</strong>: Computational simulation, particularly FEA, is indispensable for predicting the mechanical behavior, stress distribution, and overall performance of designed auxetic structures <em>in silico</em>. This significantly reduces the need for extensive physical prototyping and experimental testing.</p></li>
+<li><p><strong>Topology Optimization</strong>: This advanced design method optimizes material distribution within a defined space to meet specific performance requirements, such as maximizing strength or minimizing weight. It can be applied to both the porous infill and the solid outer shell of a device.</p></li>
+<li><p><strong>Biomimetic and Graded Designs</strong>: Mimicking the complex, often irregular, topology of natural bone (e.g., cancellous bone) is a key aspect of biomimetic design. Auxetic designs can also incorporate <strong>graded porosity</strong> or <strong>gradient Poisson’s ratio distribution</strong> to match the varying mechanical properties of different bone regions within the body, such as transitioning from a dense cortical region to a porous cancellous region. This helps to minimize <strong>stress shielding</strong>, a major complication where the implant’s stiffness leads to bone resorption due to reduced mechanical loading.</p></li>
+<li><p><strong>Hybrid Structures</strong>: Combining auxetic and conventional porous structures within a single implant offers a sophisticated design strategy. For example, a hybrid hip stem can be designed with an auxetic porous biomaterial on the side experiencing tension and a conventional porous biomaterial on the side experiencing compression. This ensures pressure is applied on both sides of the bone, improving bone-implant contact and prolonging implant lifespan.</p></li>
+<li><p><strong>Integration with Medical Imaging</strong>: For personalized designs, patient-specific anatomical data obtained from medical imaging (e.g., CT/MRI) can be directly integrated into the CAD modeling process.</p></li>
+</ul>
+</section>
+<section id="applications-of-auxetic-designs-in-biomedical-engineering">
+<h3>Applications of Auxetic Designs in Biomedical Engineering<a class="headerlink" href="#applications-of-auxetic-designs-in-biomedical-engineering" title="Link to this heading">#</a></h3>
+<p>The unique properties of auxetic metamaterials offer significant advantages across various biomedical applications:</p>
+<ul class="simple">
+<li><p><strong>Orthopedic Implants (e.g., Hip Stems)</strong>:</p>
+<ul>
+<li><p><strong>Reduction of Stress Shielding</strong>: One of the primary goals of porous implant design is to reduce stress shielding, which occurs when a stiff implant bears too much load, leading to bone loss in the surrounding tissue. Auxetic designs can be engineered with <strong>lower stiffness to better match bone tissue</strong>, thereby mitigating this effect.</p></li>
+<li><p><strong>Enhanced Osseointegration</strong>: The highly interconnected porous structure facilitates <strong>bone ingrowth, vascularization, and nutrient diffusion</strong>, crucial for long-term implant stability and integration with natural bone. Auxetic structures, especially those with TPMS geometries, offer high surface area-to-volume ratios and uniform pore distributions, promoting better cell adhesion and tissue integration.</p></li>
+<li><p><strong>Improved Bone-Implant Contact</strong>: Designs that strategically distribute auxetic and conventional meta-biomaterials can ensure <strong>improved contact between the implant and the bone</strong> under biomechanical loading, extending implant longevity and reducing micromotion and failure risks.</p></li>
+</ul>
+</li>
+<li><p><strong>Spinal Surgery</strong>:</p>
+<ul>
+<li><p><strong>Artificial Intervertebral Discs</strong>: Auxetic polyethylene materials can be used for artificial intervertebral discs that bend and twist like natural discs, <strong>preventing bulges that could injure surrounding nerves</strong>. Finite element analysis supports the effectiveness of auxetic discs in minimizing damage to spinal nerves.</p></li>
+<li><p><strong>Pedicle Screws</strong>: Auxetic pedicle screws can be designed to <strong>resist loosening</strong> and improve biomechanical interaction with surrounding bone. Re-entrant structures have shown superior strength and stiffness in this application.</p></li>
+</ul>
+</li>
+<li><p><strong>Trauma Surgery</strong>:</p>
+<ul>
+<li><p><strong>Bone Plates</strong>: Auxetic polymeric bone plates can serve as internal fixators for long bone fractures. Unlike rigid plates, they allow for desirable <strong>micromovement</strong>, which is crucial for callus formation and bone healing. Studies using FEA show substantial stress reduction in bone plates incorporating auxetic structures, indicating reduced stress shielding.</p></li>
+<li><p><strong>Bone Screws</strong>: Novel auxetic bone screw designs have been developed to enhance tensile mechanical characterization and pullout fixation strength.</p></li>
+</ul>
+</li>
+<li><p><strong>Tissue Engineering Scaffolds</strong>:</p>
+<ul>
+<li><p>Auxetic scaffolds are highly attractive for bone tissue regeneration due to their ability to <strong>mimic the natural extracellular matrix (ECM)</strong> and provide optimal mechanical support.</p></li>
+<li><p>They support <strong>cell adhesion, migration, proliferation, and differentiation</strong>.</p></li>
+<li><p>The tunable mechanical properties of auxetic scaffolds can <strong>influence cellular response</strong> and differentiation pathways.</p></li>
+<li><p>Multi-scale and multi-material auxetic scaffolds are being explored to emulate the hierarchical structure of natural bone, fostering <strong>vascularization and nutrient distribution</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Sports Medicine</strong>: Auxetic structures are being integrated into protective gear and Kinesio tapes due to their enhanced conformability, energy absorption, and unique deformation behavior. They can provide personalized comfort and better fit, potentially simplifying application and improving therapeutic effects.</p></li>
+<li><p><strong>Other Medical Devices</strong>: Auxetic designs are also being explored for applications such as nasopharyngeal swabs, where their ability to expand upon tension can reduce stress on surrounding tissues during removal. The expandable nature of auxetics also holds potential for <strong>minimally invasive surgical instruments</strong> like endoscopes and colonoscopes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">generate_reentrant_honeycomb</span><span class="p">(</span><span class="n">unit_cells_x</span><span class="p">,</span> <span class="n">unit_cells_y</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates the nodes and connections for a re-entrant auxetic honeycomb structure.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        unit_cells_x (int): Number of unit cells in the x-direction.</span>
+<span class="sd">        unit_cells_y (int): Number of unit cells in the y-direction.</span>
+<span class="sd">        l (float): The length of the cell walls.</span>
+<span class="sd">        theta_deg (float): The re-entrant angle in degrees. A negative angle </span>
+<span class="sd">                           (e.g., -30) creates the re-entrant geometry.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing:</span>
+<span class="sd">            - np.array: An array of node coordinates (x, y).</span>
+<span class="sd">            - list: A list of tuples, where each tuple represents a connection</span>
+<span class="sd">                    (edge) between two node indices.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">theta_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_rad</span><span class="p">)</span>  <span class="c1"># This will be negative for re-entrant</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_rad</span><span class="p">)</span>
+
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">connections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">node_map</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Using a dictionary to avoid duplicate nodes at shared positions</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">unit_cells_y</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">unit_cells_x</span><span class="p">):</span>
+            <span class="c1"># Calculate base coordinates for the current unit cell</span>
+            <span class="n">x_base</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">w</span>
+            <span class="n">y_base</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+
+            <span class="c1"># Define the 6 nodes of a single unit cell</span>
+            <span class="c1"># Node positions are calculated relative to the base</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">x_base</span><span class="p">,</span> <span class="n">y_base</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x_base</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y_base</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x_base</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y_base</span> <span class="o">+</span> <span class="n">h</span> <span class="o">+</span> <span class="n">l</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x_base</span><span class="p">,</span> <span class="n">y_base</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">h</span> <span class="o">+</span> <span class="n">l</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x_base</span> <span class="o">-</span> <span class="n">w</span><span class="p">,</span> <span class="n">y_base</span> <span class="o">+</span> <span class="n">h</span> <span class="o">+</span> <span class="n">l</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">x_base</span> <span class="o">-</span> <span class="n">w</span><span class="p">,</span> <span class="n">y_base</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span>
+            <span class="p">]</span>
+            
+            <span class="c1"># If we are in an odd row, shift the unit cell for proper tiling</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+
+            <span class="c1"># Add nodes to the list, avoiding duplicates</span>
+            <span class="n">node_indices</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+                <span class="c1"># Round to handle floating point inaccuracies at shared locations</span>
+                <span class="n">rounded_point</span> <span class="o">=</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">5</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">rounded_point</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">node_map</span><span class="p">:</span>
+                    <span class="n">node_map</span><span class="p">[</span><span class="n">rounded_point</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+                    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+                <span class="n">node_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node_map</span><span class="p">[</span><span class="n">rounded_point</span><span class="p">])</span>
+
+            <span class="c1"># Define connections within the unit cell using the retrieved indices</span>
+            <span class="n">cell_connections</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">node_indices</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">node_indices</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">node_indices</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">node_indices</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">node_indices</span><span class="p">[</span><span class="mi">5</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">node_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="p">]</span>
+            <span class="n">connections</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cell_connections</span><span class="p">)</span>
+            
+            <span class="c1"># Add connections to adjacent cells</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Connect to the cell on the left</span>
+                <span class="n">left_neighbor_idx</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">)))</span>
+                <span class="k">if</span> <span class="n">left_neighbor_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                     <span class="n">connections</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">left_neighbor_idx</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                 <span class="c1"># Connect to the cell below</span>
+                 <span class="k">if</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                     <span class="n">bottom_neighbor_idx1</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
+                     <span class="n">bottom_neighbor_idx2</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">w</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
+                     <span class="k">if</span> <span class="n">bottom_neighbor_idx1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                         <span class="n">connections</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bottom_neighbor_idx1</span><span class="p">))</span>
+                     <span class="k">if</span> <span class="n">bottom_neighbor_idx2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                         <span class="n">connections</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">node_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bottom_neighbor_idx2</span><span class="p">))</span>
+
+
+    <span class="c1"># Remove duplicate connections</span>
+    <span class="n">unique_connections</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nodes</span><span class="p">),</span> <span class="n">unique_connections</span>
+
+<span class="k">def</span> <span class="nf">plot_structure</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plots the structure on a given matplotlib axis.&quot;&quot;&quot;</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    
+    <span class="c1"># Plot connections (lines)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
+                <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot nodes (points)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">apply_deformation</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">strain_y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Applies a simple uniaxial tensile deformation to the structure.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        nodes (np.array): The initial node coordinates.</span>
+<span class="sd">        strain_y (float): The amount of strain to apply in the y-direction.</span>
+<span class="sd">                          e.g., 0.1 means a 10% stretch.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array: The new coordinates of the nodes after deformation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">deformed_nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># Find the min and max y coordinates to identify top and bottom edges</span>
+    <span class="n">min_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">max_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Fix the bottom edge (nodes with y == min_y)</span>
+    <span class="c1"># Stretch the top edge (nodes with y == max_y)</span>
+    <span class="n">total_height</span> <span class="o">=</span> <span class="n">max_y</span> <span class="o">-</span> <span class="n">min_y</span>
+    <span class="n">displacement</span> <span class="o">=</span> <span class="n">total_height</span> <span class="o">*</span> <span class="n">strain_y</span>
+    
+    <span class="c1"># Apply displacement proportionally to all other nodes based on their height</span>
+    <span class="c1"># This creates a uniform strain field</span>
+    <span class="k">if</span> <span class="n">total_height</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># We check to avoid division by zero for a single row of cells</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">deformed_nodes</span><span class="p">)):</span>
+            <span class="n">y_original</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="c1"># The displacement is scaled linearly from 0 at the bottom to max at the top</span>
+            <span class="n">scale_factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_original</span> <span class="o">-</span> <span class="n">min_y</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_height</span>
+            <span class="n">deformed_nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">displacement</span> <span class="o">*</span> <span class="n">scale_factor</span>
+            
+    <span class="k">return</span> <span class="n">deformed_nodes</span>
+
+<span class="c1"># --- Main Execution ---</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># --- Parameters ---</span>
+    <span class="n">unit_cells_x</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Number of cells horizontally</span>
+    <span class="n">unit_cells_y</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Number of cells vertically</span>
+    <span class="n">cell_wall_length</span> <span class="o">=</span> <span class="mf">10.0</span>
+    <span class="n">reentrant_angle</span> <span class="o">=</span> <span class="o">-</span><span class="mf">30.0</span>  <span class="c1"># Negative angle is key for auxetic behavior</span>
+    <span class="n">vertical_strain</span> <span class="o">=</span> <span class="mf">0.25</span>   <span class="c1"># Apply 25% tensile strain vertically</span>
+
+    <span class="c1"># 1. Generate the original structure</span>
+    <span class="n">original_nodes</span><span class="p">,</span> <span class="n">connections</span> <span class="o">=</span> <span class="n">generate_reentrant_honeycomb</span><span class="p">(</span>
+        <span class="n">unit_cells_x</span><span class="p">,</span> <span class="n">unit_cells_y</span><span class="p">,</span> <span class="n">cell_wall_length</span><span class="p">,</span> <span class="n">reentrant_angle</span>
+    <span class="p">)</span>
+
+    <span class="c1"># 2. Apply deformation</span>
+    <span class="n">deformed_nodes</span> <span class="o">=</span> <span class="n">apply_deformation</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">,</span> <span class="n">vertical_strain</span><span class="p">)</span>
+
+    <span class="c1"># 3. Plotting</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+    <span class="c1"># Plot Original Structure</span>
+    <span class="n">plot_structure</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">ax1</span><span class="p">,</span> <span class="s1">&#39;Original Re-entrant Structure&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Plot Deformed Structure</span>
+    <span class="n">plot_structure</span><span class="p">(</span><span class="n">deformed_nodes</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Deformed Structure (</span><span class="si">{</span><span class="n">vertical_strain</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s1">% Vertical Strain)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># --- Calculate and display Poisson&#39;s ratio ---</span>
+    <span class="c1"># Original dimensions</span>
+    <span class="n">original_width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">original_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Deformed dimensions</span>
+    <span class="n">deformed_width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">deformed_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">deformed_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">deformed_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">deformed_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">deformed_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># Calculate strains</span>
+    <span class="n">strain_longitudinal</span> <span class="o">=</span> <span class="p">(</span><span class="n">deformed_height</span> <span class="o">-</span> <span class="n">original_height</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_height</span>
+    <span class="n">strain_transverse</span> <span class="o">=</span> <span class="p">(</span><span class="n">deformed_width</span> <span class="o">-</span> <span class="n">original_width</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_width</span>
+    
+    <span class="c1"># Poisson&#39;s ratio (v = -strain_transverse / strain_longitudinal)</span>
+    <span class="k">if</span> <span class="n">strain_longitudinal</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">poissons_ratio</span> <span class="o">=</span> <span class="o">-</span><span class="n">strain_transverse</span> <span class="o">/</span> <span class="n">strain_longitudinal</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Re-entrant Auxetic Structure (Angle: </span><span class="si">{</span><span class="n">reentrant_angle</span><span class="si">}</span><span class="s2">°)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;Calculated Poisson&#39;s Ratio: </span><span class="si">{</span><span class="n">poissons_ratio</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">rect</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">])</span> <span class="c1"># Adjust layout to make room for suptitle</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_187238</span><span class="o">/</span><span class="mf">3327032798.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> 
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="c1"># Plot Original Structure</span>
+<span class="ne">--&gt; </span><span class="mi">165</span>     <span class="n">plot_structure</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">ax1</span><span class="p">,</span> <span class="s1">&#39;Original Re-entrant Structure&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> 
+<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="c1"># Plot Deformed Structure</span>
+
+<span class="nn">/tmp/ipykernel_187238/3327032798.py</span> in <span class="ni">plot_structure</span><span class="nt">(nodes, connections, ax, title, color)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="c1"># Plot connections (lines)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">101</span>         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
+<span class="g g-Whitespace">    </span><span class="mi">102</span>                 <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> 
+
+<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_axes.py</span> in <span class="ni">plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1630</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1631</span><span class="s2">         kwargs = cbook.normalize_kwargs(kwargs, mlines.Line2D)</span>
+<span class="ne">-&gt; </span><span class="mi">1632</span><span class="s2">         lines = [*self._get_lines(*args, data=data, **kwargs)]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1633</span><span class="s2">         for line in lines:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1634</span><span class="s2">             self.add_line(line)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">__call__</span><span class="nt">(self, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span><span class="s2">                 this += args[0],</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span><span class="s2">                 args = args[1:]</span>
+<span class="ne">--&gt; </span><span class="mi">312</span><span class="s2">             yield from self._plot_args(this, kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span><span class="s2">     def get_next_color(self):</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">_plot_args</span><span class="nt">(self, tup, kwargs, return_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">             # xy is tup with fmt stripped (could still be (y,) only)</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">             *xy, fmt = tup</span>
+<span class="ne">--&gt; </span><span class="mi">449</span><span class="s2">             linestyle, marker, color = _process_plot_format(fmt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="s2">         elif len(tup) == 3:</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="s2">             raise ValueError(&#39;third arg must be a format string&#39;)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">_process_plot_format</span><span class="nt">(fmt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="s2">             i += 2</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">         else:</span>
+<span class="ne">--&gt; </span><span class="mi">199</span><span class="s2">             raise ValueError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span><span class="s2">                 &#39;Unrecognized character </span><span class="si">%c</span><span class="s2"> in format string&#39; </span><span class="si">% c</span><span class="s2">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="s2"> </span>
+
+<span class="ne">ValueError</span>: Unrecognized character l in format string
+</pre></div>
+</div>
+<img alt="_images/a38c3ac7fde7d01c92ef1377a154e5dc71328ca8ea9be0d6bc6de46d6c73b4c2.png" src="_images/a38c3ac7fde7d01c92ef1377a154e5dc71328ca8ea9be0d6bc6de46d6c73b4c2.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-and-function">Structure and function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-auxetic-materials-properties-and-mechanism">Understanding Auxetic Materials: Properties and Mechanism</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design-methodologies-for-auxetic-porous-structures">Design Methodologies for Auxetic Porous Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-auxetic-designs-in-biomedical-engineering">Applications of Auxetic Designs in Biomedical Engineering</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+Traceback (most recent call last):
+  File "/home/madan/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/madan/.local/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/madan/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/madan/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/madan/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/madan/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+def generate_reentrant_honeycomb(unit_cells_x, unit_cells_y, l, theta_deg):
+    """
+    Generates the nodes and connections for a re-entrant auxetic honeycomb structure.
+
+    Args:
+        unit_cells_x (int): Number of unit cells in the x-direction.
+        unit_cells_y (int): Number of unit cells in the y-direction.
+        l (float): The length of the cell walls.
+        theta_deg (float): The re-entrant angle in degrees. A negative angle 
+                           (e.g., -30) creates the re-entrant geometry.
+
+    Returns:
+        tuple: A tuple containing:
+            - np.array: An array of node coordinates (x, y).
+            - list: A list of tuples, where each tuple represents a connection
+                    (edge) between two node indices.
+    """
+    theta_rad = np.deg2rad(theta_deg)
+    h = l * np.sin(theta_rad)  # This will be negative for re-entrant
+    w = l * np.cos(theta_rad)
+
+    nodes = []
+    connections = []
+    node_map = {} # Using a dictionary to avoid duplicate nodes at shared positions
+
+    for j in range(unit_cells_y):
+        for i in range(unit_cells_x):
+            # Calculate base coordinates for the current unit cell
+            x_base = 2 * i * w
+            y_base = j * (2 * l + 2 * h)
+
+            # Define the 6 nodes of a single unit cell
+            # Node positions are calculated relative to the base
+            p = [
+                (x_base, y_base),
+                (x_base + w, y_base + h),
+                (x_base + w, y_base + h + l),
+                (x_base, y_base + 2 * h + l),
+                (x_base - w, y_base + h + l),
+                (x_base - w, y_base + h)
+            ]
+            
+            # If we are in an odd row, shift the unit cell for proper tiling
+            if j % 2 != 0:
+                p = [(x + w, y) for x, y in p]
+
+            # Add nodes to the list, avoiding duplicates
+            node_indices = []
+            for point in p:
+                # Round to handle floating point inaccuracies at shared locations
+                rounded_point = (round(point[0], 5), round(point[1], 5))
+                if rounded_point not in node_map:
+                    node_map[rounded_point] = len(nodes)
+                    nodes.append(list(point))
+                node_indices.append(node_map[rounded_point])
+
+            # Define connections within the unit cell using the retrieved indices
+            cell_connections = [
+                (node_indices[0], node_indices[1]),
+                (node_indices[1], node_indices[2]),
+                (node_indices[2], node_indices[3]),
+                (node_indices[3], node_indices[4]),
+                (node_indices[4], node_indices[5]),
+                (node_indices[5], node_indices[0])
+            ]
+            connections.extend(cell_connections)
+            
+            # Add connections to adjacent cells
+            if i > 0:
+                # Connect to the cell on the left
+                left_neighbor_idx = node_map.get((round(p[5][0] - 2*w, 5), round(p[5][1], 5)))
+                if left_neighbor_idx is not None:
+                     connections.append((node_indices[5], left_neighbor_idx))
+
+            if j > 0:
+                 # Connect to the cell below
+                 if j % 2 == 0:
+                     bottom_neighbor_idx1 = node_map.get((round(p[0][0]-w, 5), round(p[0][1] - l - 2*h, 5)))
+                     bottom_neighbor_idx2 = node_map.get((round(p[0][0]+w, 5), round(p[0][1] - l - 2*h, 5)))
+                     if bottom_neighbor_idx1 is not None:
+                         connections.append((node_indices[0], bottom_neighbor_idx1))
+                     if bottom_neighbor_idx2 is not None:
+                         connections.append((node_indices[0], bottom_neighbor_idx2))
+
+
+    # Remove duplicate connections
+    unique_connections = list(set(tuple(sorted(c)) for c in connections))
+
+    return np.array(nodes), unique_connections
+
+def plot_structure(nodes, connections, ax, title, color='b'):
+    """Plots the structure on a given matplotlib axis."""
+    ax.set_aspect('equal', adjustable='box')
+    ax.set_title(title)
+    
+    # Plot connections (lines)
+    for (i, j) in connections:
+        ax.plot([nodes[i, 0], nodes[j, 0]], 
+                [nodes[i, 1], nodes[j, 1]], f'{color}-')
+    
+    # Plot nodes (points)
+    ax.plot(nodes[:, 0], nodes[:, 1], f'{color}o', markersize=4)
+    ax.grid(True, linestyle='--', alpha=0.6)
+
+
+def apply_deformation(nodes, strain_y):
+    """
+    Applies a simple uniaxial tensile deformation to the structure.
+    
+    Args:
+        nodes (np.array): The initial node coordinates.
+        strain_y (float): The amount of strain to apply in the y-direction.
+                          e.g., 0.1 means a 10% stretch.
+
+    Returns:
+        np.array: The new coordinates of the nodes after deformation.
+    """
+    deformed_nodes = nodes.copy()
+    
+    # Find the min and max y coordinates to identify top and bottom edges
+    min_y = np.min(nodes[:, 1])
+    max_y = np.max(nodes[:, 1])
+    
+    # Fix the bottom edge (nodes with y == min_y)
+    # Stretch the top edge (nodes with y == max_y)
+    total_height = max_y - min_y
+    displacement = total_height * strain_y
+    
+    # Apply displacement proportionally to all other nodes based on their height
+    # This creates a uniform strain field
+    if total_height > 0:
+        # We check to avoid division by zero for a single row of cells
+        for i in range(len(deformed_nodes)):
+            y_original = nodes[i, 1]
+            # The displacement is scaled linearly from 0 at the bottom to max at the top
+            scale_factor = (y_original - min_y) / total_height
+            deformed_nodes[i, 1] += displacement * scale_factor
+            
+    return deformed_nodes
+
+# --- Main Execution ---
+if __name__ == "__main__":
+    # --- Parameters ---
+    unit_cells_x = 5  # Number of cells horizontally
+    unit_cells_y = 4  # Number of cells vertically
+    cell_wall_length = 10.0
+    reentrant_angle = -30.0  # Negative angle is key for auxetic behavior
+    vertical_strain = 0.25   # Apply 25% tensile strain vertically
+
+    # 1. Generate the original structure
+    original_nodes, connections = generate_reentrant_honeycomb(
+        unit_cells_x, unit_cells_y, cell_wall_length, reentrant_angle
+    )
+
+    # 2. Apply deformation
+    deformed_nodes = apply_deformation(original_nodes, vertical_strain)
+
+    # 3. Plotting
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
+
+    # Plot Original Structure
+    plot_structure(original_nodes, connections, ax1, 'Original Re-entrant Structure', color='blue')
+
+    # Plot Deformed Structure
+    plot_structure(deformed_nodes, connections, ax2, f'Deformed Structure ({vertical_strain*100}% Vertical Strain)', color='red')
+    
+    # --- Calculate and display Poisson's ratio ---
+    # Original dimensions
+    original_width = np.max(original_nodes[:, 0]) - np.min(original_nodes[:, 0])
+    original_height = np.max(original_nodes[:, 1]) - np.min(original_nodes[:, 1])
+    
+    # Deformed dimensions
+    deformed_width = np.max(deformed_nodes[:, 0]) - np.min(deformed_nodes[:, 0])
+    deformed_height = np.max(deformed_nodes[:, 1]) - np.min(deformed_nodes[:, 1])
+
+    # Calculate strains
+    strain_longitudinal = (deformed_height - original_height) / original_height
+    strain_transverse = (deformed_width - original_width) / original_width
+    
+    # Poisson's ratio (v = -strain_transverse / strain_longitudinal)
+    if strain_longitudinal != 0:
+        poissons_ratio = -strain_transverse / strain_longitudinal
+        fig.suptitle(f"Re-entrant Auxetic Structure (Angle: {reentrant_angle}°)\n"
+                     f"Calculated Poisson's Ratio: {poissons_ratio:.3f}", fontsize=16)
+
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95]) # Adjust layout to make room for suptitle
+    plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m/tmp/ipykernel_187238/3327032798.py[0m in [0;36m<module>[0;34m[0m
+[1;32m    163[0m [0;34m[0m[0m
+[1;32m    164[0m     [0;31m# Plot Original Structure[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 165[0;31m     [0mplot_structure[0m[0;34m([0m[0moriginal_nodes[0m[0;34m,[0m [0mconnections[0m[0;34m,[0m [0max1[0m[0;34m,[0m [0;34m'Original Re-entrant Structure'[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0;34m'blue'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    166[0m [0;34m[0m[0m
+[1;32m    167[0m     [0;31m# Plot Deformed Structure[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/tmp/ipykernel_187238/3327032798.py[0m in [0;36mplot_structure[0;34m(nodes, connections, ax, title, color)[0m
+[1;32m     99[0m     [0;31m# Plot connections (lines)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    100[0m     [0;32mfor[0m [0;34m([0m[0mi[0m[0;34m,[0m [0mj[0m[0;34m)[0m [0;32min[0m [0mconnections[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 101[0;31m         ax.plot([nodes[i, 0], nodes[j, 0]], 
+[0m[1;32m    102[0m                 [nodes[i, 1], nodes[j, 1]], f'{color}-')
+[1;32m    103[0m [0;34m[0m[0m
+
+[0;32m/usr/lib/python3/dist-packages/matplotlib/axes/_axes.py[0m in [0;36mplot[0;34m(self, scalex, scaley, data, *args, **kwargs)[0m
+[1;32m   1630[0m         """
+[1;32m   1631[0m         [0mkwargs[0m [0;34m=[0m [0mcbook[0m[0;34m.[0m[0mnormalize_kwargs[0m[0;34m([0m[0mkwargs[0m[0;34m,[0m [0mmlines[0m[0;34m.[0m[0mLine2D[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1632[0;31m         [0mlines[0m [0;34m=[0m [0;34m[[0m[0;34m*[0m[0mself[0m[0;34m.[0m[0m_get_lines[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0mdata[0m[0;34m=[0m[0mdata[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1633[0m         [0;32mfor[0m [0mline[0m [0;32min[0m [0mlines[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1634[0m             [0mself[0m[0;34m.[0m[0madd_line[0m[0;34m([0m[0mline[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/lib/python3/dist-packages/matplotlib/axes/_base.py[0m in [0;36m__call__[0;34m(self, data, *args, **kwargs)[0m
+[1;32m    310[0m                 [0mthis[0m [0;34m+=[0m [0margs[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    311[0m                 [0margs[0m [0;34m=[0m [0margs[0m[0;34m[[0m[0;36m1[0m[0;34m:[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 312[0;31m             [0;32myield[0m [0;32mfrom[0m [0mself[0m[0;34m.[0m[0m_plot_args[0m[0;34m([0m[0mthis[0m[0;34m,[0m [0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    313[0m [0;34m[0m[0m
+[1;32m    314[0m     [0;32mdef[0m [0mget_next_color[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/lib/python3/dist-packages/matplotlib/axes/_base.py[0m in [0;36m_plot_args[0;34m(self, tup, kwargs, return_kwargs)[0m
+[1;32m    447[0m             [0;31m# xy is tup with fmt stripped (could still be (y,) only)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    448[0m             [0;34m*[0m[0mxy[0m[0;34m,[0m [0mfmt[0m [0;34m=[0m [0mtup[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 449[0;31m             [0mlinestyle[0m[0;34m,[0m [0mmarker[0m[0;34m,[0m [0mcolor[0m [0;34m=[0m [0m_process_plot_format[0m[0;34m([0m[0mfmt[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    450[0m         [0;32melif[0m [0mlen[0m[0;34m([0m[0mtup[0m[0;34m)[0m [0;34m==[0m [0;36m3[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    451[0m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m'third arg must be a format string'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/lib/python3/dist-packages/matplotlib/axes/_base.py[0m in [0;36m_process_plot_format[0;34m(fmt)[0m
+[1;32m    197[0m             [0mi[0m [0;34m+=[0m [0;36m2[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    198[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 199[0;31m             raise ValueError(
+[0m[1;32m    200[0m                 'Unrecognized character %c in format string' % c)
+[1;32m    201[0m [0;34m[0m[0m
+
+[0;31mValueError[0m: Unrecognized character l in format string
+

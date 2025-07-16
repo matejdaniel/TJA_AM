@@ -4,12 +4,15 @@
 format: jb-book
 root: intro
 chapters:
+- file: assignment
 - file: glossary
 - file: history
 - file: disease
+- file: biomimetics
 - file: biomaterials
 - file: am_overview
 - file: pbf
+- file: porous
 - file: hip_joint
   #- file: notebooks
 #- file: markdown-notebooks
