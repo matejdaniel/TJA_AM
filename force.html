@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Principles of Musculoskeletal Modeling &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'force';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="What is biomaterial?" href="biomaterials.html" />
+    <link rel="prev" title="Introduction to 3D Slicer: From DICOM to 3D Model" href="slicer3d.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">NTUST summer course</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Joint replacement - overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biomimetic principles</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imaging.html">Medical imaging</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="segmentation.html">Medical Image Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slicer3d.html">Introduction to 3D Slicer: From DICOM to 3D Model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Principles of Musculoskeletal Modeling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additive manufacturing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case studies</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fforce.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/force.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Principles of Musculoskeletal Modeling</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-necessity-of-biomechanical-modeling">The Necessity of Biomechanical Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principal-problem-of-muscle-redundancy">The Principal Problem of Muscle Redundancy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategies-for-managing-muscle-redundancy">Strategies for Managing Muscle Redundancy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-methods">Reduction Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-methods">Optimization Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-optimization-inverse-dynamics">Inverse Optimization (Inverse Dynamics)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-optimization-forward-dynamics">Forward Optimization (Forward Dynamics)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-verification-and-validation">Model Verification and Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-in-v-v-of-musculoskeletal-models">Challenges in V&amp;V of Musculoskeletal Models:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategies-for-effective-v-v">Strategies for Effective V&amp;V:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="principles-of-musculoskeletal-modeling">
+<h1>Principles of Musculoskeletal Modeling<a class="headerlink" href="#principles-of-musculoskeletal-modeling" title="Link to this heading">#</a></h1>
+<section id="the-necessity-of-biomechanical-modeling">
+<h2>The Necessity of Biomechanical Modeling<a class="headerlink" href="#the-necessity-of-biomechanical-modeling" title="Link to this heading">#</a></h2>
+<p>Understanding human movement, whether for athletic performance, rehabilitation, surgical planning, or ergonomic design, often requires knowledge that cannot be directly obtained through experimental measurements in living subjects. The human body is an <strong>extremely complex neuromusculoskeletal system</strong>, featuring hundreds of muscles, bones, and joints, all interacting dynamically. While we can observe external motion (kinematics) and measure external forces (kinetics), accurately determining the <strong>individual forces exerted by each muscle</strong> or the <strong>internal joint loads</strong> is challenging and often invasive or impossible <em>in vivo</em>.</p>
+<p>This is where <strong>biomechanical modeling</strong> becomes indispensable. Models provide <strong>indirect access</strong> to crucial internal information, offering quantitative insights into the underlying mechanics of movement that are otherwise unattainable. They enable researchers and clinicians to:</p>
+<ul class="simple">
+<li><p><strong>Identify mechanisms</strong> behind musculoskeletal pathologies and motor disorders.</p></li>
+<li><p><strong>Improve treatments</strong> and develop new rehabilitation techniques.</p></li>
+<li><p><strong>Guide surgical procedures</strong>, such as tendon transfers, by simulating outcomes.</p></li>
+<li><p><strong>Assess sports performance</strong> and predict movement adaptations.</p></li>
+<li><p><strong>Gain insights into neuro-musculoskeletal system organization and control</strong>.</p></li>
+</ul>
+<p>By using computational models that represent the anatomical and physiological properties of the body, biomechanists can simulate movements and estimate quantities that cannot be measured directly, such as individual muscle forces, tendon strains, and joint contact forces.</p>
+</section>
+<section id="the-principal-problem-of-muscle-redundancy">
+<h2>The Principal Problem of Muscle Redundancy<a class="headerlink" href="#the-principal-problem-of-muscle-redundancy" title="Link to this heading">#</a></h2>
+<p>A fundamental challenge in muscle modeling, and indeed in understanding human motor control, is the <strong>muscle redundancy problem</strong>. This principle highlights that the human musculoskeletal system possesses <strong>more muscles or degrees of freedom (DOFs) than are strictly necessary</strong> to perform a specific motor task. For instance, multiple muscles often cross a single joint, all capable of contributing to the same movement or moment.</p>
+<p>This excess of degrees of freedom means that there isn’t a single, unique solution for how muscles should be activated to achieve a particular movement. Mathematically, a given motor goal can be accomplished through a <strong>theoretically infinite number of possible muscle recruitment patterns</strong>. This is also known as the <strong>force-sharing problem</strong>.</p>
+<p>While this redundancy poses a computational “problem” for the central nervous system (CNS) and for modeling, it offers significant <strong>biological advantages</strong>:</p>
+<ul class="simple">
+<li><p><strong>Flexibility and Adaptability</strong>: It allows the motor system to achieve tasks in various ways, adapting to different environmental conditions or internal states.</p></li>
+<li><p><strong>Compensation</strong>: If one muscle is fatigued, injured, or dysfunctional, other muscles can <strong>compensate</strong>, enabling continued task performance and providing robustness to disruptions.</p></li>
+<li><p><strong>Motor Learning</strong>: The “redundancy space” can facilitate the learning of new motor skills by allowing exploration of different movement patterns.</p></li>
+</ul>
+<p>However, this redundancy also complicates the process of estimating individual muscle forces, as the model must “decide” which of the infinite possible solutions is the most plausible or physiologically realistic.</p>
+</section>
+<section id="strategies-for-managing-muscle-redundancy">
+<h2>Strategies for Managing Muscle Redundancy<a class="headerlink" href="#strategies-for-managing-muscle-redundancy" title="Link to this heading">#</a></h2>
+<p>The CNS and biomechanical models employ various strategies to manage this inherent redundancy and determine a specific muscle coordination pattern. These strategies primarily fall into two categories: <strong>reduction methods</strong> and <strong>optimization methods</strong>.</p>
+<section id="reduction-methods">
+<h3>Reduction Methods<a class="headerlink" href="#reduction-methods" title="Link to this heading">#</a></h3>
+<p>Reduction methods simplify the problem by reducing the number of independent variables or by introducing additional information that constrains the solution space.</p>
+<ul class="simple">
+<li><p><strong>Simplifying Musculoskeletal Models</strong>: One approach is to simplify the representation of the musculoskeletal system. For example, rather than modeling each individual muscle, the total moment generated by all muscles crossing a joint can be represented with a single <strong>torque actuator</strong>. This simplifies the computational problem, especially for large-scale optimization analyses, while still producing simulations that resemble human movement. Some models predominantly adopt <strong>monoarticular representations</strong>, where the calculated joint torque is based solely on the kinematics of the primary joint, neglecting the influence of biarticular muscles. However, highly detailed models, which discretize muscles into multiple bundles or paths, generally provide <strong>better estimations</strong> of muscle forces, albeit with increased complexity. The level of model complexity should be appropriate for the research question to avoid being counterproductive.</p></li>
+<li><p><strong>Introducing Additional Data / Grouping Muscles (Muscle Synergies)</strong>: The <strong>muscle synergy hypothesis</strong> proposes that the CNS simplifies control by activating muscles in functional groups, or “synergies,” rather than individually. This effectively reduces the high-dimensional control problem to a lower-dimensional one, easing the computational burden.</p>
+<ul>
+<li><p><strong>EMG Data Integration</strong>: <strong>Electromyography (EMG) data</strong> provide valuable information about the neural drive to muscles and can significantly improve the accuracy and physiological realism of estimated muscle forces. EMG signals reflect the sum of action potentials received by motor units.</p>
+<ul>
+<li><p><strong>EMG-driven models</strong>: In these models, EMG is an <strong>essential input</strong> that “drives” the simulation, transforming EMG signals into muscle activations, which then determine muscle forces.</p></li>
+<li><p><strong>EMG-assisted models</strong>: Here, EMG provides <strong>additional information</strong> to guide the distribution of forces during optimization, helping to produce more physiologically realistic results, especially in predicting the co-contraction of antagonist muscles.</p></li>
+<li><p><strong>EMG-calibrated models</strong>: EMG helps to calibrate the model’s parameters before its application in the experimental situation of interest.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="optimization-methods">
+<h3>Optimization Methods<a class="headerlink" href="#optimization-methods" title="Link to this heading">#</a></h3>
+<p>The <strong>optimization hypothesis</strong> suggests that the CNS resolves muscle redundancy by selecting the muscle activation pattern that <strong>minimizes a specific “cost function”</strong> while satisfying the task requirements. This cost function might represent motor effort, energy expenditure, or other physiological criteria. Optimization problems seek an “optimal solution” from the theoretically infinite possibilities that fulfill the movement constraints.</p>
+<p>Biomechanical models utilize two primary strategies for muscle force estimation: <strong>inverse dynamics</strong> and <strong>forward (or direct) dynamics</strong>. The choice depends on whether the goal is to determine the forces that <em>caused</em> an observed movement or to <em>predict</em> the movement resulting from known forces.</p>
+</section>
+<section id="inverse-optimization-inverse-dynamics">
+<h3>Inverse Optimization (Inverse Dynamics)<a class="headerlink" href="#inverse-optimization-inverse-dynamics" title="Link to this heading">#</a></h3>
+<p>The <strong>inverse solving strategy</strong> (or inverse dynamics) works backward from observed movement. It involves:</p>
+<ol class="arabic simple">
+<li><p>Determining <strong>net joint torques</strong> (moments) from observed kinematics (joint angles, velocities, accelerations of body segments) and external forces (e.g., ground reaction forces).</p></li>
+<li><p><strong>Distributing these net joint torques among individual muscles</strong> to estimate their forces, which is where the muscle redundancy problem arises.</p></li>
+</ol>
+<p>This strategy is frequently used due to its relative <strong>simplicity and speed of execution</strong>. However, this simplicity may come at the cost of adequately considering the underlying physiology of force production, and the results might lack reliability without careful consideration of model assumptions.</p>
+<ul class="simple">
+<li><p><strong>Static Optimization (within Inverse Dynamics)</strong>: When applied within an inverse dynamics framework, static optimization seeks a solution for muscle forces at a <strong>single instant in time</strong>, assuming the required net joint moments are known and the system might be stationary. It is computationally less demanding and often used to calibrate models or solve the muscle redundancy problem by minimizing a cost function at each time step independently. However, it may not fully capture the anticipatory nature of human movement or the time-dependent dynamics of muscles and tendons.</p></li>
+<li><p><strong>Dynamic Optimization (within Inverse Dynamics)</strong>: While the term “dynamic optimization” is sometimes confused with the “dynamic type of problem” in models, in the context of inverse dynamics, dynamic optimization can refer to finding a solution that considers the <strong>entire movement over time</strong>, where the objective function might depend on the entire trajectory rather than just instantaneous quantities. This approach aims to find the muscle forces and body segmental motions that achieve a task, often by minimizing a performance criterion (e.g., energy consumption) over the whole movement duration. This is particularly useful for explosive activities where the dynamics of muscles and tendons, and the anticipation of future movements, are crucial.</p></li>
+</ul>
+<section id="forward-optimization-forward-dynamics">
+<h4>Forward Optimization (Forward Dynamics)<a class="headerlink" href="#forward-optimization-forward-dynamics" title="Link to this heading">#</a></h4>
+<p>The <strong>forward solving strategy</strong> (or forward dynamics) aims to <strong>predict movement</strong> from known muscle activation levels and physiological muscle properties. This approach more closely aligns with the physiological motor control process, moving from neural drive to force production and then to resulting movement.</p>
+<ul class="simple">
+<li><p><strong>Principle</strong>: Forward dynamic simulations integrate differential equations of motion forward in time. Inputs include muscle excitations (neural commands), which are transformed into muscle activations and then muscle forces via models of muscle activation and contraction dynamics. These muscle forces then cause joint moments, which accelerate body segments, producing movement. This allows researchers to predict how the body will respond to various conditions, such as disease or surgical interventions.</p></li>
+<li><p><strong>Computed Muscle Control (CMC)</strong>: A common method used in forward dynamics to generate muscle-driven simulations that match observed experimental data is <strong>Computed Muscle Control (CMC)</strong>. This method uses optimization to determine a set of muscle excitations that, when applied to the musculoskeletal model, reproduce a measured movement. The objective function in CMC often minimizes the difference between the simulated and measured quantities (e.g., joint angles, joint powers, ground reaction forces). CMC is a powerful tool for analyzing muscle contributions to movement and establishing cause-and-effect relationships that are difficult to discern from experimental observation alone.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="model-verification-and-validation">
+<h2>Model Verification and Validation<a class="headerlink" href="#model-verification-and-validation" title="Link to this heading">#</a></h2>
+<p>For any biomechanical model to be credible and useful in practical applications, it must undergo rigorous <strong>verification and validation (V&amp;V)</strong>. These two processes ensure that the model accurately represents the physical system and solves the underlying mathematical equations correctly.</p>
+<ul class="simple">
+<li><p><strong>Verification</strong>: This process focuses on <strong>how the model is implemented</strong> and the <strong>numerical accuracy of its solutions</strong>. It addresses whether the computer code correctly solves the underlying mathematical model, essentially checking the “mathematics” of the model. Absence of verification can lead to confusion between modeling errors and implementation errors.</p></li>
+<li><p><strong>Validation</strong>: This process determines <strong>how well the model represents the real world</strong> and experimental data. It assesses the “physics” of the model. Validation confirms that the model’s output adequately reflects the observed biological phenomena. It’s crucial to understand that a model is not “validated” in a universal sense, but rather for <strong>specific applications</strong> or uses based on which a user judges its adequacy for a particular task.</p></li>
+</ul>
+<section id="challenges-in-v-v-of-musculoskeletal-models">
+<h3>Challenges in V&amp;V of Musculoskeletal Models:<a class="headerlink" href="#challenges-in-v-v-of-musculoskeletal-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Difficulty in Direct Measurement</strong>: Accurately measuring internal mechanical parameters (like individual muscle forces or joint contact forces) in living organisms is extremely challenging, making direct validation rare.</p></li>
+<li><p><strong>Biological Variability</strong>: Biological systems exhibit significant intra- and inter-subject variability, making it difficult to define comprehensive probability distributions for model parameters.</p></li>
+<li><p><strong>Complexity</strong>: The inherent complexity of biological systems makes it hard to isolate specific errors or pinpoint why a validation attempt might fail.</p></li>
+<li><p><strong>EMG Limitations</strong>: While EMG is often used for indirect validation, there is no direct relationship between EMG amplitude and muscle force amplitude, limiting the precision of such comparisons. Often, only the timing of muscle onset and offset can be reliably compared.</p></li>
+</ul>
+</section>
+<section id="strategies-for-effective-v-v">
+<h3>Strategies for Effective V&amp;V:<a class="headerlink" href="#strategies-for-effective-v-v" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Direct Validation</strong>: When possible, directly compare model outputs with <em>in vivo</em> measurements (e.g., using instrumented joint replacements to measure forces). These opportunities, though rare, provide the strongest evidence for model accuracy.</p></li>
+<li><p><strong>Indirect Validation</strong>: Compare model predictions with measurable experimental variables (e.g., joint kinematics, ground reaction forces, EMG patterns) to infer confidence in unmeasurable quantities.</p></li>
+<li><p><strong>Trend Validation</strong>: Test “what-if” scenarios to ensure that the model’s parameters interact correctly and that it predicts realistic trends in response to perturbations.</p></li>
+<li><p><strong>Quantitative Metrics</strong>: Whenever feasible, use mathematical measures to quantify the difference between computational and experimental results.</p></li>
+<li><p><strong>Validation Hierarchies</strong>: Establish structured hierarchies where sub-models or subsystems are validated separately at increasing levels of complexity. This allows for a more systematic assessment of a model’s accuracy and identifies interactions between components.</p></li>
+<li><p><strong>Open Benchmarks</strong>: Develop and share well-documented validation benchmarks and experimental datasets to allow third-party scrutiny and recreation of validation studies under different assumptions. This fosters transparency and accelerates model improvement.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="slicer3d.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to 3D Slicer: From DICOM to 3D Model</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="biomaterials.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What is biomaterial?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-necessity-of-biomechanical-modeling">The Necessity of Biomechanical Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-principal-problem-of-muscle-redundancy">The Principal Problem of Muscle Redundancy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategies-for-managing-muscle-redundancy">Strategies for Managing Muscle Redundancy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-methods">Reduction Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-methods">Optimization Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-optimization-inverse-dynamics">Inverse Optimization (Inverse Dynamics)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-optimization-forward-dynamics">Forward Optimization (Forward Dynamics)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-verification-and-validation">Model Verification and Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-in-v-v-of-musculoskeletal-models">Challenges in V&amp;V of Musculoskeletal Models:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategies-for-effective-v-v">Strategies for Effective V&amp;V:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

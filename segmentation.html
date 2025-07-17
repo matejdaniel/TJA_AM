@@ -168,23 +168,40 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">NTUST summer course</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Joint replacement - overview</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biomimetic principles</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input data</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="imaging.html">Medical imaging</a></li>
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Medical Image Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slicer3d.html">Introduction to 3D Slicer: From DICOM to 3D Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="force.html">Principles of Musculoskeletal Modeling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additive manufacturing</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case studies</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
 
 </ul>
@@ -402,12 +419,13 @@
 <p>Medical image <strong>segmentation</strong> is the process of partitioning a digital image into multiple segments or regions, often to isolate a specific object of interest. For 3D medical images from CT or MRI, this means identifying the set of voxels (3D pixels) that make up a particular anatomical structure, like a bone, organ, or tumor, and separating it from the surrounding tissue. The goal is to create a digital model of that specific structure for measurement, visualization, or manufacturing.</p>
 <section id="basic-methods-of-segmentation">
 <h2>Basic Methods of Segmentation<a class="headerlink" href="#basic-methods-of-segmentation" title="Link to this heading">#</a></h2>
-<p>Several methods exist to segment medical images, ranging from manual to fully automated. The choice of method depends on the image quality, the complexity of the anatomy, and the required accuracy.</p>
+<p>Digital image segmentation can be broadly classified into two categories, manual segmentation and automated segmentation. The choice of method depends on the image quality, the complexity of the anatomy, and the required accuracy.</p>
 <ul class="simple">
 <li><p><strong>Manual Segmentation</strong>: This is the most straightforward method, where a trained user manually traces the boundary of the target object on every single 2D slice of the CT or MRI scan. While it can be highly accurate (as it relies on expert anatomical knowledge), it’s extremely time-consuming, tedious, and subject to variations between different users.</p></li>
 <li><p><strong>Thresholding</strong>: This is a simple automated method that segments an image based on voxel intensity values. A threshold value or range is set, and all voxels with intensities within that range are assigned to the object, while all others are considered background. For example, in a CT scan, bone has very high intensity values (Hounsfield units), so a simple high-pass threshold can effectively isolate the skeleton from soft tissue. Its main limitation is that it fails when different structures have overlapping intensity ranges.</p></li>
 <li><p><strong>Region Growing</strong>: This method starts with a user placing one or more “seed points” inside the object of interest. An algorithm then expands outwards from these seeds, adding neighboring voxels to the region if they meet a certain criterion (e.g., having a similar intensity value). The process stops when no more neighboring voxels satisfy the criterion, effectively “growing” the entire object from the inside out.</p></li>
 <li><p><strong>Edge Detection</strong>: These algorithms work by identifying locations in the image with sharp changes in intensity, which usually correspond to the boundaries between different tissues or objects. By connecting these detected edges, the boundary of an object can be outlined.</p></li>
+<li><p><strong>Deep learning methodologies (AI)</strong> have fundamentally advanced the field of semantic image segmentation, the task of assigning a class label to every pixel in an image. The foundational models for this task are Convolutional Neural Networks (CNNs), leveraged for their intrinsic capacity to learn a hierarchical representation of features. In this architecture, initial layers extract low-level spatial details, such as edges and textures, while deeper layers build increasingly abstract, semantic representations. The predominant paradigm for segmentation is the encoder-decoder architecture, notably instantiated in models like the U-Net. The encoder, or contracting path, progressively downsamples feature maps to capture broad contextual information and expand the receptive field, albeit at the cost of spatial resolution. Symmetrically, the decoder, or expansive path, upsamples these feature maps, typically via transposed convolutions, to recover the original image dimensions for dense, pixel-wise prediction. A critical component of such architectures is the skip connection, which concatenates high-resolution feature maps from the encoder with the corresponding upsampled maps in the decoder. This fusion of shallow, fine-grained features with deep, semantic features mitigates the loss of precise localization information during the downsampling stages, enabling the generation of highly accurate segmentation masks. This approach has yielded state-of-the-art performance across numerous application domains, including medical image analysis and autonomous vehicle perception.</p></li>
 </ul>
 </section>
 <section id="d-data-storage-and-file-formats">

@@ -168,23 +168,40 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">NTUST summer course</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Joint replacement - overview</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biomimetic principles</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input data</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="imaging.html">Medical imaging</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="segmentation.html">Medical Image Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slicer3d.html">Introduction to 3D Slicer: From DICOM to 3D Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="force.html">Principles of Musculoskeletal Modeling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additive manufacturing</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case studies</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
 
 </ul>
@@ -598,10 +615,10 @@
     <span class="c1"># Plot connections (lines)</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
-                <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
+                <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
     
     <span class="c1"># Plot nodes (points)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
 
 
@@ -691,54 +708,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_187238</span><span class="o">/</span><span class="mf">3327032798.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span> 
-<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="c1"># Plot Original Structure</span>
-<span class="ne">--&gt; </span><span class="mi">165</span>     <span class="n">plot_structure</span><span class="p">(</span><span class="n">original_nodes</span><span class="p">,</span> <span class="n">connections</span><span class="p">,</span> <span class="n">ax1</span><span class="p">,</span> <span class="s1">&#39;Original Re-entrant Structure&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> 
-<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="c1"># Plot Deformed Structure</span>
-
-<span class="nn">/tmp/ipykernel_187238/3327032798.py</span> in <span class="ni">plot_structure</span><span class="nt">(nodes, connections, ax, title, color)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="c1"># Plot connections (lines)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">101</span>         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
-<span class="g g-Whitespace">    </span><span class="mi">102</span>                 <span class="p">[</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">-&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span> 
-
-<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_axes.py</span> in <span class="ni">plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1630</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1631</span><span class="s2">         kwargs = cbook.normalize_kwargs(kwargs, mlines.Line2D)</span>
-<span class="ne">-&gt; </span><span class="mi">1632</span><span class="s2">         lines = [*self._get_lines(*args, data=data, **kwargs)]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1633</span><span class="s2">         for line in lines:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1634</span><span class="s2">             self.add_line(line)</span>
-
-<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">__call__</span><span class="nt">(self, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span><span class="s2">                 this += args[0],</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span><span class="s2">                 args = args[1:]</span>
-<span class="ne">--&gt; </span><span class="mi">312</span><span class="s2">             yield from self._plot_args(this, kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span><span class="s2">     def get_next_color(self):</span>
-
-<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">_plot_args</span><span class="nt">(self, tup, kwargs, return_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="s2">             # xy is tup with fmt stripped (could still be (y,) only)</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">             *xy, fmt = tup</span>
-<span class="ne">--&gt; </span><span class="mi">449</span><span class="s2">             linestyle, marker, color = _process_plot_format(fmt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="s2">         elif len(tup) == 3:</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="s2">             raise ValueError(&#39;third arg must be a format string&#39;)</span>
-
-<span class="nn">/usr/lib/python3/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">_process_plot_format</span><span class="nt">(fmt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="s2">             i += 2</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">         else:</span>
-<span class="ne">--&gt; </span><span class="mi">199</span><span class="s2">             raise ValueError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span><span class="s2">                 &#39;Unrecognized character </span><span class="si">%c</span><span class="s2"> in format string&#39; </span><span class="si">% c</span><span class="s2">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="s2"> </span>
-
-<span class="ne">ValueError</span>: Unrecognized character l in format string
-</pre></div>
-</div>
-<img alt="_images/a38c3ac7fde7d01c92ef1377a154e5dc71328ca8ea9be0d6bc6de46d6c73b4c2.png" src="_images/a38c3ac7fde7d01c92ef1377a154e5dc71328ca8ea9be0d6bc6de46d6c73b4c2.png" />
+<img alt="_images/b175745b6807ceef4f2a442a330f410b60be13534d572f9d2d936e4d07251cd3.png" src="_images/b175745b6807ceef4f2a442a330f410b60be13534d572f9d2d936e4d07251cd3.png" />
 </div>
 </div>
 </section>
