@@ -8,6 +8,9 @@ chapters:
 - file: glossary
 - file: history
 - file: disease
+- file: imaging
+- file: segmentation
+- file: slicer3D
 - file: biomimetics
 - file: biomaterials
 - file: am_overview
