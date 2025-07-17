@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Medical imaging &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'imaging';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Medical Image Segmentation" href="segmentation.html" />
+    <link rel="prev" title="Pathologies Necessitating Joint Arthroplasty" href="disease.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Medical imaging</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="segmentation.html">Medical Image Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fimaging.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/imaging.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Medical imaging</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Medical imaging</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-medical-imaging">What is Medical Imaging?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dicom-standard">The DICOM Standard</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#radiography-x-ray">Radiography (X-ray)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluoroscopy-and-3d-motion-analysis">Fluoroscopy and 3D Motion Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiography-in-medical-device-design">Radiography in Medical Device Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computed-tomography-ct">Computed Tomography (CT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-processing-and-back-projection">Data Processing and Back-Projection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ct-in-implantable-medical-device-design">CT in Implantable Medical Device Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ct-artefacts">CT Artefacts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nuclear-magnetic-resonance-nmr-mri">Nuclear Magnetic Resonance (NMR) / MRI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t1-and-t2-relaxation">T1 and T2 Relaxation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mri-in-medical-device-design">MRI in Medical Device Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ultrasound">Ultrasound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#picture-archiving-and-communication-system-pacs">Picture Archiving and Communication System (PACS)</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="medical-imaging">
+<h1>Medical imaging<a class="headerlink" href="#medical-imaging" title="Link to this heading">#</a></h1>
+<section id="what-is-medical-imaging">
+<h2>What is Medical Imaging?<a class="headerlink" href="#what-is-medical-imaging" title="Link to this heading">#</a></h2>
+<p><em>Medical imaging</em> is the technique and process of creating visual representations of the interior of a body for clinical analysis and medical intervention, as well as for visualizing the function of some organs or tissues. It encompasses a variety of technologies that generate images by non-invasively “seeing” inside the body. These technologies leverage different physical principles—such as energy absorption, reflection, and emission—to differentiate between various tissue types, from dense bone to soft tissue, providing crucial information for diagnosis, treatment planning, and biomedical research.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-dicom-standard">
+<h1>The DICOM Standard<a class="headerlink" href="#the-dicom-standard" title="Link to this heading">#</a></h1>
+<p><em>Digital Imaging and Communications in Medicine (DICOM)</em> is the universal standard for communicating and managing medical imaging information and related data. It ensures that medical images and their associated information can be created, stored, retrieved, and shared by a wide variety of hardware and software from different manufacturers. A DICOM file consists of two main parts: a header and the image data.</p>
+<ul class="simple">
+<li><p><em>DICOM Header</em>: The header contains a standardized set of metadata about the patient and the imaging study. This includes patient information (name, ID, age), study details (modality, date, time, physician), and technical parameters of the image acquisition (e.g., X-ray dose, magnetic field strength, slice thickness). The information is stored as a series of “tags” or key-value pairs, allowing any DICOM-compliant software to correctly interpret the data.</p></li>
+<li><p><em>DICOM Content</em>: This is the core of the file, containing the raw pixel data that constitutes the image itself. For a 2D image like a chest X-ray, this is a single matrix of pixel values. For 3D modalities like CT or MRI, it’s a series of 2D image slices that can be reconstructed into a 3D volume.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="radiography-x-ray">
+<h1>Radiography (X-ray)<a class="headerlink" href="#radiography-x-ray" title="Link to this heading">#</a></h1>
+<p>Radiography is an imaging technique using <em>X-rays</em> to view the internal structure of an object. The physical principle is based on the <em>differential attenuation</em> of X-ray photons as they pass through the body. An X-ray source generates a beam of high-energy photons, which is directed at the patient. As the beam travels through different tissues, it is attenuated (absorbed and scattered) to varying degrees. Dense materials like bone absorb many photons and appear white or bright on the resulting image, while less dense materials like soft tissue and air allow more photons to pass through, appearing in shades of gray or black. The transmitted photons are captured by a detector (e.g., film or a digital sensor).</p>
+<p>The attenuation is described by the Beer-Lambert law:
+[I = I_0 e^{-\mu x}]
+where (I) is the transmitted intensity, (I_0) is the initial intensity, (\mu) is the linear attenuation coefficient of the material, and (x) is the thickness of the material.</p>
+<p>Historically, the term <em>skiagraphy</em> (from Greek /skia/, meaning “shadow,” and /graphia/, meaning “writing”) was used for the process of producing a radiographic image—literally “shadow writing.” Today, this term is archaic, and <em>radiography</em> is the standard term.</p>
+<section id="fluoroscopy-and-3d-motion-analysis">
+<h2>Fluoroscopy and 3D Motion Analysis<a class="headerlink" href="#fluoroscopy-and-3d-motion-analysis" title="Link to this heading">#</a></h2>
+<p><em>Fluoroscopy</em> is a type of medical imaging that shows a continuous, real-time X-ray image on a monitor, much like an “X-ray movie.” It’s used to observe moving body structures or to guide interventional procedures like catheter placement. A continuous, low-dose X-ray beam is passed through the body, and the transmitted radiation is captured by an image intensifier or a flat-panel detector, which converts the X-rays into a live video display.</p>
+<p>To capture complex <em>3D motion</em>, two fluoroscopy systems can be run in parallel, a technique often called <em>biplanar videofluoroscopy</em> or <em>Dynamic Stereo X-ray (DSX)</em>.</p>
+<ul class="simple">
+<li><p><em>Setup</em>: Two X-ray source-and-detector pairs are positioned at a known angle to each other (typically around 90 degrees), both aimed at the subject (e.g., a person walking on a treadmill).</p></li>
+<li><p><em>Data Acquisition</em>: Both systems simultaneously record fluoroscopic videos of the motion from two different perspectives.</p></li>
+<li><p><em>3D Reconstruction</em>: By tracking the 2D position of an anatomical landmark or a surgically implanted marker in both video streams, computer algorithms can calculate its precise 3D coordinates for every frame. This is achieved through <em>triangulation</em>, a method that uses the known geometry of the two imaging systems to find the unique point in 3D space that projects onto the observed 2D locations in each image. Reconstructing the path of multiple points over time yields highly accurate 3D kinematic data about joint motion, which is impossible to obtain from a single 2D projection.</p></li>
+</ul>
+</section>
+<section id="radiography-in-medical-device-design">
+<h2>Radiography in Medical Device Design<a class="headerlink" href="#radiography-in-medical-device-design" title="Link to this heading">#</a></h2>
+<p>Radiography and its dynamic form, fluoroscopy, are fundamental to biomechanics for several reasons:</p>
+<ul class="simple">
+<li><p><em>Bone Geometry and Density</em>: It provides clear images of bone structure, allowing for the analysis of skeletal alignment, fracture patterns, and bone density changes.</p></li>
+<li><p><em>Joint Kinematics</em>: Biplanar fluoroscopy allows researchers to study the dynamic 3D movement and interaction of bones within a joint during activities like walking or jumping.</p></li>
+<li><p><em>Implant Assessment</em>: It’s used to evaluate the position and integrity of orthopedic implants and to monitor the bone’s response to the implant over time.</p></li>
+</ul>
+</section>
+<section id="computed-tomography-ct">
+<h2>Computed Tomography (CT)<a class="headerlink" href="#computed-tomography-ct" title="Link to this heading">#</a></h2>
+<p><em>Computed Tomography (CT)</em>, sometimes called Computed Axial Tomography (CAT), also uses X-rays but produces cross-sectional images, or “slices,” of the body. Instead of a single, stationary source and detector, a CT scanner features an X-ray source and detector array that rotate around the patient. Hundreds of projections are acquired from different angles as the gantry rotates. This vast amount of data is then processed by a computer to reconstruct a 3D representation of the body.</p>
+<section id="data-processing-and-back-projection">
+<h3>Data Processing and Back-Projection<a class="headerlink" href="#data-processing-and-back-projection" title="Link to this heading">#</a></h3>
+<p>The raw data from a CT scan is a set of attenuation profiles called a <em>sinogram</em>. To convert this sinogram into a meaningful image, a reconstruction algorithm is needed. The most fundamental method is <em>back-projection</em>.</p>
+<p><em>Back-projection</em> is an algorithm that reconstructs a 2D image from a series of 1D projections. Imagine a single projection profile taken through an object. Simple back-projection takes this profile and “smears” it back across the image plane in the direction it was acquired. By doing this for all projections from every angle and summing the results, a rough image of the object emerges.</p>
+<p>However, simple back-projection produces heavily blurred images with a characteristic “star” or “spoke” artifact around sharp features. To correct this, a modified technique called <em>Filtered Back-Projection (FBP)</em> is used. Before back-projecting the profiles, a high-pass filter (often a “ramp filter”) is applied to the data in the frequency domain. This filtering step sharpens the edges and removes the blurring, resulting in a clinically useful, high-quality image. FBP is computationally efficient and remains the most common reconstruction method in clinical CT.</p>
+</section>
+<section id="ct-in-implantable-medical-device-design">
+<h3>CT in Implantable Medical Device Design<a class="headerlink" href="#ct-in-implantable-medical-device-design" title="Link to this heading">#</a></h3>
+<p>CT is invaluable for designing and evaluating implantable devices, especially in orthopedics.</p>
+<ul class="simple">
+<li><p><em>Patient-Specific Design</em>: High-resolution CT scans provide precise 3D data of a patient’s anatomy (e.g., a femur or vertebra). This data can be used in CAD software to design custom-fit implants, improving mechanical stability and patient outcomes.</p></li>
+<li><p><em>Pre-operative Planning</em>: Surgeons use CT data to simulate surgery, select the optimal size and type of a standard implant, and plan the surgical approach.</p></li>
+<li><p><em>Post-operative Evaluation</em>: CT scans can verify the exact placement of an implant, check for complications like loosening or breakage, and assess bone growth onto the implant surface (osseointegration).</p></li>
+</ul>
+</section>
+<section id="ct-artefacts">
+<h3>CT Artefacts<a class="headerlink" href="#ct-artefacts" title="Link to this heading">#</a></h3>
+<p>CT images are susceptible to artefacts that can degrade image quality or mimic pathology. Common artefacts include:</p>
+<ul class="simple">
+<li><p><em>Beam Hardening</em>: As the X-ray beam passes through the body, lower-energy photons are preferentially absorbed, “hardening” the beam. This can cause dark streaks or bands between dense objects.</p></li>
+<li><p><em>Metal Artefacts</em>: The high density of metallic implants causes extreme X-ray attenuation, resulting in severe streaking and shadowing that can obscure surrounding anatomy. Special algorithms (MARS) are used to reduce these effects.</p></li>
+<li><p><em>Motion Artefacts</em>: Patient movement during the scan causes blurring or ghosting in the reconstructed image.</p></li>
+<li><p><em>Partial Volume Effect</em>: This occurs when a single voxel contains multiple tissue types (e.g., bone and soft tissue). The voxel is assigned an average attenuation value, blurring the interface between the tissues.</p></li>
+</ul>
+</section>
+</section>
+<section id="nuclear-magnetic-resonance-nmr-mri">
+<h2>Nuclear Magnetic Resonance (NMR) / MRI<a class="headerlink" href="#nuclear-magnetic-resonance-nmr-mri" title="Link to this heading">#</a></h2>
+<p><em>Magnetic Resonance Imaging (MRI)</em> is a non-invasive imaging technique that does not use ionizing radiation. It is based on the principles of <em>Nuclear Magnetic Resonance (NMR)</em>. The physical principle relies on the behavior of atomic nuclei with a non-zero spin, particularly hydrogen protons ((H^+)), which are abundant in the body’s water and fat.</p>
+<ol class="arabic simple">
+<li><p><em>Alignment</em>: The patient is placed in a strong, static magnetic field ((B_0)). This causes the randomly oriented protons to align either parallel or anti-parallel to the field, creating a net longitudinal magnetization ((M_z)).</p></li>
+<li><p><em>Precession</em>: The protons also precess (wobble like a spinning top) around the direction of the (B_0) field at a specific frequency, known as the Larmor frequency, given by (\omega_0 = \gamma B_0), where (\gamma) is the gyromagnetic ratio.</p></li>
+<li><p><em>Excitation</em>: A radiofrequency (RF) pulse, tuned to the Larmor frequency, is applied. This pulse knocks the net magnetization out of alignment with the (B_0) field and into the transverse plane ((M_{xy})), also forcing the protons to precess in phase.</p></li>
+<li><p><em>Signal Detection</em>: When the RF pulse is turned off, the protons begin to relax back to their equilibrium state. As they do, they release the absorbed energy, which induces a detectable signal in a receiver coil. The spatial location of the signal is encoded using magnetic field gradients.</p></li>
+</ol>
+<section id="t1-and-t2-relaxation">
+<h3>T1 and T2 Relaxation<a class="headerlink" href="#t1-and-t2-relaxation" title="Link to this heading">#</a></h3>
+<p>The signal contrast in MRI comes from the different relaxation rates of various tissues. Relaxation is characterized by two independent processes: T1 and T2 relaxation.</p>
+<ul class="simple">
+<li><p><em>T1 Relaxation (Longitudinal)</em>: This is the time it takes for the protons to realign with the main magnetic field ((B_0)). It describes the recovery of longitudinal magnetization ((M_z)). Tissues with short T1 times (e.g., fat) relax quickly and appear bright on <em>T1-weighted images</em>. Tissues with long T1 times (e.g., water/CSF) relax slowly and appear dark.</p></li>
+<li><p><em>T2 Relaxation (Transverse)</em>: This is the time it takes for the precessing protons to dephase, or lose their phase coherence, in the transverse plane. It describes the decay of transverse magnetization ((M_{xy})). Tissues with long T2 times (e.g., water, edema, tumors) dephase slowly and appear bright on <em>T2-weighted images</em>. Tissues with short T2 times (e.g., muscle, cortical bone) dephase quickly and appear dark.</p></li>
+</ul>
+</section>
+<section id="mri-in-medical-device-design">
+<h3>MRI in Medical Device Design<a class="headerlink" href="#mri-in-medical-device-design" title="Link to this heading">#</a></h3>
+<p>MRI’s superior soft-tissue contrast makes it essential for designing devices that interact with non-bony tissues.</p>
+<ul class="simple">
+<li><p><em>Cardiovascular Devices</em>: MRI is used to visualize blood vessels and heart anatomy to aid in the design of stents, grafts, and artificial heart valves. It can also assess blood flow (MR angiography) and tissue response after implantation.</p></li>
+<li><p><em>Neurological Devices</em>: For designing devices like deep brain stimulation (DBS) electrodes or spinal cord stimulators, MRI provides detailed maps of the brain and spinal cord, ensuring precise targeting and avoiding critical structures.</p></li>
+<li><p><em>Material Compatibility</em>: A major consideration is ensuring devices are “MRI-safe” or “MRI-conditional.” Ferromagnetic materials are contraindicated as they can experience dangerous torque and heating. Device designers must use non-ferromagnetic materials like titanium, nitinol, or certain polymers and test them for MRI compatibility.</p></li>
+</ul>
+</section>
+</section>
+<section id="ultrasound">
+<h2>Ultrasound<a class="headerlink" href="#ultrasound" title="Link to this heading">#</a></h2>
+<p><em>Ultrasound imaging</em> uses high-frequency sound waves (typically 2-18 MHz) and their echoes to create images. A handheld probe called a transducer, which contains piezoelectric crystals, sends short pulses of sound into the body. These sound waves travel through tissues and are reflected back when they hit a boundary between tissues with different acoustic impedances. The transducer detects the returning echoes, and a computer uses the time and intensity of these echoes to create a real-time image. It is widely used in obstetrics, cardiology, and for guiding procedures because it is real-time, portable, inexpensive, and uses no ionizing radiation.</p>
+</section>
+<section id="picture-archiving-and-communication-system-pacs">
+<h2>Picture Archiving and Communication System (PACS)<a class="headerlink" href="#picture-archiving-and-communication-system-pacs" title="Link to this heading">#</a></h2>
+<p>A <em>Picture Archiving and Communication System (PACS)</em> is a medical imaging technology that provides economical storage and convenient access to images from multiple modalities (e.g., CT, MRI, X-ray).</p>
+<ul class="simple">
+<li><p><em>Storage</em>: Medical images, typically in DICOM format, are sent from the imaging modality to a central PACS server. This server uses a large-scale, secure storage system, often involving a combination of fast, short-term storage (like a RAID array) for recent studies and slower, long-term archival storage (like cloud or tape libraries) for older data.</p></li>
+<li><p><em>Access</em>: Radiologists and clinicians access the images using specialized PACS viewing software on dedicated workstations or through secure web viewers. The system is integrated with the hospital’s information systems, such as the Radiology Information System (RIS) and Hospital Information System (HIS). When a physician needs to view a patient’s images, they query the PACS using patient identifiers. The system retrieves the relevant DICOM files from the archive and sends them to the user’s workstation for display and analysis. This allows for instant, simultaneous access to imaging studies from anywhere in the hospital or even remotely, streamlining the clinical workflow.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="disease.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pathologies Necessitating Joint Arthroplasty</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="segmentation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Medical Image Segmentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Medical imaging</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-medical-imaging">What is Medical Imaging?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dicom-standard">The DICOM Standard</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#radiography-x-ray">Radiography (X-ray)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluoroscopy-and-3d-motion-analysis">Fluoroscopy and 3D Motion Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiography-in-medical-device-design">Radiography in Medical Device Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computed-tomography-ct">Computed Tomography (CT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-processing-and-back-projection">Data Processing and Back-Projection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ct-in-implantable-medical-device-design">CT in Implantable Medical Device Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ct-artefacts">CT Artefacts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nuclear-magnetic-resonance-nmr-mri">Nuclear Magnetic Resonance (NMR) / MRI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t1-and-t2-relaxation">T1 and T2 Relaxation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mri-in-medical-device-design">MRI in Medical Device Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ultrasound">Ultrasound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#picture-archiving-and-communication-system-pacs">Picture Archiving and Communication System (PACS)</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

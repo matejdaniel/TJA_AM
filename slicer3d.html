@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Additive manufacturing for joint replacement design &#8212; Joint arthroplasty design using additive manufacturing</title>
+    <title>Introduction to 3D Slicer: From DICOM to 3D Model &#8212; Joint arthroplasty design using additive manufacturing</title>
   
   
   
@@ -60,12 +60,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'slicer3d';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project Assignment: Novel Joint Implant Design Using Additive Manufacturing" href="assignment.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -138,7 +135,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -165,8 +162,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Additive manufacturing for joint replacement design
                 </a>
             </li>
@@ -265,7 +262,7 @@
       
       
       
-      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fslicer3d.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +292,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/slicer3d.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +302,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -371,7 +368,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Additive manufacturing for joint replacement design</h1>
+    <h1>Introduction to 3D Slicer: From DICOM to 3D Model</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,8 +378,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-3d-slicer">What is 3D Slicer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-dicom-files">Importing DICOM Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-the-key-to-3d-modeling">Segmentation: The Key to 3D Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-segmentation-methods-in-3d-slicer">Common Segmentation Methods in 3D Slicer:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-learn-more-tutorials-and-resources">Where to Learn More: Tutorials and Resources</a></li>
 </ul>
             </nav>
         </div>
@@ -394,82 +396,71 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="additive-manufacturing-for-joint-replacement-design">
-<h1>Additive manufacturing for joint replacement design<a class="headerlink" href="#additive-manufacturing-for-joint-replacement-design" title="Link to this heading">#</a></h1>
-<section id="table-of-contents">
-<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html#basic-anatomical-terminology">Basic Anatomical Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
-<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
-<li class="toctree-l1"><a class="reference internal" href="imaging.html">Medical imaging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="imaging.html#the-dicom-standard">The DICOM Standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="imaging.html#radiography-x-ray">Radiography (X-ray)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="segmentation.html">Medical Image Segmentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biomaterials.html#surface-treatment">Surface treatment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hip_joint.html#hip-joint-loading">Hip joint loading</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-3d-slicer-from-dicom-to-3d-model">
+<h1>Introduction to 3D Slicer: From DICOM to 3D Model<a class="headerlink" href="#introduction-to-3d-slicer-from-dicom-to-3d-model" title="Link to this heading">#</a></h1>
+<section id="what-is-3d-slicer">
+<h2>What is 3D Slicer?<a class="headerlink" href="#what-is-3d-slicer" title="Link to this heading">#</a></h2>
+<p>3D Slicer is a free, open-source software platform for medical image analysis, visualization, and image-guided therapy. It’s a powerful and versatile tool used by researchers, clinicians, and engineers worldwide. Think of it as a digital workbench that allows you to take raw 2D medical scans and turn them into interactive 3D models that you can measure, analyze, and manipulate. To oobtain more information visit <a class="reference external" href="https://www.slicer.org/">https://www.slicer.org/</a>.</p>
+<div class="highlight-{figure}https://www.slicer.org/assets/img/image-carousel/SegmentEditor.png notranslate"><div class="highlight"><pre><span></span>Image segmentation in Slicer3D
+</pre></div>
 </div>
+<p>The core functionality of Slicer revolves around its ability to handle various types of medical imaging data and provide a suite of tools for:</p>
+<ul class="simple">
+<li><p><em>Visualization:</em> Viewing 2D image stacks (like from a CT or MRI scan) in 2D and as reconstructed 3D volumes.</p></li>
+<li><p><em>Segmentation:</em> The process of identifying and isolating specific anatomical structures or regions of interest (like organs, tumors, or bones) from the rest of the image.</p></li>
+<li><p><em>Registration:</em> Aligning and fusing different image datasets, for example, overlaying a CT scan with an MRI scan to combine their information.</p></li>
+<li><p><em>Analysis:</em> Performing measurements, analyzing shapes, and extracting quantitative data from the segmented structures.</p></li>
+<li><p><em>3D Printing:</em> Exporting the final 3D models in formats suitable for 3D printing, creating physical replicas of patient anatomy.</p></li>
+</ul>
+<p>Due to its open-source nature, Slicer has a vibrant community that contributes new features and extensions, making it an ever-evolving platform for medical imaging innovation.</p>
 </section>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The field of orthopedic medicine is on the cusp of a revolution, and at
-its heart lies a technology that promises to reshape the future of
-joint replacement: additive manufacturing. For decades, the design and
-fabrication of implants have been constrained by the limitations of
-traditional manufacturing methods. While these conventional techniques
-have undoubtedly improved the lives of millions, they often fall short
-of providing truly personalized solutions, leading to a host of
-challenges that can impact patient outcomes and longevity of the
-implant. This book is an exploration of the transformative potential
-of additive manufacturing, a technology that is not just refining the
-process of joint replacement, but redefining its very essence.</p>
-<p>The conventional approach to joint replacement, while effective, is a
-one-size-fits-all paradigm. Implants are mass-produced in a limited
-range of sizes, forcing surgeons to make compromises that can affect
-the fit, function, and long-term success of the procedure. This lack
-of customization can lead to a cascade of issues, from bone loss and
-stress shielding to an increased risk of implant failure. Furthermore,
-traditional manufacturing methods restrict the use of novel materials
-and complex geometries that could enhance the performance and
-biocompatibility of implants. The result is a field that, despite its
-advancements, has been yearning for a new approach—one that can
-deliver on the promise of truly patient-specific care.</p>
-<p>Enter additive manufacturing, more commonly known as 3D printing. This
-groundbreaking technology offers a paradigm shift in the way we design
-and create medical implants. By building objects layer by layer from a
-digital model, additive manufacturing unshackles designers from the
-constraints of traditional fabrication, opening up a world of
-possibilities for creating implants that are as unique as the patients
-who receive them. This book will serve as a comprehensive guide to
-this new frontier, providing a detailed exploration of the principles,
-processes, and applications of additive manufacturing in the context
-of joint replacement design.</p>
-<p>We will embark on a journey that begins with the history of joint
-replacements, fundamentals of additive manufacturing, delving into the
-various technologies and materials that are at the forefront of this
-revolution. From there, we will explore the intricate process of
-designing patient-specific implants, from medical imaging and 3D
-modeling to the optimization of implant geometry for enhanced
-performance and bone integration. The book will also shed light on the
-cutting-edge research and clinical applications that are paving the
-way for a new generation of implants, including the development of
-bioactive materials, drug-eluting devices, and smart implants that can
-monitor and respond to the patient’s physiology.</p>
-<p>This book is intended for a diverse audience, from biomedical
-engineers and materials scientists to orthopedic surgeons and medical
-students. It is for anyone who is passionate about leveraging
-technology to improve patient care and who believes in the power of
-innovation to solve the most pressing challenges in medicine.</p>
+<section id="importing-dicom-files">
+<h2>Importing DICOM Files<a class="headerlink" href="#importing-dicom-files" title="Link to this heading">#</a></h2>
+<p>The first step in any medical imaging workflow is loading the data. In the clinical world, medical images are most commonly stored in the <em>DICOM (Digital Imaging and Communications in Medicine)</em> format. A single medical scan usually consists of hundreds or thousands of individual DICOM files, each representing a single “slice” of the anatomy.</p>
+<p>3D Slicer provides a robust DICOM browser to handle this process seamlessly:</p>
+<ol class="arabic simple">
+<li><p><em>Launch the DICOM Browser:</em> You can find this module in the toolbar or through the “Data” module.</p></li>
+<li><p><em>Import:</em> The browser allows you to import entire folders of DICOM files. Slicer will automatically scan the folder, read the metadata from each file, and group the individual slices into coherent series based on patient information and scan parameters.</p></li>
+<li><p><em>Examine and Load:</em> Once imported, the DICOM browser displays the patient and study information. You can see all the different scan series associated with a patient. Select the series you want to work with and load it into the Slicer scene.</p></li>
+</ol>
+<p>Upon loading, Slicer will display the image slices in the standard 2D views (axial, sagittal, coronal) and also render a preliminary 3D volume, which you can immediately explore.</p>
+</section>
+<section id="segmentation-the-key-to-3d-modeling">
+<h2>Segmentation: The Key to 3D Modeling<a class="headerlink" href="#segmentation-the-key-to-3d-modeling" title="Link to this heading">#</a></h2>
+<p>Segmentation is the most critical and often the most time-consuming part of creating a 3D model. It is the digital equivalent of carefully outlining a structure on each and every image slice. Slicer offers a powerful module called the <em>Segment Editor</em> which contains a wide array of tools to accomplish this, catering to different needs and image types.</p>
+<section id="common-segmentation-methods-in-3d-slicer">
+<h3>Common Segmentation Methods in 3D Slicer:<a class="headerlink" href="#common-segmentation-methods-in-3d-slicer" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>Thresholding:</em> This is one of the simplest and most effective methods. It works by selecting a range of intensity values that correspond to the tissue you want to isolate. For example, in a CT scan, bone has a very high intensity (appears bright white), so you can easily select it by setting a high threshold.</p></li>
+<li><p><em>Paint and Erase:</em> These tools allow you to manually “paint” the segmentation directly onto the 2D slices. This is useful for refining segmentations from other methods or for segmenting structures that are difficult to isolate automatically.</p></li>
+<li><p><em>Level Tracing:</em> This tool lets you draw a line on a slice, and it will automatically trace the boundary of an object at that intensity level. It’s like a “magic wand” for image slices.</p></li>
+<li><p><em>Grow from Seeds:</em> A more advanced semi-automatic method. You place “seeds” inside the structure of interest and other seeds outside of it. The algorithm then grows the segmentation from your seeds, intelligently finding the boundaries based on the image data.</p></li>
+<li><p><em>Island and Scissor Tools:</em> These are for cleaning up your segmentation. The “Islands” tool can automatically remove small, disconnected fragments. The “Scissors” tool allows you to draw a line to cut away unwanted parts of a segment.</p></li>
+</ul>
+<p>Once your segmentation is complete, Slicer can instantly generate a clean, smooth 3D surface model from it. This model can then be exported as an STL or other 3D file format for 3D printing, further analysis, or visualization in other software.</p>
+</section>
+</section>
+<section id="where-to-learn-more-tutorials-and-resources">
+<h2>Where to Learn More: Tutorials and Resources<a class="headerlink" href="#where-to-learn-more-tutorials-and-resources" title="Link to this heading">#</a></h2>
+<p>The 3D Slicer community provides excellent, free learning resources for users of all levels.</p>
+<ul class="simple">
+<li><p><em>Official 3D Slicer Tutorial Series:</em> The best place to start. These step-by-step video and text tutorials cover the fundamental workflows.</p>
+<ul>
+<li><p>[[<a class="reference external" href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html">https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html</a>][Slicer Welcome Tutorial]]</p></li>
+<li><p>[[<a class="reference external" href="https://slicer.readthedocs.io/en/latest/user_guide/modules/segmenteditor.html">https://slicer.readthedocs.io/en/latest/user_guide/modules/segmenteditor.html</a>][Segmentation Tutorials]]</p></li>
+</ul>
+</li>
+<li><p><em>3D Slicer on YouTube:</em> Many researchers and educators post video tutorials on YouTube demonstrating specific techniques and workflows. A simple search for “3D Slicer segmentation” will yield numerous results.</p>
+<ul>
+<li><p>[[<a class="reference external" href="https://www.youtube.com/c/3DSlicer">https://www.youtube.com/c/3DSlicer</a>][3D Slicer YouTube Channel]]</p></li>
+</ul>
+</li>
+<li><p><em>The Slicer Discourse Forum:</em> An active online community where you can ask questions, share your work, and get help from experienced users and developers.</p>
+<ul>
+<li><p>[[<a class="reference external" href="https://discourse.slicer.org/">https://discourse.slicer.org/</a>][Slicer Discourse]]</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 
@@ -503,15 +494,6 @@ innovation to solve the most pressing challenges in medicine.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="assignment.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -529,8 +511,13 @@ innovation to solve the most pressing challenges in medicine.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-3d-slicer">What is 3D Slicer?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-dicom-files">Importing DICOM Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-the-key-to-3d-modeling">Segmentation: The Key to 3D Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-segmentation-methods-in-3d-slicer">Common Segmentation Methods in 3D Slicer:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-learn-more-tutorials-and-resources">Where to Learn More: Tutorials and Resources</a></li>
 </ul>
   </nav></div>
 
