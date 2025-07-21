@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equilibrium in a One-Legged Stance &#8212; Joint arthroplasty design using additive manufacturing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'one-legged';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modern Frontiers in Total Hip Arthroplasty: Materials, Manufacturing, and Mechanisms" href="tha_modern.html" />
+    <link rel="prev" title="Hip joint" href="hip_joint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Joint arthroplasty design using additive manufacturing - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Additive manufacturing for joint replacement design
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">NTUST summer course</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment.html">Project Assignment: Novel Joint Implant Design Using Additive Manufacturing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Joint replacement - overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of Key Terms</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="history.html">The Historical and Technical Evolution of Joint Replacement: From Ancient Remedies to Modern Arthroplasty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disease.html">Pathologies Necessitating Joint Arthroplasty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biomimetic principles</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="biomimetics.html">Biomimetic Principles in Arthroplasty: Engineering Inspired by Nature’s Blueprints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="imaging.html">Medical imaging</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="segmentation.html">Medical Image Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slicer3d.html">Introduction to 3D Slicer: From DICOM to 3D Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="force.html">Principles of Musculoskeletal Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mocap.html">Motion Capture in Biomechanics: From Historical Roots to AI-Driven Future</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additive manufacturing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="biomaterials.html">What is biomaterial?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="am_overview.html">Additive Manufacturing Forges the Future of Medical Implants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pbf.html">Powder bed fusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="porous.html">Porous Implants in Orthopedics: Design, Function, and Advanced Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wear.html">Wear in Joint Arthroplasty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case studies</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hip_joint.html">Hip joint</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Equilibrium in a One-Legged Stance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tha_modern.html">Modern Frontiers in Total Hip Arthroplasty: Materials, Manufacturing, and Mechanisms</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/matejdaniel/TJA_AM/issues/new?title=Issue%20on%20page%20%2Fone-legged.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/one-legged.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equilibrium in a One-Legged Stance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-muscle-redundancy">The Problem: Muscle Redundancy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-the-reductionist-approach-pauwels-analysis">Method 1: The Reductionist Approach (Pauwels’ Analysis)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-and-free-body-diagram-fbd">The Model and Free Body Diagram (FBD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-equations">Equilibrium Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-the-optimization-approach">Method 2: The Optimization Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-and-cost-function">The Model and Cost Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-with-lagrange-multipliers">Solving with Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reality-check-comparison-with-in-vivo-data">Reality Check: Comparison with In Vivo Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-orthoload">How to Use OrthoLoad</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equilibrium-in-a-one-legged-stance">
+<h1>Equilibrium in a One-Legged Stance<a class="headerlink" href="#equilibrium-in-a-one-legged-stance" title="Link to this heading">#</a></h1>
+<p>When you stand on one leg, the forces acting on your hip joint are surprisingly large. To keep your pelvis from tipping over, your hip abductor muscles must contract powerfully. This creates a large reaction force inside the hip joint itself. In this chapter, we’ll model this common biomechanical situation to estimate these forces. We’ll start with a simple model and then explore a more complex, realistic approach using optimization.</p>
+<section id="the-problem-muscle-redundancy">
+<h2>The Problem: Muscle Redundancy<a class="headerlink" href="#the-problem-muscle-redundancy" title="Link to this heading">#</a></h2>
+<p>A key challenge in biomechanics is <strong>muscle redundancy</strong>. This means that there are more muscles available to perform a task than are strictly necessary. For example, several muscles can abduct the hip (pull the leg sideways away from the body’s midline), including the gluteus medius, gluteus minimus, and tensor fasciae latae.</p>
+<p>From a mechanics perspective, this creates a <strong>statically indeterminate system</strong>. We have more unknown muscle forces than we have equilibrium equations (typically 3 in 2D analysis: <span class="math notranslate nohighlight">\(\sum F_x = 0\)</span>, <span class="math notranslate nohighlight">\(\sum F_y = 0\)</span>, <span class="math notranslate nohighlight">\(\sum M = 0\)</span>). To solve such problems, we must either simplify the system or introduce additional criteria to find a unique solution.</p>
+</section>
+<section id="method-1-the-reductionist-approach-pauwels-analysis">
+<h2>Method 1: The Reductionist Approach (Pauwels’ Analysis)<a class="headerlink" href="#method-1-the-reductionist-approach-pauwels-analysis" title="Link to this heading">#</a></h2>
+<p>The simplest way to solve this problem is to reduce the redundant muscles into a single, equivalent muscle group. This is a classic approach first detailed by Friedrich Pauwels.</p>
+<section id="the-model-and-free-body-diagram-fbd">
+<h3>The Model and Free Body Diagram (FBD)<a class="headerlink" href="#the-model-and-free-body-diagram-fbd" title="Link to this heading">#</a></h3>
+<p>We’ll analyze the forces in the frontal plane acting on the femur at the moment of a one-legged stance. The system is in static equilibrium. The key forces are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F_M\)</span>: The combined force of the <strong>hip abductor muscles</strong>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_R\)</span>: The <strong>joint reaction force</strong> at the femoral head (the force of the acetabulum pushing on the femur).</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_{G5}\)</span>: The body weight minus the weight of the supporting leg. This is the force trying to tip the pelvis over. It’s often estimated as <strong>5/6 of the total Body Weight (BW)</strong>.</p></li>
+</ul>
+<p>Let’s assume a person with a mass of 75 kg.</p>
+<ul class="simple">
+<li><p>Total Body Weight, <span class="math notranslate nohighlight">\(BW = 75 \text{ kg} \times 9.81 \text{ m/s}^2 = 736 \text{ N}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_{G5} = \frac{5}{6} \times 736 \text{ N} = 613 \text{ N}\)</span>.</p></li>
+</ul>
+<p>The FBD below shows these forces and their lever arms relative to the center of the femoral head (Point A).</p>
+<figure class="align-default" id="id1">
+<img alt="https://www.researchgate.net/profile/Joerg-Eschweiler/publication/236603383/figure/fig1/AS:299406772457474&#64;1448395556098/Simple-mathematical-model-of-the-hip-joint-resultant-force-F-R-and-orientation-according_W640.jpg" src="https://www.researchgate.net/profile/Joerg-Eschweiler/publication/236603383/figure/fig1/AS:299406772457474&#64;1448395556098/Simple-mathematical-model-of-the-hip-joint-resultant-force-F-R-and-orientation-according_W640.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Free Body Diagram of the hip in a one-legged stance. From DOI: 10.1177/0954411912445261.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Based on typical anatomy, we’ll use these estimations:</p>
+<ul class="simple">
+<li><p>Lever arm for <span class="math notranslate nohighlight">\(F_{G5}\)</span>: <span class="math notranslate nohighlight">\(d_{G} = 16 \text{ cm} = 0.16 \text{ m}\)</span>.</p></li>
+<li><p>Lever arm for <span class="math notranslate nohighlight">\(F_M\)</span>: <span class="math notranslate nohighlight">\(d_M = 7 \text{ cm} = 0.07 \text{ m}\)</span>.</p></li>
+<li><p>The muscle force <span class="math notranslate nohighlight">\(F_M\)</span> acts at an angle <span class="math notranslate nohighlight">\(\alpha = 20^{\circ}\)</span> to the vertical.</p></li>
+</ul>
+</section>
+<section id="equilibrium-equations">
+<h3>Equilibrium Equations<a class="headerlink" href="#equilibrium-equations" title="Link to this heading">#</a></h3>
+<p>To find the unknown forces (<span class="math notranslate nohighlight">\(F_M\)</span> and <span class="math notranslate nohighlight">\(F_R\)</span>), we apply the equations of static equilibrium.</p>
+<p><strong>1. Moment Equilibrium:</strong>
+We sum the moments about the center of the femoral head (Point A) to eliminate the unknown <span class="math notranslate nohighlight">\(F_J\)</span>. The clockwise moment from the body weight must be balanced by the counter-clockwise moment from the muscle force.</p>
+<div class="math notranslate nohighlight">
+\[\sum M_A = 0\]</div>
+<div class="math notranslate nohighlight">
+\[(F_M \cdot \cos \alpha) \cdot d_M - F_{G5} \cdot d_{G} = 0\]</div>
+<p>Solving for the muscle force <span class="math notranslate nohighlight">\(F_M\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F_M = \frac{F_{G5} \cdot d_{G}}{d_M \cdot \cos \alpha}\]</div>
+<div class="math notranslate nohighlight">
+\[F_M = \frac{613 \text{ N} \cdot 0.16 \text{ m}}{0.07 \text{ m} \cdot \cos(20^{\circ})} = \frac{98.08}{0.0658} \approx \bf{1491 \textbf{ N}}\]</div>
+<p>This muscle force is about <span class="math notranslate nohighlight">\(1491 / 736 \approx \bf{2.0}\)</span> <strong>times the person’s body weight!</strong></p>
+<p><strong>2. Force Equilibrium:</strong>
+Now we solve for the joint reaction force, <span class="math notranslate nohighlight">\(F_J\)</span>, by ensuring the sum of all forces is zero. We’ll do this by components.</p>
+<ul class="simple">
+<li><p><strong>Sum of forces in the x-direction (horizontal):</strong>
+$<span class="math notranslate nohighlight">\(\sum F_x = 0\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(F_{Rx} - F_{Mx} = 0 \implies F_{Jx} = F_M \cdot \sin \alpha\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(F_{Rx} = 1491 \text{ N} \cdot \sin(20^{\circ}) = \bf{510 \textbf{ N}}\)</span>$</p></li>
+<li><p><strong>Sum of forces in the y-direction (vertical):</strong>
+$<span class="math notranslate nohighlight">\(\sum F_y = 0\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(F_{Ry} - F_{My} - F_{G5} = 0 \implies F_{Ry} = F_M \cdot \cos \alpha + F_{G5}\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(F_{Ry} = 1491 \text{ N} \cdot \cos(20^{\circ}) + 613 \text{ N} = 1401 \text{ N} + 613 \text{ N} = \bf{2014 \textbf{ N}}\)</span>$</p></li>
+</ul>
+<p><strong>3. Resultant Joint Force:</strong>
+Finally, we find the magnitude of the total joint reaction force using the Pythagorean theorem.</p>
+<div class="math notranslate nohighlight">
+\[F_R = \sqrt{F_{Rx}^2 + F_{Ry}^2}\]</div>
+<div class="math notranslate nohighlight">
+\[F_R = \sqrt{(510 \text{ N})^2 + (2014 \text{ N})^2} = \sqrt{260100 + 4056196} \approx \bf{2077 \textbf{ N}}\]</div>
+<p>The joint reaction force is approximately <span class="math notranslate nohighlight">\(2077 / 736 \approx \bf{2.8}\)</span> <strong>times the person’s body weight</strong>. This shows how everyday activities can generate substantial internal forces.</p>
+</section>
+</section>
+<section id="method-2-the-optimization-approach">
+<h2>Method 2: The Optimization Approach<a class="headerlink" href="#method-2-the-optimization-approach" title="Link to this heading">#</a></h2>
+<p>The reductionist approach is useful but assumes all abductor muscles act as one. In reality, the body must decide how to distribute the load among the available muscles. Optimization theory provides a powerful tool for solving this.</p>
+<p>Let’s assume the abducting moment is generated by two muscles: the gluteus medius (<span class="math notranslate nohighlight">\(F_1\)</span>) and the gluteus minimus (<span class="math notranslate nohighlight">\(F_2\)</span>). The problem is now to find the values of <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_2\)</span>.</p>
+<section id="the-model-and-cost-function">
+<h3>The Model and Cost Function<a class="headerlink" href="#the-model-and-cost-function" title="Link to this heading">#</a></h3>
+<p>We’ll use a common physiological hypothesis: the body distributes muscle force to minimize a certain metabolic or physical “cost.” A widely used cost function (<span class="math notranslate nohighlight">\(J\)</span>) is the sum of the squares of the muscle forces. This penalizes large individual muscle forces, encouraging load sharing.</p>
+<ul class="simple">
+<li><p><strong>Objective:</strong> Minimize <span class="math notranslate nohighlight">\(J = F_1^2 + F_2^2\)</span></p></li>
+<li><p><strong>Constraint:</strong> The muscles must still produce the required counter-clockwise moment to balance the body weight. Let’s say the external moment from <span class="math notranslate nohighlight">\(W_{HAT}\)</span> is <span class="math notranslate nohighlight">\(M_{ext} = W_{HAT} \cdot d_{HAT} = 98.08 \text{ N} \cdot \text{m}\)</span>.</p>
+<ul>
+<li><p>Let’s assign slightly different (and simplified) lever arms: <span class="math notranslate nohighlight">\(d_1 = 7 \text{ cm}\)</span> (gluteus medius) and <span class="math notranslate nohighlight">\(d_2 = 5 \text{ cm}\)</span> (gluteus minimus).</p></li>
+<li><p>The constraint equation is: <span class="math notranslate nohighlight">\(F_1 d_1 + F_2 d_2 = M_{ext}\)</span>
+$<span class="math notranslate nohighlight">\(0.07 F_1 + 0.05 F_2 = 98.08\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="solving-with-lagrange-multipliers">
+<h3>Solving with Lagrange Multipliers<a class="headerlink" href="#solving-with-lagrange-multipliers" title="Link to this heading">#</a></h3>
+<p>We use the method of Lagrange multipliers to solve this constrained optimization problem. We define a new function, the Lagrangian (<span class="math notranslate nohighlight">\(\mathcal{L}\)</span>), which combines the cost function and the constraint.</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}(F_1, F_2, \lambda) = (F_1^2 + F_2^2) + \lambda (0.07 F_1 + 0.05 F_2 - 98.08)\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\lambda\)</span> is the Lagrange multiplier. To find the minimum, we take the partial derivatives of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> with respect to <span class="math notranslate nohighlight">\(F_1\)</span>, <span class="math notranslate nohighlight">\(F_2\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> and set them to zero.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{L}}{\partial F_1} = 2F_1 + 0.07 \lambda = 0 \implies F_1 = -0.035 \lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{L}}{\partial F_2} = 2F_2 + 0.05 \lambda = 0 \implies F_2 = -0.025 \lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{L}}{\partial \lambda} = 0.07 F_1 + 0.05 F_2 - 98.08 = 0\)</span></p></li>
+</ol>
+<p>Now we have a system of three linear equations. Substitute the expressions for <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_2\)</span> from (1) and (2) into the constraint equation (3):</p>
+<div class="math notranslate nohighlight">
+\[0.07(-0.035 \lambda) + 0.05(-0.025 \lambda) - 98.08 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[-0.00245 \lambda - 0.00125 \lambda = 98.08\]</div>
+<div class="math notranslate nohighlight">
+\[-0.0037 \lambda = 98.08 \implies \lambda = -\frac{98.08}{0.0037} \approx -26508\]</div>
+<p>Now, substitute <span class="math notranslate nohighlight">\(\lambda\)</span> backUntitled into the equations for <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_2\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F_1 = -0.035 \cdot (-26508) \approx \bf{928 \textbf{ N}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F_2 = -0.025 \cdot (-26508) \approx \bf{663 \textbf{ N}}\)</span></p></li>
+</ul>
+<p><strong>Result Interpretation:</strong>
+The optimization distributes the load between the two muscles. The total muscle force is <span class="math notranslate nohighlight">\(928 + 663 = 1591\)</span> N, which is slightly higher than the 1491 N from the single-muscle model. The muscle with the larger lever arm (<span class="math notranslate nohighlight">\(F_1\)</span>, gluteus medius) is recruited to produce more force, which is an efficient strategy. You can now use these two forces to recalculate the joint reaction force <span class="math notranslate nohighlight">\(F_J\)</span> as we did in the first method.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="reality-check-comparison-with-in-vivo-data">
+<h2>Reality Check: Comparison with In Vivo Data<a class="headerlink" href="#reality-check-comparison-with-in-vivo-data" title="Link to this heading">#</a></h2>
+<p>How do our models compare to reality? To find out, we need to measure the forces inside a living person’s hip joint. This is achieved using instrumented endoprostheses—hip implants equipped with sensors that transmit force data wirelessly.</p>
+<p>A fantastic resource for this data is the <strong>OrthoLoad</strong> database from the Julius Wolff Institute at Charité in Berlin.</p>
+<p><strong>OrthoLoad Database:</strong> <a class="reference external" href="https://orthoload.com/">https://orthoload.com/</a></p>
+<section id="how-to-use-orthoload">
+<h3>How to Use OrthoLoad<a class="headerlink" href="#how-to-use-orthoload" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Navigate to the OrthoLoad website and click on <strong>“Enter database”</strong> in the top menu.</p></li>
+<li><p>From the implants, select the <strong>Hip Joint III</strong> (the most recent generation of implant).</p></li>
+<li><p>On the left-hand menu, under “Activities”, select <strong>“Standing / One-legged stance”</strong>.</p></li>
+<li><p>Choose a random patient.</p></li>
+<li><p>You will see a graph showing the resultant force (<span class="math notranslate nohighlight">\(F_{res}\)</span>) on the hip implant, typically normalized to percent body weight (%BW).</p></li>
+</ol>
+<p><img alt="OrthoLoad data for one-legged stance" src="https://orthoload.com/wp-content/uploads/What_see_orthoload_big.png" />
+<em>Example data from OrthoLoad for the activity “one-legged stance.”</em></p>
+<p>You’ll likely find that the measured peak forces during a one-legged stance are in the range of <strong>200% to 270% BW</strong>. Our calculated results (<span class="math notranslate nohighlight">\(F_J \approx 2.8\)</span> BW or 280% BW) are in the same ballpark, which validates our models as reasonable estimations!</p>
+<p><strong>Why the differences?</strong> Our models are simplified. Real-world forces can be affected by:</p>
+<ul class="simple">
+<li><p><strong>Co-contraction:</strong> Antagonist muscles (like adductors) might also be active, increasing the joint force.</p></li>
+<li><p><strong>Dynamic effects:</strong> Even standing still involves small movements and muscle adjustments.</p></li>
+<li><p><strong>Anatomical variation:</strong> Our lever arms and angles are averages; every individual is different.</p></li>
+<li><p><strong>3D forces:</strong> We used a 2D model, but real forces are three-dimensional.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hip_joint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hip joint</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tha_modern.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modern Frontiers in Total Hip Arthroplasty: Materials, Manufacturing, and Mechanisms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-muscle-redundancy">The Problem: Muscle Redundancy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-the-reductionist-approach-pauwels-analysis">Method 1: The Reductionist Approach (Pauwels’ Analysis)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-and-free-body-diagram-fbd">The Model and Free Body Diagram (FBD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-equations">Equilibrium Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-the-optimization-approach">Method 2: The Optimization Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model-and-cost-function">The Model and Cost Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-with-lagrange-multipliers">Solving with Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reality-check-comparison-with-in-vivo-data">Reality Check: Comparison with In Vivo Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-orthoload">How to Use OrthoLoad</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Matej Daniel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
