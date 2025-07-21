@@ -3,19 +3,34 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: assignment
-- file: glossary
-- file: history
-- file: disease
-- file: imaging
-- file: segmentation
-- file: slicer3D
-- file: biomimetics
-- file: biomaterials
-- file: am_overview
-- file: pbf
-- file: porous
-- file: hip_joint
-  #- file: notebooks
-#- file: markdown-notebooks
+parts:
+  - caption: NTUST summer course
+    chapters:
+    - file: assignment
+  - caption: Joint replacement - overview  # Title of the part
+    chapters:
+      - file: glossary
+      - file: history
+      - file: disease
+  - caption: Biomimetic principles
+    chapters:
+      - file: biomimetics
+  - caption: Input data
+    chapters:
+      - file: imaging
+      - file: segmentation
+      - file: slicer3d
+      - file: force
+      - file: mocap
+  - caption: Additive manufacturing
+    chapters:
+      - file: biomaterials
+      - file: am_overview
+      - file: pbf
+      - file: porous
+      - file: wear
+  - caption: Case studies
+    chapters:
+      - file: hip_joint
+      - file: one-legged
+      - file: tha_modern
