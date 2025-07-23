@@ -25,6 +25,7 @@ parts:
   - caption: Additive manufacturing
     chapters:
       - file: biomaterials
+      - file: biomaterials_testing
       - file: am_overview
       - file: pbf
       - file: porous
@@ -34,3 +35,7 @@ parts:
       - file: hip_joint
       - file: one-legged
       - file: tha_modern
+  - caption: Regulatory
+    chapters:
+       - file: mdr
+
